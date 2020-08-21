@@ -1,0 +1,26 @@
+{
+  "id": "no.runely.jslogic",
+  "version": "0.0.1",
+  "compatibility": ">=2.0.0",
+  "sdk": 2,
+  "name": {
+    "en": "JavaScript Logic",
+    "no": "JavaScript Logic"
+  },
+  "description": {
+    "en": "Use advanced logic through JavaScript",
+    "no": "Bruk avansert logikk med JavaScript"
+  },
+  "category": [
+    "tools"
+  ],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Rune Moskvil Lyngås",
+    "email": "runely85@gmail.com"
+  }
+}

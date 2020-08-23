@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "compatibility": ">=2.0.0",
   "sdk": 2,
+  "brandColor": "#05A22C",
   "name": {
     "en": "JavaScript Logic",
     "no": "JavaScript Logic"
@@ -14,7 +15,6 @@
   "category": [
     "tools"
   ],
-  "permissions": [],
   "images": {
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
@@ -22,5 +22,97 @@
   "author": {
     "name": "Rune Moskvil Lyngås",
     "email": "runely85@gmail.com"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Rune Moskvil Lyngås",
+        "email": "runely85@gmail.com"
+      }
+    ]
+  },
+  "tags": {
+    "en": [
+      "javascript",
+      "js",
+      "array",
+      "logic",
+      "advanced"
+    ],
+    "no": [
+      "javascript",
+      "js",
+      "array",
+      "logikk",
+      "avansert"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/runely/jslogic-homey/issues"
+  },
+  "source": "https://github.com/runely/jslogic-homey",
+  "permissions": [],
+  "flow": {
+    "conditions": [
+      {
+        "id": "value_contains_array",
+        "title": {
+          "en": "Value contains !{{one of|not one of}}..."
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "value",
+            "placeholder": {
+              "en": "Value"
+            }
+          },
+          {
+            "type": "text",
+            "name": "array",
+            "placeholder": {
+              "en": "Array items split by ';'"
+            }
+          }
+        ]
+      },
+      {
+        "id": "value_empty",
+        "title": {
+          "en": "Is value !{{empty|not empty}}"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "value",
+            "placeholder": {
+              "en": "Value"
+            }
+          }
+        ]
+      },
+      {
+        "id": "value_in_array",
+        "title": {
+          "en": "Is value !{{one of|not one of}}..."
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "value",
+            "placeholder": {
+              "en": "Value"
+            }
+          },
+          {
+            "type": "text",
+            "name": "array",
+            "placeholder": {
+              "en": "Array items split by ';'"
+            }
+          }
+        ]
+      }
+    ]
   }
 }

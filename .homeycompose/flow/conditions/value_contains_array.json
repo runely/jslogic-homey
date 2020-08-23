@@ -1,0 +1,22 @@
+{
+  "id": "value_contains_array",
+  "title": {
+    "en": "Value contains !{{one of|not one of}}..."
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "value",
+      "placeholder": {
+        "en": "Value"
+      }
+    },
+    {
+      "type": "text",
+      "name": "array",
+      "placeholder": {
+        "en": "Array items split by ';'"
+      }
+    }
+  ]
+}

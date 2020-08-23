@@ -1,0 +1,22 @@
+{
+  "id": "value_in_array",
+  "title": {
+    "en": "Is value !{{one of|not one of}}..."
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "value",
+      "placeholder": {
+        "en": "Value"
+      }
+    },
+    {
+      "type": "text",
+      "name": "array",
+      "placeholder": {
+        "en": "Array items split by ';'"
+      }
+    }
+  ]
+}

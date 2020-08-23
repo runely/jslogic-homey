@@ -1,0 +1,15 @@
+{
+  "id": "value_empty",
+  "title": {
+    "en": "Is value !{{empty|not empty}}"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "value",
+      "placeholder": {
+        "en": "Value"
+      }
+    }
+  ]
+}

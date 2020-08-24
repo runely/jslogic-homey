@@ -59,6 +59,9 @@
         "title": {
           "en": "Value contains !{{one of|not one of}}..."
         },
+        "hint": {
+          "en": "Does [value] contain [one of items]. Check as case senitive?"
+        },
         "args": [
           {
             "type": "text",
@@ -73,6 +76,24 @@
             "placeholder": {
               "en": "Array items split by ';'"
             }
+          },
+          {
+            "type": "dropdown",
+            "name": "casesenitive",
+            "values": [
+              {
+                "id": "true",
+                "label": {
+                  "en": "True"
+                }
+              },
+              {
+                "id": "false",
+                "label": {
+                  "en": "False"
+                }
+              }
+            ]
           }
         ]
       },
@@ -94,7 +115,10 @@
       {
         "id": "value_in_array",
         "title": {
-          "en": "Is value !{{one of|not one of}}..."
+          "en": "Is value exactly !{{one of|not one of}}..."
+        },
+        "hint": {
+          "en": "Is [value] exactly [one of items]. Check as case senitive?"
         },
         "args": [
           {
@@ -110,6 +134,25 @@
             "placeholder": {
               "en": "Array items split by ';'"
             }
+          },
+          {
+            "type": "dropdown",
+            "name": "casesenitive",
+            "value": "true",
+            "values": [
+              {
+                "id": "true",
+                "label": {
+                  "en": "True"
+                }
+              },
+              {
+                "id": "false",
+                "label": {
+                  "en": "False"
+                }
+              }
+            ]
           }
         ]
       }

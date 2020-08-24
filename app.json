@@ -3,14 +3,12 @@
   "version": "0.0.1",
   "compatibility": ">=2.0.0",
   "sdk": 2,
-  "brandColor": "#05A22C",
+  "brandColor": "#F0A100",
   "name": {
-    "en": "JavaScript Logic",
-    "no": "JavaScript Logic"
+    "en": "JavaScript Logic"
   },
   "description": {
-    "en": "Use advanced logic through JavaScript",
-    "no": "Bruk avansert logikk med JavaScript"
+    "en": "Use advanced logic through JavaScript"
   },
   "category": [
     "tools"
@@ -38,13 +36,6 @@
       "array",
       "logic",
       "advanced"
-    ],
-    "no": [
-      "javascript",
-      "js",
-      "array",
-      "logikk",
-      "avansert"
     ]
   },
   "bugs": {

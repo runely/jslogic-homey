@@ -1,0 +1,22 @@
+{
+    "id": "value_too_long",
+    "title": {
+      "en": "Is value length !{{less|not less}} than"
+    },
+    "args": [
+      {
+        "type": "text",
+        "name": "value",
+        "placeholder": {
+          "en": "Text value"
+        }
+      },
+      {
+          "type": "number",
+          "name": "maxLength",
+          "placeholder": {
+              "en": "Max length"
+          }
+      }
+    ]
+  }

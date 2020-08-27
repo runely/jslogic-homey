@@ -70,6 +70,28 @@ class MyApp extends Homey.App {
 				}
 			});
 		
+		new Homey.FlowCardCondition('value_too_long')
+			.register()
+			.registerRunListener((args, state) => {
+				//this.log("--------------------------------------------------------------");
+				if (args.maxLength) {
+					if (args.value) {
+						let value = args.value.trim();
+						//this.log(`condition: Value: '${value}' (${value.length})`);
+						//this.log(`condition: MaxLength: '${args.maxLength}'`);
+						let result = (value.length < args.maxLength)
+						//this.log(`condition: Is value length less than:`, result);
+						return Promise.resolve(result);
+					}
+					else {
+						return Promise.resolve(true);
+					}
+				}
+				else {
+					return Promise.resolve(false);
+				}
+			});
+		
 		new Homey.FlowCardCondition('value_contains_array')
 			.register()
 			.registerRunListener((args, state) => {

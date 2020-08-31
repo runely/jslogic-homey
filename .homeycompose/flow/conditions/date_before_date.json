@@ -1,24 +1,28 @@
 {
   "id": "date_before_date",
   "title": {
-    "en": "Is Date !{{before|not before}} Date"
+    "en": "Is Date !{{before|not before}} Date",
+    "nl": "Is Datum !{{voor|niet voor}} Datum"
   },
   "hint": {
-    "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nExample: 31-08-2020"
+    "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nExample: 31-08-2020",
+    "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)\nVoorbeeld: 31-08-2020"
   },
   "args": [
     {
       "type": "text",
       "name": "dateOne",
       "placeholder": {
-        "en": "Date one"
+        "en": "Date one",
+        "nl": "Datum één"
       }
     },
     {
       "type": "text",
       "name": "dateTwo",
       "placeholder": {
-        "en": "Date two"
+        "en": "Date two",
+        "nl": "Datum twee"
       }
     }
   ]

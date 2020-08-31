@@ -1,24 +1,28 @@
 {
   "id": "datetime_before_datetime",
   "title": {
-    "en": "Is DateTime !{{before|not before}} DateTime"
+    "en": "Is DateTime !{{before|not before}} DateTime",
+    "nl": "Is DatumTijd !{{voor|niet voor}} DatumTijd"
   },
   "hint": {
-    "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nHH:mm (Separator can be ':', or '.')\nExample: 31-08-2020 08:30"
+    "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nHH:mm (Separator can be ':', or '.')\nExample: 31-08-2020 08:30",
+    "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)\nHH:mm (Scheidingsteken kan ':', of '.' zijn)\nVoorbeeld: 31-08-2020 08:30"
   },
   "args": [
     {
       "type": "text",
       "name": "dateTimeOne",
       "placeholder": {
-        "en": "DateTime one"
+        "en": "DateTime one",
+        "nl": "DatumTijd één"
       }
     },
     {
       "type": "text",
       "name": "dateTimeTwo",
       "placeholder": {
-        "en": "DateTime two"
+        "en": "DateTime two",
+        "nl": "DatumTijd twee"
       }
     }
   ]

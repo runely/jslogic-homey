@@ -6,7 +6,7 @@
   },
   "hint": {
     "en": "Is [value] exactly [one of items]. Check as case sensitive?",
-    "nl": "Is [waarde] exact [één van de items]. Hoofdlettergevoelig"
+    "nl": "Is [waarde] exact [één van de items]. Hoofdlettergevoelig?"
   },
   "args": [
     {

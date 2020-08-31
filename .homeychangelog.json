@@ -4,5 +4,8 @@
   },
   "0.0.2": {
     "en": "Added 'Is value length less than' condition"
+  },
+  "0.0.3": {
+    "en": "3 new conditions to calculate Date/Time/DateTime"
   }
 }

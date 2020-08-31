@@ -2,6 +2,10 @@
 
 const Homey = require('homey');
 
+const getDate = require('./lib/get-date');
+const getTime = require('./lib/get-time');
+const getDateTime = require('./lib/get-date-time');
+
 class MyApp extends Homey.App {
 	
 	onInit() {
@@ -139,6 +143,81 @@ class MyApp extends Homey.App {
 					return Promise.resolve(false);
 				}
 			});
+
+		new Homey.FlowCardCondition('date_before_date')
+			.register()
+			.registerRunListener((args, state) => {
+				//this.log("--------------------------------------------------------------");
+				if (args.dateOne) {
+					let dateOne = getDate(args.dateOne);
+					if (args.dateTwo) {
+						let dateTwo = getDate(args.dateTwo);
+						return this.checkDateTime({ parsed: dateOne, raw: args.dateOne }, { parsed: dateTwo, raw: args.dateTwo }, 'DateOne', 'DateTwo');
+					}
+					else {
+						return Promise.resolve(false);
+					}
+				}
+				else {
+					return Promise.resolve(false);
+				}
+			});
+
+		new Homey.FlowCardCondition('time_before_time')
+			.register()
+			.registerRunListener((args, state) => {
+				//this.log("--------------------------------------------------------------");
+				if (args.timeOne) {
+					let timeOne = getTime(args.timeOne);
+					if (args.timeTwo) {
+						let timeTwo = getTime(args.timeTwo);
+						return this.checkDateTime({ parsed: timeOne, raw: args.timeOne }, { parsed: timeTwo, raw: args.timeTwo }, 'TimeOne', 'TimeTwo');
+					}
+					else {
+						return Promise.resolve(false);
+					}
+				}
+				else {
+					return Promise.resolve(false);
+				}
+			});
+
+		new Homey.FlowCardCondition('datetime_before_datetime')
+			.register()
+			.registerRunListener((args, state) => {
+				//this.log("--------------------------------------------------------------");
+				if (args.dateTimeOne) {
+					let dateTimeOne = getDateTime(args.dateTimeOne);
+					if (args.dateTimeTwo) {
+						let dateTimeTwo = getDateTime(args.dateTimeTwo);
+						return this.checkDateTime({ parsed: dateTimeOne, raw: args.dateTimeOne }, { parsed: dateTimeTwo, raw: args.dateTimeTwo }, 'DateTimeOne', 'DateTimeTwo');
+					}
+					else {
+						return Promise.resolve(false);
+					}
+				}
+				else {
+					return Promise.resolve(false);
+				}
+			});
+	}
+
+	checkDateTime(itemOne, itemTwo, descOne, descTwo) {
+		if (itemOne.parsed == 'Invalid Date') {
+			this.log(`condition: ${descOne} '${itemOne.raw}' is in invalid format`);
+			return Promise.reject(false);
+		}
+		else if (itemTwo.parsed == 'Invalid Date') {
+			this.log(`condition: ${descTwo} '${itemTwo.raw}' is in invalid format`);
+			return Promise.reject(false);
+		}
+		else {
+			//this.log(`condition: ${descOne}: '${itemOne.parsed}' (${typeof itemOne.parsed})`);
+			//this.log(`condition: ${descTwo}: '${itemTwo.parsed}' (${typeof itemTwo.parsed})`);
+			let result = (itemOne.parsed < itemTwo.parsed)
+			//this.log(`condition: Is ${descOne} before ${descTwo}:`, result);
+			return Promise.resolve(result);
+		}
 	}
 	
 }

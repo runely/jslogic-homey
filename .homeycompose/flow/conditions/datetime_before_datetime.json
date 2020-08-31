@@ -1,0 +1,25 @@
+{
+  "id": "datetime_before_datetime",
+  "title": {
+    "en": "Is DateTime !{{before|not before}} DateTime"
+  },
+  "hint": {
+    "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nHH:mm (Separator can be ':', or '.')\nExample: 31-08-2020 08:30"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "dateTimeOne",
+      "placeholder": {
+        "en": "DateTime one"
+      }
+    },
+    {
+      "type": "text",
+      "name": "dateTimeTwo",
+      "placeholder": {
+        "en": "DateTime two"
+      }
+    }
+  ]
+}

@@ -9,6 +9,10 @@
 
 ## Changelog
 
+- 0.0.3
+    - Added condition 'Is Date before Date' to check if a Date occurs before another Date
+    - Added condition 'Is Time before Time' to check if one Time occurs before another Time
+    - Added condition 'Is DateTime before DateTime' to check if a DateTime occurs before another DateTime
 - 0.0.2
     - Added 'Is value length less than' condition
 - 0.0.1

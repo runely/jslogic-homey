@@ -1,0 +1,25 @@
+{
+  "id": "time_before_time",
+  "title": {
+    "en": "Is Time !{{before|not before}} Time"
+  },
+  "hint": {
+    "en": "HH:mm (Separator can be ':', or '.')\nExample: 08:30"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "timeOne",
+      "placeholder": {
+        "en": "Time one"
+      }
+    },
+    {
+      "type": "text",
+      "name": "timeTwo",
+      "placeholder": {
+        "en": "Time two"
+      }
+    }
+  ]
+}

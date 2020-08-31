@@ -1,0 +1,25 @@
+{
+  "id": "date_before_date",
+  "title": {
+    "en": "Is Date !{{before|not before}} Date"
+  },
+  "hint": {
+    "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nExample: 31-08-2020"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "dateOne",
+      "placeholder": {
+        "en": "Date one"
+      }
+    },
+    {
+      "type": "text",
+      "name": "dateTwo",
+      "placeholder": {
+        "en": "Date two"
+      }
+    }
+  ]
+}

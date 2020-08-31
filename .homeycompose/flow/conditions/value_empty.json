@@ -1,14 +1,16 @@
 {
   "id": "value_empty",
   "title": {
-    "en": "Is value !{{empty|not empty}}"
+    "en": "Is value !{{empty|not empty}}",
+    "nl": "Is waarde !{{leeg|niet leeg}}"
   },
   "args": [
     {
       "type": "text",
       "name": "value",
       "placeholder": {
-        "en": "Value"
+        "en": "Value",
+        "nl": "Waarde"
       }
     }
   ]

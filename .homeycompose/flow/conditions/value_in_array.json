@@ -1,24 +1,28 @@
 {
   "id": "value_in_array",
   "title": {
-    "en": "Is value exactly !{{one of|not one of}}..."
+    "en": "Is value exactly !{{one of|not one of}}...",
+    "nl": "Is waarde exact !{{één van de|niet één van de}}..."
   },
   "hint": {
-    "en": "Is [value] exactly [one of items]. Check as case senitive?"
+    "en": "Is [value] exactly [one of items]. Check as case sensitive?",
+    "nl": "Is [waarde] exact [één van de items]. Hoofdlettergevoelig"
   },
   "args": [
     {
       "type": "text",
       "name": "value",
       "placeholder": {
-        "en": "Value"
+        "en": "Value",
+        "nl": "Waarde"
       }
     },
     {
       "type": "text",
       "name": "array",
       "placeholder": {
-        "en": "Array items split by ';'"
+        "en": "Array items split by ';'",
+        "nl": "Reeks items gesplitst door ';'"
       }
     },
     {
@@ -29,13 +33,15 @@
         {
           "id": "true",
           "label": {
-            "en": "True"
+            "en": "True",
+            "nl": "Waar"
           }
         },
         {
           "id": "false",
           "label": {
-            "en": "False"
+            "en": "False",
+            "nl": "Onwaar"
           }
         }
       ]

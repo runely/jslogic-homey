@@ -48,24 +48,32 @@
       {
         "id": "date_before_date",
         "title": {
-          "en": "Is Date !{{before|not before}} Date"
+          "en": "Is Date !{{before|not before}} Date",
+          "nl": "Is Datum !{{voor|niet voor}} Datum",
+          "no": "Er Dato !{{før|ikke før}} Dato"
         },
         "hint": {
-          "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nExample: 31-08-2020"
+          "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nExample: 31-08-2020",
+          "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)\nVoorbeeld: 31-08-2020",
+          "no": "Dag-Måned-År (Skilletegn kan være '-', '.', eller '/')\nEksempel: 31-08-2020"
         },
         "args": [
           {
             "type": "text",
             "name": "dateOne",
             "placeholder": {
-              "en": "Date one"
+              "en": "Date one",
+              "nl": "Datum één",
+              "no": "Dato en"
             }
           },
           {
             "type": "text",
             "name": "dateTwo",
             "placeholder": {
-              "en": "Date two"
+              "en": "Date two",
+              "nl": "Datum twee",
+              "no": "Dato to"
             }
           }
         ]
@@ -73,24 +81,32 @@
       {
         "id": "datetime_before_datetime",
         "title": {
-          "en": "Is DateTime !{{before|not before}} DateTime"
+          "en": "Is DateTime !{{before|not before}} DateTime",
+          "nl": "Is DatumTijd !{{voor|niet voor}} DatumTijd",
+          "no": "Er DatoTid !{{før|ikke før}} DatoTid"
         },
         "hint": {
-          "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nHH:mm (Separator can be ':', or '.')\nExample: 31-08-2020 08:30"
+          "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nHH:mm (Separator can be ':', or '.')\nExample: 31-08-2020 08:30",
+          "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)\nHH:mm (Scheidingsteken kan ':', of '.' zijn)\nVoorbeeld: 31-08-2020 08:30",
+          "no": "Dag-Måned-År (Skilletegn kan være '-', '.', eller '/')\nHH:mm (Skilletegn kan være ':', eller '.')\nEksempel: 31-08-2020 08:30"
         },
         "args": [
           {
             "type": "text",
             "name": "dateTimeOne",
             "placeholder": {
-              "en": "DateTime one"
+              "en": "DateTime one",
+              "nl": "DatumTijd één",
+              "no": "DatoTid en"
             }
           },
           {
             "type": "text",
             "name": "dateTimeTwo",
             "placeholder": {
-              "en": "DateTime two"
+              "en": "DateTime two",
+              "nl": "DatumTijd twee",
+              "no": "DatoTid to"
             }
           }
         ]
@@ -98,24 +114,32 @@
       {
         "id": "time_before_time",
         "title": {
-          "en": "Is Time !{{before|not before}} Time"
+          "en": "Is Time !{{before|not before}} Time",
+          "nl": "Is Tijd !{{voor|niet voor}} Tijd",
+          "no": "Er Tid !{{før|ikke før}} Tid"
         },
         "hint": {
-          "en": "HH:mm (Separator can be ':', or '.')\nExample: 08:30"
+          "en": "HH:mm (Separator can be ':', or '.')\nExample: 08:30",
+          "nl": "HH:mm (Scheidingsteken kan ':', of '.' zijn)\nVoorbeeld: 08:30",
+          "no": "HH:mm (Skilletegn kan være ':', eller '.')\nEksempel: 08:30"
         },
         "args": [
           {
             "type": "text",
             "name": "timeOne",
             "placeholder": {
-              "en": "Time one"
+              "en": "Time one",
+              "nl": "Tijd één",
+              "no": "Tid en"
             }
           },
           {
             "type": "text",
             "name": "timeTwo",
             "placeholder": {
-              "en": "Time two"
+              "en": "Time two",
+              "nl": "Tijd twee",
+              "no": "Tid to"
             }
           }
         ]
@@ -123,24 +147,32 @@
       {
         "id": "value_contains_array",
         "title": {
-          "en": "Value contains !{{one of|not one of}}..."
+          "en": "Value contains !{{one of|not one of}}...",
+          "nl": "Waarde bevat !{{één van de|niet één van de}}...",
+          "no": "Tekst inneholder !{{en av|ikke en av}}..."
         },
         "hint": {
-          "en": "Does [value] contain [one of items]. Check as case senitive?"
+          "en": "Does [value] contain [one of items]. Check as case sensitive?",
+          "nl": "Bevat [Waarde] [één van de items]. Hoofdlettergevoelig?",
+          "no": "Inneholder [tekst] [en av listeverdiene]. Skill på store og små bokstaver?"
         },
         "args": [
           {
             "type": "text",
             "name": "value",
             "placeholder": {
-              "en": "Value"
+              "en": "Value",
+              "nl": "Waarde",
+              "no": "Tekst"
             }
           },
           {
             "type": "text",
             "name": "array",
             "placeholder": {
-              "en": "Array items split by ';'"
+              "en": "Array items split by ';'",
+              "nl": "Reeks items gesplitst door ';'",
+              "no": "Listeverdier skilles med ';'"
             }
           },
           {
@@ -150,13 +182,17 @@
               {
                 "id": "true",
                 "label": {
-                  "en": "True"
+                  "en": "True",
+                  "nl": "Waar",
+                  "no": "True"
                 }
               },
               {
                 "id": "false",
                 "label": {
-                  "en": "False"
+                  "en": "False",
+                  "nl": "Onwaar",
+                  "no": "False"
                 }
               }
             ]
@@ -166,14 +202,18 @@
       {
         "id": "value_empty",
         "title": {
-          "en": "Is value !{{empty|not empty}}"
+          "en": "Is value !{{empty|not empty}}",
+          "nl": "Is waarde !{{leeg|niet leeg}}",
+          "no": "Er verdi !{{tom|ikke tom}}"
         },
         "args": [
           {
             "type": "text",
             "name": "value",
             "placeholder": {
-              "en": "Value"
+              "en": "Value",
+              "nl": "Waarde",
+              "no": "Tekst"
             }
           }
         ]
@@ -181,24 +221,32 @@
       {
         "id": "value_in_array",
         "title": {
-          "en": "Is value exactly !{{one of|not one of}}..."
+          "en": "Is value exactly !{{one of|not one of}}...",
+          "nl": "Is waarde exact !{{één van de|niet één van de}}...",
+          "no": "Er tekst helt lik !{{en av|ikke en av}}..."
         },
         "hint": {
-          "en": "Is [value] exactly [one of items]. Check as case senitive?"
+          "en": "Is [value] exactly [one of items]. Check as case sensitive?",
+          "nl": "Is [waarde] exact [één van de items]. Hoofdlettergevoelig?",
+          "no": "Er [tekst] helt lik [en av listeverdiene]. Skill på store og små bokstaver?"
         },
         "args": [
           {
             "type": "text",
             "name": "value",
             "placeholder": {
-              "en": "Value"
+              "en": "Value",
+              "nl": "Waarde",
+              "no": "Tekst"
             }
           },
           {
             "type": "text",
             "name": "array",
             "placeholder": {
-              "en": "Array items split by ';'"
+              "en": "Array items split by ';'",
+              "nl": "Reeks items gesplitst door ';'",
+              "no": "Listeverdier skilles med ';'"
             }
           },
           {
@@ -209,13 +257,17 @@
               {
                 "id": "true",
                 "label": {
-                  "en": "True"
+                  "en": "True",
+                  "nl": "Waar",
+                  "no": "True"
                 }
               },
               {
                 "id": "false",
                 "label": {
-                  "en": "False"
+                  "en": "False",
+                  "nl": "Onwaar",
+                  "no": "False"
                 }
               }
             ]
@@ -225,21 +277,27 @@
       {
         "id": "value_too_long",
         "title": {
-          "en": "Is value length !{{less|not less}} than"
+          "en": "Is value length !{{less|not less}} than",
+          "nl": "Is de lengte van de waarde !{{minder|niet minder}} dan",
+          "no": "Er tesktlengde !{{lenger|ikke lenger}} enn"
         },
         "args": [
           {
             "type": "text",
             "name": "value",
             "placeholder": {
-              "en": "Text value"
+              "en": "Text value",
+              "nl": "Tekst waarde",
+              "no": "Tekst"
             }
           },
           {
             "type": "number",
             "name": "maxLength",
             "placeholder": {
-              "en": "Max length"
+              "en": "Max length",
+              "nl": "Maximum lengte",
+              "no": "Makslengde"
             }
           }
         ]

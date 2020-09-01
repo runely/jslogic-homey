@@ -1,24 +1,32 @@
 {
   "id": "value_in_array",
   "title": {
-    "en": "Is value exactly !{{one of|not one of}}..."
+    "en": "Is value exactly !{{one of|not one of}}...",
+    "nl": "Is waarde exact !{{één van de|niet één van de}}...",
+    "no": "Er tekst helt lik !{{en av|ikke en av}}..."
   },
   "hint": {
-    "en": "Is [value] exactly [one of items]. Check as case senitive?"
+    "en": "Is [value] exactly [one of items]. Check as case sensitive?",
+    "nl": "Is [waarde] exact [één van de items]. Controleren op hoofdlettergevoeligheid?",
+    "no": "Er [tekst] helt lik [en av listeverdiene]. Skill på store og små bokstaver?"
   },
   "args": [
     {
       "type": "text",
       "name": "value",
       "placeholder": {
-        "en": "Value"
+        "en": "Value",
+        "nl": "Waarde",
+        "no": "Tekst"
       }
     },
     {
       "type": "text",
       "name": "array",
       "placeholder": {
-        "en": "Array items split by ';'"
+        "en": "Array items split by ';'",
+        "nl": "Reeks items gesplitst door ';'",
+        "no": "Listeverdier skilles med ';'"
       }
     },
     {
@@ -29,13 +37,17 @@
         {
           "id": "true",
           "label": {
-            "en": "True"
+            "en": "True",
+            "nl": "Waar",
+            "no": "True"
           }
         },
         {
           "id": "false",
           "label": {
-            "en": "False"
+            "en": "False",
+            "nl": "Onwaar",
+            "no": "False"
           }
         }
       ]

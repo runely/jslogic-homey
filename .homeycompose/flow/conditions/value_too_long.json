@@ -1,21 +1,27 @@
 {
     "id": "value_too_long",
     "title": {
-      "en": "Is value length !{{less|not less}} than"
+      "en": "Is value length !{{less|not less}} than",
+      "nl": "Is de lengte van de waarde !{{minder|niet minder}} dan",
+      "no": "Er tesktlengde !{{lenger|ikke lenger}} enn"
     },
     "args": [
       {
         "type": "text",
         "name": "value",
         "placeholder": {
-          "en": "Text value"
+          "en": "Text value",
+          "nl": "Tekst waarde",
+          "no": "Tekst"
         }
       },
       {
           "type": "number",
           "name": "maxLength",
           "placeholder": {
-              "en": "Max length"
+              "en": "Max length",
+              "nl": "Maximum lengte",
+              "no": "Makslengde"
           }
       }
     ]

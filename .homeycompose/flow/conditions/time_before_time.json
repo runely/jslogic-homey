@@ -1,24 +1,32 @@
 {
   "id": "time_before_time",
   "title": {
-    "en": "Is Time !{{before|not before}} Time"
+    "en": "Is Time !{{before|not before}} Time",
+    "nl": "Is Tijd !{{voor|niet voor}} Tijd",
+    "no": "Er Tid !{{før|ikke før}} Tid"
   },
   "hint": {
-    "en": "HH:mm (Separator can be ':', or '.')\nExample: 08:30"
+    "en": "HH:mm (Separator can be ':', or '.')\nExample: 08:30",
+    "nl": "HH:mm (Scheidingsteken kan ':', of '.' zijn)\nVoorbeeld: 08:30",
+    "no": "HH:mm (Skilletegn kan være ':', eller '.')\nEksempel: 08:30"
   },
   "args": [
     {
       "type": "text",
       "name": "timeOne",
       "placeholder": {
-        "en": "Time one"
+        "en": "Time one",
+        "nl": "Tijd één",
+        "no": "Tid en"
       }
     },
     {
       "type": "text",
       "name": "timeTwo",
       "placeholder": {
-        "en": "Time two"
+        "en": "Time two",
+        "nl": "Tijd twee",
+        "no": "Tid to"
       }
     }
   ]

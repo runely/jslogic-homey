@@ -153,7 +153,7 @@
         },
         "hint": {
           "en": "Does [value] contain [one of items]. Check as case sensitive?",
-          "nl": "Bevat [Waarde] [één van de items]. Hoofdlettergevoelig?",
+          "nl": "Bevat [Waarde] [één van de items]. Controleren op hoofdlettergevoeligheid?",
           "no": "Inneholder [tekst] [en av listeverdiene]. Skill på store og små bokstaver?"
         },
         "args": [
@@ -227,7 +227,7 @@
         },
         "hint": {
           "en": "Is [value] exactly [one of items]. Check as case sensitive?",
-          "nl": "Is [waarde] exact [één van de items]. Hoofdlettergevoelig?",
+          "nl": "Is [waarde] exact [één van de items]. Controleren op hoofdlettergevoeligheid?",
           "no": "Er [tekst] helt lik [en av listeverdiene]. Skill på store og små bokstaver?"
         },
         "args": [

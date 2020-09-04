@@ -26,6 +26,7 @@ In the following triggers you can choose to use case sensitity or not:
 
 - 0.0.5
     - Cleanup
+    - Bugfix: Norwegian title on trigger 'Is value length less than' fixed to correct wording
 - 0.0.4
     - Dutch translation. Thanks to [@liams239](https://github.com/liams239) -> [Issue #5](https://github.com/runely/jslogic-homey/issues/5)
     - Norwegian translation

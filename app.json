@@ -279,7 +279,7 @@
         "title": {
           "en": "Is value length !{{less|not less}} than",
           "nl": "Is de lengte van de waarde !{{minder|niet minder}} dan",
-          "no": "Er tesktlengde !{{lenger|ikke lenger}} enn"
+          "no": "Er tesktlengde !{{kortere|ikke kortere}} enn"
         },
         "args": [
           {

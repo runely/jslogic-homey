@@ -38,3 +38,8 @@ In the following triggers you can choose to use case sensitity or not:
     - Added 'Is value length less than' condition
 - 0.0.1
     - Initial version
+
+# Thanks
+
+- Translators
+    - [@liams239](https://github.com/liams239) : Dutch

@@ -10,5 +10,8 @@
   },
   "0.0.4": {
     "en": "Dutch translation. Norwegian translation"
+  },
+  "0.0.5": {
+    "en": "Norwegian title on trigger 'Is value length less than' fixed to correct wording. General cleanup"
   }
 }

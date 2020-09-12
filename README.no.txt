@@ -1,5 +1,6 @@
 Gir Homey muligheten til å bruke JavaScript logikk gjennom flytkort
 
+Conditions:
 - Sjekk om angitt tekst er helt lik en av listeverdiene
 - Sjekk om angitt tekst inneholder en av listeverdiene
 - Sjekk om angitt tekst er tom
@@ -7,6 +8,7 @@ Gir Homey muligheten til å bruke JavaScript logikk gjennom flytkort
 - Sjekk om angitt dato er før dato
 - Sjekk om angitt tid er før tid
 - Sjekk om angitt dato/tid er før dato/tid
+- Tilfeldig (sann|usann)
 
 Skiller på store og små bokstaver
 

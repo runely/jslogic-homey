@@ -159,6 +159,15 @@ class MyApp extends Homey.App {
 					return Promise.resolve(false);
 				}
 			});
+
+		new Homey.FlowCardCondition('is_random_true_false')
+			.register()
+			.registerRunListener((args, state) => {
+				let random = Math.random();
+				let result = random > 0.5;
+				this.log(`is_random_true_false: ${random} > 0.5 == ${result}`);
+				return Promise.resolve(result);
+			});
 	}
 }
 

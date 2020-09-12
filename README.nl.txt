@@ -1,5 +1,6 @@
 Geeft Homey de mogelijkheid om JavaScript logic te gebruiken in de Flow kaarten.
 
+Condities
 - Controleer of de opgegeven waarde gelijk is aan één van de waarden in een reeks
 - Controleer of de opgegeven waarde één van de waarde in een reeks bevat
 - Controleer of de opgegeven waarde leeg is
@@ -7,6 +8,7 @@ Geeft Homey de mogelijkheid om JavaScript logic te gebruiken in de Flow kaarten.
 - Controleer of de opgegeven datum voor een datum is
 - Controleer of de opgegeven tijd voor een tijd is
 - Controleer of de opgegeven datum/tijd voor een datum/tijd is
+- Willekeurig (waar | onwaar)
 
 Hoofdlettergevoeligheid
 

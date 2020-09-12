@@ -112,6 +112,19 @@
         ]
       },
       {
+        "id": "is_random_true_false",
+        "title": {
+          "en": "Random (true|false)",
+          "nl": "Willekeurig (waar | onwaar)",
+          "no": "Tilfeldig (sann|usann)"
+        },
+        "hint": {
+          "en": "This will randomly be true or false",
+          "nl": "Dit zal willekeurig waar of onwaar zijn",
+          "no": "Denne vil tilfeldig være sann eller usann"
+        }
+      },
+      {
         "id": "time_before_time",
         "title": {
           "en": "Is Time !{{before|not before}} Time",

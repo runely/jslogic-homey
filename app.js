@@ -1,17 +1,37 @@
 'use strict';
 
 const Homey = require('homey');
+const moment = require('moment');
 
 const checkDateTime = require('./lib/check-date-time');
 
+let tokens = [];
+
 class MyApp extends Homey.App {
-	
+
 	onInit() {
 		this.log(Homey.manifest.name.en + " v" + Homey.manifest.version + " is running...");
 
+		// flow tokens
+		new Homey.FlowToken("formatted_date", { type: "string", title: Homey.__('flowTokens.formatted_date') })
+			.register()
+			.then(token => tokens.push(token));
+
+		// actions
+		new Homey.FlowCardAction('get_formatted_date')
+			.register()
+			.registerRunListener(async (args, state) => {
+				let day = moment().add(args.daysToAdd, 'days');
+
+				tokens[0].setValue(day.format(args.format));
+
+				return Promise.resolve(true);
+			});
+
+		// conditions
 		new Homey.FlowCardCondition('value_in_array')
-            .register()
-            .registerRunListener((args, state) => {
+			.register()
+			.registerRunListener((args, state) => {
 				if (args.array) {
 					let array = args.array.split(';');
 					this.log('value_in_array: Array items:', array);
@@ -42,7 +62,7 @@ class MyApp extends Homey.App {
 					return Promise.resolve(false);
 				}
 			});
-		
+
 		new Homey.FlowCardCondition('value_empty')
 			.register()
 			.registerRunListener((args, state) => {
@@ -56,7 +76,7 @@ class MyApp extends Homey.App {
 					return Promise.resolve(true);
 				}
 			});
-		
+
 		new Homey.FlowCardCondition('value_too_long')
 			.register()
 			.registerRunListener((args, state) => {
@@ -78,7 +98,7 @@ class MyApp extends Homey.App {
 					return Promise.resolve(false);
 				}
 			});
-		
+
 		new Homey.FlowCardCondition('value_contains_array')
 			.register()
 			.registerRunListener((args, state) => {

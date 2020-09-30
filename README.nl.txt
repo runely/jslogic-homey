@@ -1,5 +1,8 @@
 Geeft Homey de mogelijkheid om JavaScript logic te gebruiken in de Flow kaarten.
 
+Actions:
+- Krijg opgemaakte datum :: Voegt de opgemaakte datum toe aan de algemene tag 'Opgemaakte datum'
+
 Condities
 - Controleer of de opgegeven waarde gelijk is aan één van de waarden in een reeks
 - Controleer of de opgegeven waarde één van de waarde in een reeks bevat
@@ -12,7 +15,7 @@ Condities
 
 Hoofdlettergevoeligheid
 
-In de volgende triggers kan je kiezen of je hoofdlettergevoeligheid aan of uit zet:
+In de volgende condities kan je kiezen of je hoofdlettergevoeligheid aan of uit zet:
 - 'Waarde bevat één van de...'
 - 'Is waarde exact één van de...'
 

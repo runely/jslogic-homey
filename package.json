@@ -4,5 +4,8 @@
   "main": "app.js",
   "devDependencies": {
     "homey": "2.7.0"
+  },
+  "dependencies": {
+    "moment": "2.29.0"
   }
 }

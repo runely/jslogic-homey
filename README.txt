@@ -1,5 +1,8 @@
 Give Homey the possibility to use JavaScript logic through flow cards
 
+Actions:
+- Get formatted date :: Adds the formatted date to the global tag 'Formatted date'
+
 Conditions:
 - Check if specified value is equal to one of the values in an array
 - Check if specified value contains one of the values in an array
@@ -12,7 +15,7 @@ Conditions:
 
 Case sesitivty
 
-In the following triggers you can choose to use case sensitity or not:
+In the following conditions you can choose to use case sensitity or not:
 - 'Value contains one of...'
 - 'Is value exactly one of...'
 

@@ -315,6 +315,36 @@
           }
         ]
       }
+    ],
+    "actions": [
+      {
+        "id": "get_formatted_date",
+        "title": {
+          "en": "Get formatted date",
+          "nl": "Krijg opgemaakte datum",
+          "no": "Hent formatert dato"
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "daysToAdd",
+            "placeholder": {
+              "en": "0 = today, 1 = tomorrow, and so on...",
+              "nl": "0 = vandaag, 1 = morgen, enzovoort ...",
+              "no": "0 = idag, 1 = imorgen, osv..."
+            }
+          },
+          {
+            "type": "text",
+            "name": "format",
+            "placeholder": {
+              "en": "Format, like 'MM-DD-YYYY'",
+              "nl": "Formaat, zoals 'DD-MM-YY'",
+              "no": "Format, som 'DD-MM-YYYY'"
+            }
+          }
+        ]
+      }
     ]
   }
 }

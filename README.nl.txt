@@ -1,9 +1,9 @@
 Geeft Homey de mogelijkheid om JavaScript logic te gebruiken in de Flow kaarten.
 
-Actions:
-- Krijg opgemaakte datum :: Voegt de opgemaakte datum toe aan de algemene tag 'Opgemaakte datum'
+Acties:
+- Krijg opgemaakte datum: Voegt de opgemaakte datum toe aan de algemene tag 'Opgemaakte datum'
 
-Condities
+Condities:
 - Controleer of de opgegeven waarde gelijk is aan één van de waarden in een reeks
 - Controleer of de opgegeven waarde één van de waarde in een reeks bevat
 - Controleer of de opgegeven waarde leeg is

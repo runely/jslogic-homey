@@ -29,7 +29,7 @@ In the following conditions you can choose to use case sensitity or not:
 
 ## Changelog
 
-- 0.0.6
+- 0.1.0
     - Added condition 'Random (true|false)'
     - Added global tag 'Formatted date' to hold the date formatted from action 'Get formatted date'
     - Added action 'Get formatted date' where yoy can choose day by number and what format to get in. This will set the result in the global tag 'Formatted date'

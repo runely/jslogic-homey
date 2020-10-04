@@ -330,7 +330,7 @@
             "name": "daysToAdd",
             "placeholder": {
               "en": "0 = today, 1 = tomorrow, and so on...",
-              "nl": "0 = vandaag, 1 = morgen, enzovoort ...",
+              "nl": "0 = vandaag, 1 = morgen, enzovoort...",
               "no": "0 = idag, 1 = imorgen, osv..."
             }
           },
@@ -339,7 +339,7 @@
             "name": "format",
             "placeholder": {
               "en": "Format, like 'MM-DD-YYYY'",
-              "nl": "Formaat, zoals 'DD-MM-YY'",
+              "nl": "Formaat, zoals 'DD-MM-YYYY'",
               "no": "Format, som 'DD-MM-YYYY'"
             }
           }

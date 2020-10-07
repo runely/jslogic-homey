@@ -6,6 +6,6 @@
     "homey": "2.8.0"
   },
   "dependencies": {
-    "moment": "2.29.0"
+    "moment": "2.29.1"
   }
 }

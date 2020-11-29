@@ -1,5 +1,7 @@
 'use strict';
 
+const { sentry, init, startTransaction } = require('./lib/sentry-io');
+
 const Homey = require('homey');
 const moment = require('moment');
 
@@ -11,6 +13,10 @@ class MyApp extends Homey.App {
 
 	onInit() {
 		this.log(Homey.manifest.name.en + " v" + Homey.manifest.version + " is running...");
+
+		// initialize sentry.io
+		init(Homey);
+		this.sentry = sentry;
 
 		// flow tokens
 		new Homey.FlowToken("formatted_date", { type: "string", title: Homey.__('flowTokens.formatted_date') })

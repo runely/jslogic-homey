@@ -29,6 +29,8 @@ In the following conditions you can choose to use case sensitity or not:
 
 ## Changelog
 
+- 0.1.1
+    - Added sentry
 - 0.1.0
     - Added condition 'Random (true|false)'
     - Added global tag 'Formatted date' to hold the date formatted from action 'Get formatted date'

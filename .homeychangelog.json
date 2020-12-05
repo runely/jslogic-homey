@@ -19,5 +19,8 @@
   },
   "0.1.1": {
     "en": "Added Sentry"
+  },
+  "0.1.2": {
+    "en": "Sentry property update"
   }
 }

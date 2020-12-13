@@ -9,5 +9,8 @@
     "@sentry/node": "5.29.0",
     "@sentry/tracing": "5.29.0",
     "moment": "2.29.1"
+  },
+  "scripts": {
+    "refresh": "rm -rf node_modules/ && rm package-lock.json && npm i"
   }
 }

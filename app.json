@@ -1,6 +1,6 @@
 {
   "id": "no.runely.jslogic",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "compatibility": ">=2.0.0",
   "sdk": 2,
   "brandColor": "#F0A100",

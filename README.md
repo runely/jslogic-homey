@@ -29,6 +29,8 @@ In the following conditions you can choose to use case sensitity or not:
 
 ## Changelog
 
+- 0.1.3
+    - Dependency updates
 - 0.1.2
     - Enhancement: Sentry property update
 - 0.1.1

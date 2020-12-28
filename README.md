@@ -31,6 +31,7 @@ In the following conditions you can choose to use case sensitity or not:
 
 - 0.1.3
     - Dependency updates
+    - Text updated in conditions
 - 0.1.2
     - Enhancement: Sentry property update
 - 0.1.1

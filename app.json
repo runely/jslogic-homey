@@ -58,15 +58,20 @@
           "no": "Er Dato !{{før|ikke før}} Dato"
         },
         "hint": {
-          "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nExample: 31-08-2020",
-          "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)\nVoorbeeld: 31-08-2020",
-          "no": "Dag-Måned-År (Skilletegn kan være '-', '.', eller '/')\nEksempel: 31-08-2020"
+          "en": "Day-Month-Year (Separator can be '-', '.', or '/')",
+          "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)",
+          "no": "Dag-Måned-År (Skilletegn kan være '-', '.', eller '/')"
         },
         "args": [
           {
             "type": "text",
             "name": "dateOne",
             "placeholder": {
+              "en": "31-08-2020",
+              "nl": "31-08-2020",
+              "no": "31-08-2020"
+            },
+            "title": {
               "en": "Date one",
               "nl": "Datum één",
               "no": "Dato en"
@@ -76,6 +81,11 @@
             "type": "text",
             "name": "dateTwo",
             "placeholder": {
+              "en": "04-09-2020",
+              "nl": "04-09-2020",
+              "no": "04-09-2020"
+            },
+            "title": {
               "en": "Date two",
               "nl": "Datum twee",
               "no": "Dato to"
@@ -91,15 +101,20 @@
           "no": "Er DatoTid !{{før|ikke før}} DatoTid"
         },
         "hint": {
-          "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nHH:mm (Separator can be ':', or '.')\nExample: 31-08-2020 08:30",
-          "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)\nHH:mm (Scheidingsteken kan ':', of '.' zijn)\nVoorbeeld: 31-08-2020 08:30",
-          "no": "Dag-Måned-År (Skilletegn kan være '-', '.', eller '/')\nHH:mm (Skilletegn kan være ':', eller '.')\nEksempel: 31-08-2020 08:30"
+          "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nHH:mm (Separator can be ':', or '.')",
+          "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)\nHH:mm (Scheidingsteken kan ':', of '.' zijn)",
+          "no": "Dag-Måned-År (Skilletegn kan være '-', '.', eller '/')\nHH:mm (Skilletegn kan være ':', eller '.')"
         },
         "args": [
           {
             "type": "text",
             "name": "dateTimeOne",
             "placeholder": {
+              "en": "31-08-2020 08:30",
+              "nl": "31-08-2020 08:30",
+              "no": "31-08-2020 08:30"
+            },
+            "title": {
               "en": "DateTime one",
               "nl": "DatumTijd één",
               "no": "DatoTid en"
@@ -109,6 +124,11 @@
             "type": "text",
             "name": "dateTimeTwo",
             "placeholder": {
+              "en": "04-09-2020 08:30",
+              "nl": "04-09-2020 08:30",
+              "no": "04-09-2020 08:30"
+            },
+            "title": {
               "en": "DateTime two",
               "nl": "DatumTijd twee",
               "no": "DatoTid to"
@@ -137,15 +157,20 @@
           "no": "Er Tid !{{før|ikke før}} Tid"
         },
         "hint": {
-          "en": "HH:mm (Separator can be ':', or '.')\nExample: 08:30",
-          "nl": "HH:mm (Scheidingsteken kan ':', of '.' zijn)\nVoorbeeld: 08:30",
-          "no": "HH:mm (Skilletegn kan være ':', eller '.')\nEksempel: 08:30"
+          "en": "HH:mm (Separator can be ':', or '.')",
+          "nl": "HH:mm (Scheidingsteken kan ':', of '.' zijn)",
+          "no": "HH:mm (Skilletegn kan være ':', eller '.')"
         },
         "args": [
           {
             "type": "text",
             "name": "timeOne",
             "placeholder": {
+              "en": "08:30",
+              "nl": "08:30",
+              "no": "08:30"
+            },
+            "title": {
               "en": "Time one",
               "nl": "Tijd één",
               "no": "Tid en"
@@ -155,6 +180,11 @@
             "type": "text",
             "name": "timeTwo",
             "placeholder": {
+              "en": "09:00",
+              "nl": "09:00",
+              "no": "09:00"
+            },
+            "title": {
               "en": "Time two",
               "nl": "Tijd twee",
               "no": "Tid to"
@@ -170,9 +200,9 @@
           "no": "Tekst inneholder !{{en av|ikke en av}}..."
         },
         "hint": {
-          "en": "Does [value] contain [one of items]. Check as case sensitive?",
-          "nl": "Bevat [Waarde] [één van de items]. Controleren op hoofdlettergevoeligheid?",
-          "no": "Inneholder [tekst] [en av listeverdiene]. Skill på store og små bokstaver?"
+          "en": "Does [value] contain [one of items]?",
+          "nl": "Bevat [Waarde] [één van de items]?",
+          "no": "Inneholder [tekst] [en av listeverdiene]?"
         },
         "args": [
           {
@@ -213,7 +243,12 @@
                   "no": "False"
                 }
               }
-            ]
+            ],
+            "title": {
+              "en": "Check as case sensitive?",
+              "nl": "Controleren op hoofdlettergevoeligheid?",
+              "no": "Skill på store og små bokstaver?"
+            }
           }
         ]
       },
@@ -244,9 +279,9 @@
           "no": "Er tekst helt lik !{{en av|ikke en av}}..."
         },
         "hint": {
-          "en": "Is [value] exactly [one of items]. Check as case sensitive?",
-          "nl": "Is [waarde] exact [één van de items]. Controleren op hoofdlettergevoeligheid?",
-          "no": "Er [tekst] helt lik [en av listeverdiene]. Skill på store og små bokstaver?"
+          "en": "Is [value] exactly [one of items]?",
+          "nl": "Is [waarde] exact [één van de items]?",
+          "no": "Er [tekst] helt lik [en av listeverdiene]?"
         },
         "args": [
           {
@@ -288,7 +323,12 @@
                   "no": "False"
                 }
               }
-            ]
+            ],
+            "title": {
+              "en": "Check as case sensitive?",
+              "nl": "Controleren op hoofdlettergevoeligheid?",
+              "no": "Skill på store og små bokstaver?"
+            }
           }
         ]
       },

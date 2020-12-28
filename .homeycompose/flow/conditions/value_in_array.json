@@ -6,9 +6,9 @@
     "no": "Er tekst helt lik !{{en av|ikke en av}}..."
   },
   "hint": {
-    "en": "Is [value] exactly [one of items]. Check as case sensitive?",
-    "nl": "Is [waarde] exact [één van de items]. Controleren op hoofdlettergevoeligheid?",
-    "no": "Er [tekst] helt lik [en av listeverdiene]. Skill på store og små bokstaver?"
+    "en": "Is [value] exactly [one of items]?",
+    "nl": "Is [waarde] exact [één van de items]?",
+    "no": "Er [tekst] helt lik [en av listeverdiene]?"
   },
   "args": [
     {
@@ -50,7 +50,12 @@
             "no": "False"
           }
         }
-      ]
+      ],
+      "title": {
+        "en": "Check as case sensitive?",
+        "nl": "Controleren op hoofdlettergevoeligheid?",
+        "no": "Skill på store og små bokstaver?"
+      }
     }
   ]
 }

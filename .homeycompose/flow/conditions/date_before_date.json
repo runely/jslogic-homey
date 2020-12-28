@@ -6,15 +6,20 @@
     "no": "Er Dato !{{før|ikke før}} Dato"
   },
   "hint": {
-    "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nExample: 31-08-2020",
-    "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)\nVoorbeeld: 31-08-2020",
-    "no": "Dag-Måned-År (Skilletegn kan være '-', '.', eller '/')\nEksempel: 31-08-2020"
+    "en": "Day-Month-Year (Separator can be '-', '.', or '/')",
+    "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)",
+    "no": "Dag-Måned-År (Skilletegn kan være '-', '.', eller '/')"
   },
   "args": [
     {
       "type": "text",
       "name": "dateOne",
       "placeholder": {
+        "en": "31-08-2020",
+        "nl": "31-08-2020",
+        "no": "31-08-2020"
+      },
+      "title": {
         "en": "Date one",
         "nl": "Datum één",
         "no": "Dato en"
@@ -24,6 +29,11 @@
       "type": "text",
       "name": "dateTwo",
       "placeholder": {
+        "en": "04-09-2020",
+        "nl": "04-09-2020",
+        "no": "04-09-2020"
+      },
+      "title": {
         "en": "Date two",
         "nl": "Datum twee",
         "no": "Dato to"

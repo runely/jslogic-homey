@@ -6,9 +6,9 @@
     "no": "Tekst inneholder !{{en av|ikke en av}}..."
   },
   "hint": {
-    "en": "Does [value] contain [one of items]. Check as case sensitive?",
-    "nl": "Bevat [Waarde] [één van de items]. Controleren op hoofdlettergevoeligheid?",
-    "no": "Inneholder [tekst] [en av listeverdiene]. Skill på store og små bokstaver?"
+    "en": "Does [value] contain [one of items]?",
+    "nl": "Bevat [Waarde] [één van de items]?",
+    "no": "Inneholder [tekst] [en av listeverdiene]?"
   },
   "args": [
     {
@@ -49,7 +49,12 @@
             "no": "False"
           }
         }
-      ]
+      ],
+      "title": {
+        "en": "Check as case sensitive?",
+        "nl": "Controleren op hoofdlettergevoeligheid?",
+        "no": "Skill på store og små bokstaver?"
+      }
     }
   ]
 }

@@ -6,15 +6,20 @@
     "no": "Er DatoTid !{{før|ikke før}} DatoTid"
   },
   "hint": {
-    "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nHH:mm (Separator can be ':', or '.')\nExample: 31-08-2020 08:30",
-    "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)\nHH:mm (Scheidingsteken kan ':', of '.' zijn)\nVoorbeeld: 31-08-2020 08:30",
-    "no": "Dag-Måned-År (Skilletegn kan være '-', '.', eller '/')\nHH:mm (Skilletegn kan være ':', eller '.')\nEksempel: 31-08-2020 08:30"
+    "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nHH:mm (Separator can be ':', or '.')",
+    "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)\nHH:mm (Scheidingsteken kan ':', of '.' zijn)",
+    "no": "Dag-Måned-År (Skilletegn kan være '-', '.', eller '/')\nHH:mm (Skilletegn kan være ':', eller '.')"
   },
   "args": [
     {
       "type": "text",
       "name": "dateTimeOne",
       "placeholder": {
+        "en": "31-08-2020 08:30",
+        "nl": "31-08-2020 08:30",
+        "no": "31-08-2020 08:30"
+      },
+      "title": {
         "en": "DateTime one",
         "nl": "DatumTijd één",
         "no": "DatoTid en"
@@ -24,6 +29,11 @@
       "type": "text",
       "name": "dateTimeTwo",
       "placeholder": {
+        "en": "04-09-2020 08:30",
+        "nl": "04-09-2020 08:30",
+        "no": "04-09-2020 08:30"
+      },
+      "title": {
         "en": "DateTime two",
         "nl": "DatumTijd twee",
         "no": "DatoTid to"

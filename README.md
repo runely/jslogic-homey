@@ -14,6 +14,8 @@
 - Check if specified time is before time
 - Check if specified date/time is before date/time
 - Random (true|false)
+- Date number is (between|not between)
+- Month is (between|not between)
 
 ## Case sesitivty
 
@@ -32,6 +34,7 @@ In the following conditions you can choose to use case sensitity or not:
 - 0.1.3
     - Dependency updates
     - Text updated in conditions
+    - New conditions: 'Date number is (between|not between)' and 'Month is (between|not between)' . [`Added because there's a bug in Homeys version of 'Date number is (between|not between)'`](https://github.com/athombv/homey-apps-sdk-issues/issues/160)
 - 0.1.2
     - Enhancement: Sentry property update
 - 0.1.1

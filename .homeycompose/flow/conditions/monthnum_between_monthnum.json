@@ -1,0 +1,54 @@
+{
+  "id": "monthnum_between_monthnum",
+  "title": {
+    "en": "Month is !{{between|not between}}...",
+    "nl": "De Maand is !{{tussen|niet tussen}}...",
+    "no": "Måneden er !{{mellom|ikke mellom}}..."
+  },
+  "titleFormatted": {
+    "en": "Month is !{{between|not between}} [[monthOne]] and [[monthTwo]]",
+    "nl": "De Maand is !{{tussen|niet tussen}} [[monthOne]] en [[monthTwo]]",
+    "no": "Måneden er !{{mellom|ikke mellom}} [[monthOne]] og [[monthTwo]]"
+  },
+  "hint": {
+    "en": "When second month is earlier than the first month, it is considered to be next year",
+    "nl": "Wanneer de tweede maand eerder is dan de eerste maand, wordt deze geacht volgend jaar te zijn",
+    "no": "Når den andre måneden er tidligere enn den første måneden, anses det å være neste år"
+  },
+  "args": [
+    {
+      "type": "number",
+      "name": "monthOne",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "placeholder": {
+        "en": "1-12",
+        "nl": "1-12",
+        "no": "1-12"
+      },
+      "title": {
+        "en": "Month one",
+        "nl": "Maand één",
+        "no": "Måned en"
+      }
+    },
+    {
+      "type": "number",
+      "name": "monthTwo",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "placeholder": {
+        "en": "1-12",
+        "nl": "1-12",
+        "no": "1-12"
+      },
+      "title": {
+        "en": "Month two",
+        "nl": "Maand twee",
+        "no": "Måned to"
+      }
+    }
+  ]
+}

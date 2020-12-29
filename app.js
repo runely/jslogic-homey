@@ -194,6 +194,70 @@ class MyApp extends Homey.App {
 				this.log(`is_random_true_false: ${random} > 0.5 == ${result}`);
 				return Promise.resolve(result);
 			});
+
+		new Homey.FlowCardCondition('daynum_between_daynum')
+			.register()
+			.registerRunListener((args, state) => {
+				if (args.dayNumOne) {
+					if (args.dayNumTwo) {
+						const now = moment();
+						const first = moment().set('date', args.dayNumOne).startOf('day');
+						this.log(`daynum_between_daynum: Now '${now}'`);
+						this.log(`daynum_between_daynum: First: '${first}'`);
+						let second;
+						if (args.dayNumTwo < args.dayNumOne) {
+							second = moment().add(1, 'month').set('date', args.dayNumTwo).endOf('day');
+							this.log(`daynum_between_daynum: Day number two '${args.dayNumTwo}' is earlier than day number one '${args.dayNumOne}'. Considering it to be next month: '${second}'`);
+						}
+						else {
+							second = moment().set('date', args.dayNumTwo).endOf('day');
+							this.log(`daynum_between_daynum: Day number one '${args.dayNumOne}' is earlier than day number two '${args.dayNumTwo}'. This is same month: '${second}'`);
+						}
+
+						return Promise.resolve(now.isBetween(first, second));
+					}
+					else {
+						this.log(`daynum_between_daynum: Argument 'dayNumTwo' missing...`);
+						return Promise.resolve(false);
+					}
+				}
+				else {
+					this.log(`daynum_between_daynum: Argument 'dayNumOne' missing...`);
+					return Promise.resolve(false);
+				}
+			});
+		
+		new Homey.FlowCardCondition('monthnum_between_monthnum')
+			.register()
+			.registerRunListener((args, state) => {
+				if (args.monthOne) {
+					if (args.monthTwo) {
+						const now = moment();
+						const first = moment().set('month', (args.monthOne - 1)).startOf('day');
+						this.log(`monthnum_between_monthnum: Now '${now}'`);
+						this.log(`monthnum_between_monthnum: First: '${first}'`);
+						let second;
+						if (args.monthTwo < args.monthOne) {
+							second = moment().add(1, 'year').set('month', (args.monthTwo - 1)).endOf('day');
+							this.log(`monthnum_between_monthnum: Month two '${args.monthTwo}' is earlier than month one '${args.monthOne}'. Considering it to be next year: '${second}'`);
+						}
+						else {
+							second = moment().set('month', (args.monthTwo - 1)).endOf('day');
+							this.log(`monthnum_between_monthnum: Month one '${args.monthOne}' is earlier than month two '${args.monthTwo}'. This is same year: '${second}'`);
+						}
+
+						return Promise.resolve(now.isBetween(first, second));
+					}
+					else {
+						this.log(`monthnum_between_monthnum: Argument 'monthTwo' missing...`);
+						return Promise.resolve(false);
+					}
+				}
+				else {
+					this.log(`monthnum_between_monthnum: Argument 'monthOne' missing...`);
+					return Promise.resolve(false);
+				}
+			});
 	}
 }
 

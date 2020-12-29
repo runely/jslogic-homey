@@ -12,6 +12,8 @@ Conditions:
 - Sjekk om angitt tid er før tid
 - Sjekk om angitt dato/tid er før dato/tid
 - Tilfeldig (sann|usann)
+- Dagsnummeret er (mellom|ikke mellom)
+- Måneden er (mellom|ikke mellom)
 
 Skiller på store og små bokstaver
 

@@ -12,6 +12,8 @@ Condities:
 - Controleer of de opgegeven tijd voor een tijd is
 - Controleer of de opgegeven datum/tijd voor een datum/tijd is
 - Willekeurig (waar | onwaar)
+- Het Dagnummer ligt (tussen|niet tussen)
+- De Maand is (tussen|niet tussen)
 
 Hoofdlettergevoeligheid
 

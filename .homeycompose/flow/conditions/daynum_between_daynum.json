@@ -1,0 +1,54 @@
+{
+  "id": "daynum_between_daynum",
+  "title": {
+    "en": "Date number is !{{between|not between}}...",
+    "nl": "Het Dagnummer ligt !{{tussen|niet tussen}}...",
+    "no": "Dagsnummeret er !{{mellom|ikke mellom}}..."
+  },
+  "titleFormatted": {
+    "en": "Date number is !{{between|not between}} [[dayNumOne]] and [[dayNumTwo]]",
+    "nl": "Het Dagnummer ligt !{{tussen|niet tussen}} [[dayNumOne]] en [[dayNumTwo]]",
+    "no": "Dagsnummeret er !{{mellom|ikke mellom}} [[dayNumOne]] og [[dayNumTwo]]"
+  },
+  "hint": {
+    "en": "When second date number is earlier than the first date number, it is considered to be next month",
+    "nl": "Als het tweede datumnummer eerder is dan het eerste datumnummer, wordt dit beschouwd als de volgende maand",
+    "no": "Når det andre dagsnummeret er tidligere enn det første dagsnummeret, anses det å være neste måned"
+  },
+  "args": [
+    {
+      "type": "number",
+      "name": "dayNumOne",
+      "min": 1,
+      "max": 31,
+      "step": 1,
+      "placeholder": {
+        "en": "1-31",
+        "nl": "1-31",
+        "no": "1-31"
+      },
+      "title": {
+        "en": "Date number one",
+        "nl": "Datumnummer één",
+        "no": "Dagsnummer en"
+      }
+    },
+    {
+      "type": "number",
+      "name": "dayNumTwo",
+      "min": 1,
+      "max": 31,
+      "step": 1,
+      "placeholder": {
+        "en": "1-31",
+        "nl": "1-31",
+        "no": "1-31"
+      },
+      "title": {
+        "en": "Date number two",
+        "nl": "Datumnummer twee",
+        "no": "Dagsnummer to"
+      }
+    }
+  ]
+}

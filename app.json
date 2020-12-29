@@ -137,6 +137,60 @@
         ]
       },
       {
+        "id": "daynum_between_daynum",
+        "title": {
+          "en": "Date number is !{{between|not between}}...",
+          "nl": "Het Dagnummer ligt !{{tussen|niet tussen}}...",
+          "no": "Dagsnummeret er !{{mellom|ikke mellom}}..."
+        },
+        "titleFormatted": {
+          "en": "Date number is !{{between|not between}} [[dayNumOne]] and [[dayNumTwo]]",
+          "nl": "Het Dagnummer ligt !{{tussen|niet tussen}} [[dayNumOne]] en [[dayNumTwo]]",
+          "no": "Dagsnummeret er !{{mellom|ikke mellom}} [[dayNumOne]] og [[dayNumTwo]]"
+        },
+        "hint": {
+          "en": "When second date number is earlier than the first date number, it is considered to be next month",
+          "nl": "Als het tweede datumnummer eerder is dan het eerste datumnummer, wordt dit beschouwd als de volgende maand",
+          "no": "Når det andre dagsnummeret er tidligere enn det første dagsnummeret, anses det å være neste måned"
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "dayNumOne",
+            "min": 1,
+            "max": 31,
+            "step": 1,
+            "placeholder": {
+              "en": "1-31",
+              "nl": "1-31",
+              "no": "1-31"
+            },
+            "title": {
+              "en": "Date number one",
+              "nl": "Datumnummer één",
+              "no": "Dagsnummer en"
+            }
+          },
+          {
+            "type": "number",
+            "name": "dayNumTwo",
+            "min": 1,
+            "max": 31,
+            "step": 1,
+            "placeholder": {
+              "en": "1-31",
+              "nl": "1-31",
+              "no": "1-31"
+            },
+            "title": {
+              "en": "Date number two",
+              "nl": "Datumnummer twee",
+              "no": "Dagsnummer to"
+            }
+          }
+        ]
+      },
+      {
         "id": "is_random_true_false",
         "title": {
           "en": "Random (true|false)",
@@ -148,6 +202,60 @@
           "nl": "Dit zal willekeurig waar of onwaar zijn",
           "no": "Denne vil tilfeldig være sann eller usann"
         }
+      },
+      {
+        "id": "monthnum_between_monthnum",
+        "title": {
+          "en": "Month is !{{between|not between}}...",
+          "nl": "De Maand is !{{tussen|niet tussen}}...",
+          "no": "Måneden er !{{mellom|ikke mellom}}..."
+        },
+        "titleFormatted": {
+          "en": "Month is !{{between|not between}} [[monthOne]] and [[monthTwo]]",
+          "nl": "De Maand is !{{tussen|niet tussen}} [[monthOne]] en [[monthTwo]]",
+          "no": "Måneden er !{{mellom|ikke mellom}} [[monthOne]] og [[monthTwo]]"
+        },
+        "hint": {
+          "en": "When second month is earlier than the first month, it is considered to be next year",
+          "nl": "Wanneer de tweede maand eerder is dan de eerste maand, wordt deze geacht volgend jaar te zijn",
+          "no": "Når den andre måneden er tidligere enn den første måneden, anses det å være neste år"
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "monthOne",
+            "min": 1,
+            "max": 12,
+            "step": 1,
+            "placeholder": {
+              "en": "1-12",
+              "nl": "1-12",
+              "no": "1-12"
+            },
+            "title": {
+              "en": "Month one",
+              "nl": "Maand één",
+              "no": "Måned en"
+            }
+          },
+          {
+            "type": "number",
+            "name": "monthTwo",
+            "min": 1,
+            "max": 12,
+            "step": 1,
+            "placeholder": {
+              "en": "1-12",
+              "nl": "1-12",
+              "no": "1-12"
+            },
+            "title": {
+              "en": "Month two",
+              "nl": "Maand twee",
+              "no": "Måned to"
+            }
+          }
+        ]
       },
       {
         "id": "time_before_time",

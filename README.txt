@@ -12,6 +12,8 @@ Conditions:
 - Check if specified time is before time
 - Check if specified date/time is before date/time
 - Random (true|false)
+- Date number is (between|not between)
+- Month is (between|not between)
 
 Case sesitivty
 

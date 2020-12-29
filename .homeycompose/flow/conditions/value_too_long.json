@@ -5,6 +5,11 @@
       "nl": "Is de lengte van de waarde !{{minder|niet minder}} dan",
       "no": "Er tesktlengde !{{kortere|ikke kortere}} enn"
     },
+    "titleFormatted": {
+      "en": "Is length of [[value]] !{{less|not less}} than [[maxLength]]",
+      "nl": "Is lengte van [[value]] !{{minder|niet minder}} dan [[maxLength]]",
+      "no": "Er tesktlengden på [[value]] !{{kortere|ikke kortere}} enn [[maxLength]]"
+    },
     "args": [
       {
         "type": "text",

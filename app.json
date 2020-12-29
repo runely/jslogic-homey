@@ -57,6 +57,11 @@
           "nl": "Is Datum !{{voor|niet voor}} Datum",
           "no": "Er Dato !{{før|ikke før}} Dato"
         },
+        "titleFormatted": {
+          "en": "Is [[dateOne]] !{{before|not before}} [[dateTwo]]",
+          "nl": "Is [[dateOne]] !{{voor|niet voor}} [[dateTwo]]",
+          "no": "Er [[dateOne]] !{{før|ikke før}} [[dateTwo]]"
+        },
         "hint": {
           "en": "Day-Month-Year (Separator can be '-', '.', or '/')",
           "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)",
@@ -99,6 +104,11 @@
           "en": "Is DateTime !{{before|not before}} DateTime",
           "nl": "Is DatumTijd !{{voor|niet voor}} DatumTijd",
           "no": "Er DatoTid !{{før|ikke før}} DatoTid"
+        },
+        "titleFormatted": {
+          "en": "Is [[dateTimeOne]] !{{before|not before}} [[dateTimeTwo]]",
+          "nl": "Is [[dateTimeOne]] !{{voor|niet voor}} [[dateTimeTwo]]",
+          "no": "Er [[dateTimeOne]] !{{før|ikke før}} [[dateTimeTwo]]"
         },
         "hint": {
           "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nHH:mm (Separator can be ':', or '.')",
@@ -264,6 +274,11 @@
           "nl": "Is Tijd !{{voor|niet voor}} Tijd",
           "no": "Er Tid !{{før|ikke før}} Tid"
         },
+        "titleFormatted": {
+          "en": "Is [[timeOne]] !{{before|not before}} [[timeTwo]]",
+          "nl": "Is [[timeOne]] !{{voor|niet voor}} [[timeTwo]]",
+          "no": "Er [[timeOne]] !{{før|ikke før}} [[timeTwo]]"
+        },
         "hint": {
           "en": "HH:mm (Separator can be ':', or '.')",
           "nl": "HH:mm (Scheidingsteken kan ':', of '.' zijn)",
@@ -306,6 +321,11 @@
           "en": "Value contains !{{one of|not one of}}...",
           "nl": "Waarde bevat !{{één van de|niet één van de}}...",
           "no": "Tekst inneholder !{{en av|ikke en av}}..."
+        },
+        "titleFormatted": {
+          "en": "[[value]] contains !{{one of|not one of}} [[array]]? Case sensitive ([[casesenitive]])",
+          "nl": "[[value]] bevat !{{één van de|niet één van de}} [[array]]? Hoofdlettergevoelig ([[casesenitive]])",
+          "no": "[[value]] inneholder !{{en av|ikke en av}} [[array]]? Case sensitive ([[casesenitive]])"
         },
         "hint": {
           "en": "Does [value] contain [one of items]?",
@@ -367,6 +387,11 @@
           "nl": "Is waarde !{{leeg|niet leeg}}",
           "no": "Er verdi !{{tom|ikke tom}}"
         },
+        "titleFormatted": {
+          "en": "Is [[value]] !{{empty|not empty}}",
+          "nl": "Is [[value]] !{{leeg|niet leeg}}",
+          "no": "Er [[value]] !{{tom|ikke tom}}"
+        },
         "args": [
           {
             "type": "text",
@@ -385,6 +410,11 @@
           "en": "Is value exactly !{{one of|not one of}}...",
           "nl": "Is waarde exact !{{één van de|niet één van de}}...",
           "no": "Er tekst helt lik !{{en av|ikke en av}}..."
+        },
+        "titleFormatted": {
+          "en": "Is [[value]] exactly !{{one of|not one of}} [[array]]? Case sensitive ([[casesenitive]])",
+          "nl": "Is [[value]] exact !{{één van de|niet één van de}} [[array]]? Hoofdlettergevoelig ([[casesenitive]])",
+          "no": "Er [[value]] helt lik !{{en av|ikke en av}} [[array]]? Case sensitive ([[casesenitive]])"
         },
         "hint": {
           "en": "Is [value] exactly [one of items]?",
@@ -446,6 +476,11 @@
           "en": "Is value length !{{less|not less}} than",
           "nl": "Is de lengte van de waarde !{{minder|niet minder}} dan",
           "no": "Er tesktlengde !{{kortere|ikke kortere}} enn"
+        },
+        "titleFormatted": {
+          "en": "Is length of [[value]] !{{less|not less}} than [[maxLength]]",
+          "nl": "Is lengte van [[value]] !{{minder|niet minder}} dan [[maxLength]]",
+          "no": "Er tesktlengden på [[value]] !{{kortere|ikke kortere}} enn [[maxLength]]"
         },
         "args": [
           {

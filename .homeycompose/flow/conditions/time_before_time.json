@@ -5,6 +5,11 @@
     "nl": "Is Tijd !{{voor|niet voor}} Tijd",
     "no": "Er Tid !{{før|ikke før}} Tid"
   },
+  "titleFormatted": {
+    "en": "Is [[timeOne]] !{{before|not before}} [[timeTwo]]",
+    "nl": "Is [[timeOne]] !{{voor|niet voor}} [[timeTwo]]",
+    "no": "Er [[timeOne]] !{{før|ikke før}} [[timeTwo]]"
+  },
   "hint": {
     "en": "HH:mm (Separator can be ':', or '.')",
     "nl": "HH:mm (Scheidingsteken kan ':', of '.' zijn)",

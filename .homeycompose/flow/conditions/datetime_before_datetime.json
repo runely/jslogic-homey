@@ -5,6 +5,11 @@
     "nl": "Is DatumTijd !{{voor|niet voor}} DatumTijd",
     "no": "Er DatoTid !{{før|ikke før}} DatoTid"
   },
+  "titleFormatted": {
+    "en": "Is [[dateTimeOne]] !{{before|not before}} [[dateTimeTwo]]",
+    "nl": "Is [[dateTimeOne]] !{{voor|niet voor}} [[dateTimeTwo]]",
+    "no": "Er [[dateTimeOne]] !{{før|ikke før}} [[dateTimeTwo]]"
+  },
   "hint": {
     "en": "Day-Month-Year (Separator can be '-', '.', or '/')\nHH:mm (Separator can be ':', or '.')",
     "nl": "Dag-Maand-Jaar (Scheidingsteken kan '-', '.', of '/' zijn)\nHH:mm (Scheidingsteken kan ':', of '.' zijn)",

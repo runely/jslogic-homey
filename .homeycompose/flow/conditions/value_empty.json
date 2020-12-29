@@ -5,6 +5,11 @@
     "nl": "Is waarde !{{leeg|niet leeg}}",
     "no": "Er verdi !{{tom|ikke tom}}"
   },
+  "titleFormatted": {
+    "en": "Is [[value]] !{{empty|not empty}}",
+    "nl": "Is [[value]] !{{leeg|niet leeg}}",
+    "no": "Er [[value]] !{{tom|ikke tom}}"
+  },
   "args": [
     {
       "type": "text",

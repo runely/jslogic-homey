@@ -233,12 +233,12 @@ class MyApp extends Homey.App {
 				if (args.monthOne) {
 					if (args.monthTwo) {
 						const now = moment();
-						const first = moment().set('month', (args.monthOne - 1)).startOf('day');
+						const first = moment().set('month', parseInt(args.monthOne)).startOf('day');
 						this.log(`monthnum_between_monthnum: Now '${now}'`);
 						this.log(`monthnum_between_monthnum: First: '${first}'`);
 						let second;
 						if (args.monthTwo < args.monthOne) {
-							second = moment().add(1, 'year').set('month', (args.monthTwo - 1)).endOf('day');
+							second = moment().add(1, 'year').set('month', parseInt(args.monthTwo)).endOf('day');
 							this.log(`monthnum_between_monthnum: Month two '${args.monthTwo}' is earlier than month one '${args.monthOne}'. Considering it to be next year: '${second}'`);
 						}
 						else {

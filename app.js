@@ -241,8 +241,16 @@ class MyApp extends Homey.App {
 						this.log(`monthnum_between_monthnum: First: '${first}'`);
 						let second;
 						if (monthTwo < monthOne) {
-							second = moment().add(1, 'year').set('month', monthTwo).endOf('day');
-							this.log(`monthnum_between_monthnum: Month two '${monthTwo}' is earlier than month one '${monthOne}'. Considering it to be next year: '${second}'`);
+							if (monthTwo === now.get('month')) {
+								// next year has happend, but now is still inside monthOne -> monthTwo
+								second = moment().set('month', monthTwo).endOf('day');
+								this.log(`monthnum_between_monthnum: Month two '${monthTwo}' is earlier than month one '${monthOne}'. Next year has happend but month is still inside: '${second}'`);
+							}
+							else {
+								// next year hasn't happend yet
+								second = moment().add(1, 'year').set('month', monthTwo).endOf('day');
+								this.log(`monthnum_between_monthnum: Month two '${monthTwo}' is earlier than month one '${monthOne}'. Considering it to be next year: '${second}'`);
+							}
 						}
 						else {
 							second = moment().set('month', monthTwo).endOf('day');

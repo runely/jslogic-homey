@@ -232,18 +232,21 @@ class MyApp extends Homey.App {
 			.registerRunListener((args, state) => {
 				if (args.monthOne) {
 					if (args.monthTwo) {
+						const monthOne = parseInt(args.monthOne);
+						const monthTwo = parseInt(args.monthTwo);
 						const now = moment();
-						const first = moment().set('month', parseInt(args.monthOne)).startOf('day');
+						const first = moment().set('month', monthOne).startOf('day');
+
 						this.log(`monthnum_between_monthnum: Now '${now}'`);
 						this.log(`monthnum_between_monthnum: First: '${first}'`);
 						let second;
-						if (args.monthTwo < args.monthOne) {
-							second = moment().add(1, 'year').set('month', parseInt(args.monthTwo)).endOf('day');
-							this.log(`monthnum_between_monthnum: Month two '${args.monthTwo}' is earlier than month one '${args.monthOne}'. Considering it to be next year: '${second}'`);
+						if (monthTwo < monthOne) {
+							second = moment().add(1, 'year').set('month', monthTwo).endOf('day');
+							this.log(`monthnum_between_monthnum: Month two '${monthTwo}' is earlier than month one '${monthOne}'. Considering it to be next year: '${second}'`);
 						}
 						else {
-							second = moment().set('month', (args.monthTwo - 1)).endOf('day');
-							this.log(`monthnum_between_monthnum: Month one '${args.monthOne}' is earlier than month two '${args.monthTwo}'. This is same year: '${second}'`);
+							second = moment().set('month', monthTwo).endOf('day');
+							this.log(`monthnum_between_monthnum: Month one '${monthOne}' is earlier than month two '${monthTwo}'. This is same year: '${second}'`);
 						}
 
 						return Promise.resolve(now.isBetween(first, second));

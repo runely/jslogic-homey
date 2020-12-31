@@ -202,12 +202,21 @@ class MyApp extends Homey.App {
 					if (args.dayNumTwo) {
 						const now = moment();
 						const first = moment().set('date', args.dayNumOne).startOf('day');
+
 						this.log(`daynum_between_daynum: Now '${now}'`);
 						this.log(`daynum_between_daynum: First: '${first}'`);
 						let second;
 						if (args.dayNumTwo < args.dayNumOne) {
-							second = moment().add(1, 'month').set('date', args.dayNumTwo).endOf('day');
-							this.log(`daynum_between_daynum: Day number two '${args.dayNumTwo}' is earlier than day number one '${args.dayNumOne}'. Considering it to be next month: '${second}'`);
+							if (args.dayNumTwo === now.get('date')) {
+								// next month has happend, but now is still inside dayNumOne -> dayNumTwo
+								second = moment().set('date', args.dayNumTwo).endOf('day');
+								this.log(`daynum_between_daynum: Day number two '${args.dayNumTwo}' is earlier than day number one '${args.dayNumOne}'. Next month has happend but month is still inside: '${second}'`);
+							}
+							else {
+								// next month hasn't happend yet
+								second = moment().add(1, 'month').set('date', args.dayNumTwo).endOf('day');
+								this.log(`daynum_between_daynum: Day number two '${args.dayNumTwo}' is earlier than day number one '${args.dayNumOne}'. Considering it to be next month: '${second}'`);
+							}
 						}
 						else {
 							second = moment().set('date', args.dayNumTwo).endOf('day');

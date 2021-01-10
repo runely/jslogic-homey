@@ -6,9 +6,9 @@
     "no": "Dagsnummeret er !{{mellom|ikke mellom}}..."
   },
   "titleFormatted": {
-    "en": "Date number is !{{between|not between}} [[dayNumOne]] and [[dayNumTwo]]",
-    "nl": "Het Dagnummer ligt !{{tussen|niet tussen}} [[dayNumOne]] en [[dayNumTwo]]",
-    "no": "Dagsnummeret er !{{mellom|ikke mellom}} [[dayNumOne]] og [[dayNumTwo]]"
+    "en": "Date number is !{{between|not between}} [[dayOne]] and [[dayTwo]]",
+    "nl": "Het Dagnummer ligt !{{tussen|niet tussen}} [[dayOne]] en [[dayTwo]]",
+    "no": "Dagsnummeret er !{{mellom|ikke mellom}} [[dayOne]] og [[dayTwo]]"
   },
   "hint": {
     "en": "When second date number is earlier than the first date number, it is considered to be next month",
@@ -18,7 +18,7 @@
   "args": [
     {
       "type": "number",
-      "name": "dayNumOne",
+      "name": "dayOne",
       "min": 1,
       "max": 31,
       "step": 1,
@@ -35,7 +35,7 @@
     },
     {
       "type": "number",
-      "name": "dayNumTwo",
+      "name": "dayTwo",
       "min": 1,
       "max": 31,
       "step": 1,

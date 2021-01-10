@@ -180,18 +180,18 @@ class MyApp extends Homey.App {
 		new Homey.FlowCardCondition('daynum_between_daynum')
 			.register()
 			.registerRunListener((args, state) => {
-				if (!args.dayNumOne) {
-					this.log(`daynum_between_daynum: Argument 'dayNumOne' missing...`);
+				if (!args.dayOne) {
+					this.log(`daynum_between_daynum: Argument 'dayOne' missing...`);
 					return Promise.resolve(false);
 				}
-				if (!args.dayNumTwo) {
-					this.log(`daynum_between_daynum: Argument 'dayNumTwo' missing...`);
+				if (!args.dayTwo) {
+					this.log(`daynum_between_daynum: Argument 'dayTwo' missing...`);
 					return Promise.resolve(false);
 				}
 
 				const today = new Date().getDate();
-				const first = args.dayNumOne;
-				const second = args.dayNumTwo;
+				const first = args.dayOne;
+				const second = args.dayTwo;
 
 				this.log(`daynum_between_daynum: Todays date: '${today}'`);
 				this.log(`daynum_between_daynum: First  date: '${first}'`);

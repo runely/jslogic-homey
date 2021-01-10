@@ -5,6 +5,11 @@
     "nl": "Krijg opgemaakte datum",
     "no": "Hent formatert dato"
   },
+  "titleFormatted": {
+    "en": "Get date [[daysToAdd]] days ahead in [[format]] format",
+    "nl": "Krijg de datum [[daysToAdd]] dagen vooruit in [[format]] formaat",
+    "no": "Hent dato [[daysToAdd]] dager frem i tid i [[format]] format"
+  },
   "args": [
     {
       "type": "number",

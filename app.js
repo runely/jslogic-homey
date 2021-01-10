@@ -208,15 +208,21 @@ class MyApp extends Homey.App {
           return Promise.resolve(true);
         }
 
-        // second is lower than first and today is lower than first and lower than second (still inside for next month)
-        if (second < first && today < first && today <= second) {
-          this.log(`daynum_between_daynum: Second(${second}) is < first(${first}) && today(${today}) is (< to first(${first}) && <= to second(${second})). Inside for next month!`);
+        // second is lower than first and today is greater than first and greater than second (still inside for this month)
+        if (second < first && today >= first && today >= second) {
+          this.log(`daynum_between_daynum: Second(${second}) is < first(${first}) && today(${today}) is (>= to first(${first}) && >= to second(${second})). Inside for this month!`);
           return Promise.resolve(true);
         }
 
-        // second is lower than first and today is greater than first and greater than second (still inside for next month)
-        if (second < first && today >= first && today >= second) {
-          this.log(`daynum_between_daynum: Second(${second}) is < first(${first}) && today(${today}) is (>= to first(${first}) && >= to second(${second})). Inside for next month!`);
+        // second is lower than first and today is greater than or equal to first and lower than or equal second (still inside for next month)
+        if (second < first && today >= first && today <= second) {
+          this.log(`daynum_between_daynum: Second(${second}) is < first(${first}) && today(${today}) is (>= to first(${first}) && <= to second(${second})). Inside for next month!`);
+          return Promise.resolve(true);
+        }
+
+        // second is lower than first and today is lower than first and lower than second (still inside for next month)
+        if (second < first && today < first && today <= second) {
+          this.log(`daynum_between_daynum: Second(${second}) is < first(${first}) && today(${today}) is (< to first(${first}) && <= to second(${second})). Inside for next month!`);
           return Promise.resolve(true);
         }
 

@@ -31,7 +31,7 @@ In the following conditions you can choose to use case sensitity or not:
 
 ## Changelog
 
-- 0.1.3
+- 0.2.0
     - Dependency updates
     - Text updated in conditions
     - New conditions: 'Date number is (between|not between)' and 'Month is (between|not between)' . [`Added because there's a bug in Homeys version of 'Date number is (between|not between)'`](https://github.com/athombv/homey-apps-sdk-issues/issues/160)

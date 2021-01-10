@@ -25,5 +25,8 @@
   },
   "0.1.3": {
     "en": "Better readability. New conditions: 'Date number is (between|not between)' and 'Month is (between|not between)'"
+  },
+  "0.2.0": {
+    "en": "Better readability. New conditions: 'Date number is (between|not between)' and 'Month is (between|not between)'"
   }
 }

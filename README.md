@@ -31,6 +31,8 @@ In the following conditions you can choose to use case sensitity or not:
 
 ## Changelog
 
+- 0.2.1
+    - Dependency updates
 - 0.2.0
     - Dependency updates
     - Text updated in conditions

@@ -4,7 +4,7 @@
   "main": "app.js",
   "devDependencies": {
     "homey": "2.9.7",
-    "xo": "0.37.1"
+    "standard": "16.0.3"
   },
   "dependencies": {
     "@sentry/node": "6.0.3",
@@ -12,8 +12,8 @@
   },
   "scripts": {
     "refresh": "rm -rf node_modules/ && rm package-lock.json && npm i",
-    "test": "xo",
-    "fix": "xo --fix",
+    "test": "standard",
+    "fix": "standard --fix",
     "homey-run": "homey app run",
     "homey-publish": "npm run fix && homey app publish"
   },

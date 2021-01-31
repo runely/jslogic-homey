@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "@sentry/node": "6.0.3",
-    "@sentry/tracing": "6.0.3",
     "moment": "2.29.1"
   },
   "scripts": {

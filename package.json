@@ -7,7 +7,7 @@
     "standard": "16.0.3"
   },
   "dependencies": {
-    "@sentry/node": "6.0.4",
+    "@sentry/node": "6.1.0",
     "moment": "2.29.1"
   },
   "scripts": {

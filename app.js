@@ -10,32 +10,28 @@ const checkDateTime = require('./lib/check-date-time')
 const tokens = []
 
 class MyApp extends Homey.App {
-  onInit () {
+  async onInit () {
     this.log(Homey.manifest.name.en + ' v' + Homey.manifest.version + ' is running...')
 
     // initialize sentry.io
-    init(Homey)
+    init(this.homey)
     this.sentry = sentry
 
     // flow tokens
-    new Homey.FlowToken('formatted_date', { type: 'string', title: Homey.__('flowTokens.formatted_date') })
-      .register()
-      .then(token => tokens.push(token))
+    tokens.push(await this.homey.flow.createToken('formatted_date', { type: 'string', title: this.homey.__('flowTokens.formatted_date') }))
 
     // actions
-    new Homey.FlowCardAction('get_formatted_date')
-      .register()
+    this.homey.flow.getActionCard('get_formatted_date')
       .registerRunListener(async (args, state) => {
         const day = moment().add(args.daysToAdd, 'days')
 
-        tokens[0].setValue(day.format(args.format))
+        await tokens[0].setValue(day.format(args.format))
 
         return Promise.resolve(true)
       })
 
     // conditions
-    new Homey.FlowCardCondition('value_in_array')
-      .register()
+    this.homey.flow.getConditionCard('value_in_array')
       .registerRunListener((args, state) => {
         if (!args.array) {
           return Promise.resolve(false)
@@ -66,8 +62,7 @@ class MyApp extends Homey.App {
         return Promise.resolve(result)
       })
 
-    new Homey.FlowCardCondition('value_empty')
-      .register()
+    this.homey.flow.getConditionCard('value_empty')
       .registerRunListener((args, state) => {
         if (args.value) {
           this.log('value_empty: Value:', args.value)
@@ -79,8 +74,7 @@ class MyApp extends Homey.App {
         return Promise.resolve(true)
       })
 
-    new Homey.FlowCardCondition('value_too_long')
-      .register()
+    this.homey.flow.getConditionCard('value_too_long')
       .registerRunListener((args, state) => {
         if (!args.maxLength) {
           return Promise.resolve(false)
@@ -99,8 +93,7 @@ class MyApp extends Homey.App {
         return Promise.resolve(result)
       })
 
-    new Homey.FlowCardCondition('value_contains_array')
-      .register()
+    this.homey.flow.getConditionCard('value_contains_array')
       .registerRunListener((args, state) => {
         if (!args.array) {
           return Promise.resolve(false)
@@ -130,8 +123,7 @@ class MyApp extends Homey.App {
         return Promise.resolve(result)
       })
 
-    new Homey.FlowCardCondition('date_before_date')
-      .register()
+    this.homey.flow.getConditionCard('date_before_date')
       .registerRunListener((args, state) => {
         if (!args.dateOne) {
           return Promise.resolve(false)
@@ -144,8 +136,7 @@ class MyApp extends Homey.App {
         return checkDateTime(this, args.dateOne, args.dateTwo, 'DateOne', 'DateTwo', 'date_before_date')
       })
 
-    new Homey.FlowCardCondition('time_before_time')
-      .register()
+    this.homey.flow.getConditionCard('time_before_time')
       .registerRunListener((args, state) => {
         if (!args.timeOne) {
           return Promise.resolve(false)
@@ -158,8 +149,7 @@ class MyApp extends Homey.App {
         return checkDateTime(this, args.timeOne, args.timeTwo, 'TimeOne', 'TimeTwo', 'time_before_time')
       })
 
-    new Homey.FlowCardCondition('datetime_before_datetime')
-      .register()
+    this.homey.flow.getConditionCard('datetime_before_datetime')
       .registerRunListener((args, state) => {
         if (!args.dateTimeOne) {
           return Promise.resolve(false)
@@ -172,8 +162,7 @@ class MyApp extends Homey.App {
         return checkDateTime(this, args.dateTimeOne, args.dateTimeTwo, 'DateTimeOne', 'DateTimeTwo', 'datetime_before_datetime')
       })
 
-    new Homey.FlowCardCondition('is_random_true_false')
-      .register()
+    this.homey.flow.getConditionCard('is_random_true_false')
       .registerRunListener((args, state) => {
         const random = Math.random()
         const result = random > 0.5
@@ -181,8 +170,7 @@ class MyApp extends Homey.App {
         return Promise.resolve(result)
       })
 
-    new Homey.FlowCardCondition('daynum_between_daynum')
-      .register()
+    this.homey.flow.getConditionCard('daynum_between_daynum')
       .registerRunListener((args, state) => {
         if (!args.dayOne) {
           this.log('daynum_between_daynum: Argument \'dayOne\' missing...')
@@ -230,8 +218,7 @@ class MyApp extends Homey.App {
         return Promise.resolve(false)
       })
 
-    new Homey.FlowCardCondition('monthnum_between_monthnum')
-      .register()
+    this.homey.flow.getConditionCard('monthnum_between_monthnum')
       .registerRunListener((args, state) => {
         if (!args.monthOne) {
           this.log('monthnum_between_monthnum: Argument \'monthOne\' missing...')

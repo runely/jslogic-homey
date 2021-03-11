@@ -11,7 +11,7 @@ const tokens = []
 
 class MyApp extends Homey.App {
   async onInit () {
-    this.log(Homey.manifest.name.en + ' v' + Homey.manifest.version + ' is running...')
+    this.log(`${Homey.manifest.name.en} v${Homey.manifest.version} is running on ${this.homey.version}...`)
 
     // initialize sentry.io
     init(this.homey)

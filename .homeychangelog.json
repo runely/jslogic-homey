@@ -28,5 +28,8 @@
   },
   "0.2.0": {
     "en": "Better readability. New conditions: 'Date number is (between|not between)' and 'Month is (between|not between)'"
+  },
+  "1.0.0": {
+    "en": "Updated to SDKv3"
   }
 }

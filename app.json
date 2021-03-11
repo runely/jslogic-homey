@@ -1,8 +1,8 @@
 {
   "id": "no.runely.jslogic",
   "version": "0.2.0",
-  "compatibility": ">=2.0.0",
-  "sdk": 2,
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
   "brandColor": "#F0A100",
   "name": {
     "en": "JavaScript Logic"

@@ -33,8 +33,10 @@ In the following conditions you can choose to use case sensitity or not:
 
 ## Changelog
 
-- 0.2.1
+
+- 0.3.0
     - Dependency updates
+    - Updated to SDKv3. App now requires Homey firmware >= 5.0.0. Those with Homey firmware < 5.0.0 will still have v0.2.0 (unless user uninstalls 0.2.0, then 0.3.0 is they're only option)
 - 0.2.0
     - Dependency updates
     - Text updated in conditions

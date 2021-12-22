@@ -1,5 +1,4 @@
 {
-  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "no.runely.jslogic",
   "version": "1.0.0",
   "compatibility": ">=5.0.0",
@@ -155,9 +154,9 @@
           "no": "Dagen og måneden er !{{mellom|ikke mellom}}..."
         },
         "titleFormatted": {
-          "en": "Day and month is !{{between|not between}} [[dayOne]][[monthOne]] and [[dayTwo]][[monthTwo]]",
-          "nl": "Dag en maand is !{{tussen|niet tussen}} [[dayOne]][[monthOne]] en [[dayTwo]][[monthTwo]]",
-          "no": "Dagen og måneden er !{{mellom|ikke mellom}} [[dayOne]][[monthOne]] og [[dayTwo]][[monthTwo]]"
+          "en": "Day and month is !{{between|not between}} [[monthOne]] and [[monthTwo]]",
+          "nl": "Dag en maand is !{{tussen|niet tussen}} [[monthOne]] en [[monthTwo]]",
+          "no": "Dagen og måneden er !{{mellom|ikke mellom}} [[monthOne]] og [[monthTwo]]"
         },
         "hint": {
           "en": "When second day and month is earlier than the first day and month, it is considered to be next year",

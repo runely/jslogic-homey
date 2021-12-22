@@ -15,6 +15,7 @@
     "test": "standard",
     "fix": "standard --fix",
     "homey-run": "homey app run",
-    "homey-publish": "npm run fix && homey app publish"
+    "homey-install": "npm run test && homey app install",
+    "homey-publish": "npm run test && homey app publish"
   }
 }

@@ -253,6 +253,57 @@ class MyApp extends Homey.App {
         this.log('monthnum_between_monthnum: Not inside!')
         return Promise.resolve(false)
       })
+
+    this.homey.flow.getConditionCard('daymonthnum_between_daymonthnum')
+      .registerRunListener((args, state) => {
+        if (!args.dayOne) {
+          this.log('daymonthnum_between_daymonthnum: Argument \'dayOne\' missing...')
+          return Promise.resolve(false)
+        }
+
+        if (!args.monthOne) {
+          this.log('daymonthnum_between_daymonthnum: Argument \'monthOne\' missing...')
+          return Promise.resolve(false)
+        }
+
+        if (!args.dayTwo) {
+          this.log('daymonthnum_between_daymonthnum: Argument \'dayTwo\' missing...')
+          return Promise.resolve(false)
+        }
+
+        if (!args.monthTwo) {
+          this.log('daymonthnum_between_daymonthnum: Argument \'monthTwo\' missing...')
+          return Promise.resolve(false)
+        }
+
+        const today = new Date()
+        const todayYear = today.getFullYear()
+        const firstDate = args.dayOne
+        const firstMonth = args.monthOne
+        const secondDate = args.dayTwo
+        const secondMonth = args.monthTwo
+        const first = new Date(todayYear, firstMonth, firstDate, today.getHours(), today.getMinutes(), today.getSeconds())
+        const second = new Date(secondMonth < firstMonth || (secondMonth === firstMonth && secondDate < firstDate) ? (todayYear + 1) : todayYear, secondMonth, secondDate, today.getHours(), today.getMinutes(), today.getSeconds())
+
+        this.log(`daymonthnum_between_daymonthnum: Today: '${today}'`)
+        this.log(`daymonthnum_between_daymonthnum: First: '${first}'`)
+        this.log(`daymonthnum_between_daymonthnum: Second: '${second}'`)
+
+        // today is inside first and second
+        if (today >= first && today <= second) {
+          this.log(`daymonthnum_between_daymonthnum: Today(${today}) is (>= to first(${first}) && <= to second(${second})). Inside this year!`)
+          return Promise.resolve(true)
+        }
+
+        // second is lower than first and today is greater than or equal to first and lower than or equal second (still inside for next year)
+        if (second < first && today >= first && today <= second) {
+          this.log(`daymonthnum_between_daymonthnum: Second(${second}) is < first(${first}) && today(${today}) is (>= to first(${first}) && <= to second(${second})). Inside for next year!`)
+          return Promise.resolve(true)
+        }
+
+        this.log('daymonthnum_between_daymonthnum: Not inside!')
+        return Promise.resolve(false)
+      })
   }
 }
 

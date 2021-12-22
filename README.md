@@ -34,8 +34,9 @@ In the following conditions you can choose to use case sensitity or not:
 ## Changelog
 
 
-- 1.0.1
+- 1.1.0
     - Dependency updates
+    - New condition: 'Day and month is (between|not between)
 - 1.0.0
     - Dependency updates
     - Updated to SDKv3. App now requires Homey firmware >= 5.0.0. Those with Homey firmware < 5.0.0 will still have v0.2.0 (unless user uninstalls 0.2.0, then 1.0.0 is they're only option)

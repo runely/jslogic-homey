@@ -147,6 +147,298 @@
         ]
       },
       {
+        "id": "daymonthnum_between_daymonthnum",
+        "title": {
+          "en": "Day and month is !{{between|not between}}...",
+          "nl": "Dag en maand is !{{tussen|niet tussen}}...",
+          "no": "Dagen og måneden er !{{mellom|ikke mellom}}..."
+        },
+        "titleFormatted": {
+          "en": "Day and month is !{{between|not between}} [[dayOne]][[monthOne]] and [[dayTwo]][[monthTwo]]",
+          "nl": "Dag en maand is !{{tussen|niet tussen}} [[dayOne]][[monthOne]] en [[dayTwo]][[monthTwo]]",
+          "no": "Dagen og måneden er !{{mellom|ikke mellom}} [[dayOne]][[monthOne]] og [[dayTwo]][[monthTwo]]"
+        },
+        "hint": {
+          "en": "When second day and month is earlier than the first day and month, it is considered to be next year",
+          "nl": "Wanneer de tweede dag en maand eerder is dan de eerste dag en maand, wordt deze geacht volgend jaar te zijn",
+          "no": "Når den andre dagen og måneden er tidligere enn den første dagen og måneden, anses det å være neste år"
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "dayOne",
+            "min": 1,
+            "max": 31,
+            "step": 1,
+            "placeholder": {
+              "en": "1-31",
+              "nl": "1-31",
+              "no": "1-31"
+            },
+            "title": {
+              "en": "Date number one",
+              "nl": "Datumnummer één",
+              "no": "Dagsnummer en"
+            }
+          },
+          {
+            "name": "monthOne",
+            "type": "dropdown",
+            "title": {
+              "en": "Month one",
+              "nl": "Maand één",
+              "no": "Måned en"
+            },
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "January",
+                  "no": "Januar",
+                  "nl": "Januari",
+                  "de": "Januar"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "February",
+                  "no": "Februar",
+                  "nl": "Februari",
+                  "de": "Februar"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "March",
+                  "no": "Mars",
+                  "nl": "Maart",
+                  "de": "März"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "April",
+                  "no": "April",
+                  "nl": "April",
+                  "de": "April"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "May",
+                  "no": "Mai",
+                  "nl": "Mei",
+                  "de": "Kann"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "June",
+                  "no": "Juni",
+                  "nl": "Juni",
+                  "de": "Juni"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "July",
+                  "no": "Juli",
+                  "nl": "Juli",
+                  "de": "Juli"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "August",
+                  "no": "August",
+                  "nl": "Augustus",
+                  "de": "August"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "September",
+                  "no": "September",
+                  "nl": "September",
+                  "de": "September"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "October",
+                  "no": "Oktober",
+                  "nl": "Oktober",
+                  "de": "Oktober"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "November",
+                  "no": "November",
+                  "nl": "November",
+                  "de": "November"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "December",
+                  "no": "Desember",
+                  "nl": "December",
+                  "de": "Dezember"
+                }
+              }
+            ]
+          },
+          {
+            "type": "number",
+            "name": "dayTwo",
+            "min": 1,
+            "max": 31,
+            "step": 1,
+            "placeholder": {
+              "en": "1-31",
+              "nl": "1-31",
+              "no": "1-31"
+            },
+            "title": {
+              "en": "Date number two",
+              "nl": "Datumnummer twee",
+              "no": "Dagsnummer to"
+            }
+          },
+          {
+            "name": "monthTwo",
+            "type": "dropdown",
+            "title": {
+              "en": "Month two",
+              "nl": "Maand twee",
+              "no": "Måned to"
+            },
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "January",
+                  "no": "Januar",
+                  "nl": "Januari",
+                  "de": "Januar"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "February",
+                  "no": "Februar",
+                  "nl": "Februari",
+                  "de": "Februar"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "March",
+                  "no": "Mars",
+                  "nl": "Maart",
+                  "de": "März"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "April",
+                  "no": "April",
+                  "nl": "April",
+                  "de": "April"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "May",
+                  "no": "Mai",
+                  "nl": "Mei",
+                  "de": "Kann"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "June",
+                  "no": "Juni",
+                  "nl": "Juni",
+                  "de": "Juni"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "July",
+                  "no": "Juli",
+                  "nl": "Juli",
+                  "de": "Juli"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "August",
+                  "no": "August",
+                  "nl": "Augustus",
+                  "de": "August"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "September",
+                  "no": "September",
+                  "nl": "September",
+                  "de": "September"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "October",
+                  "no": "Oktober",
+                  "nl": "Oktober",
+                  "de": "Oktober"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "November",
+                  "no": "November",
+                  "nl": "November",
+                  "de": "November"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "December",
+                  "no": "Desember",
+                  "nl": "December",
+                  "de": "Dezember"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "daynum_between_daynum",
         "title": {
           "en": "Date number is !{{between|not between}}...",

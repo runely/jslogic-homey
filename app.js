@@ -133,7 +133,7 @@ class MyApp extends Homey.App {
           return Promise.resolve(false)
         }
 
-        return checkDateTime(this, args.dateOne, args.dateTwo, 'DateOne', 'DateTwo', 'date_before_date')
+        return Promise.resolve(checkDateTime(this, args.dateOne, args.dateTwo, 'DateOne', 'DateTwo', 'date_before_date'))
       })
 
     this.homey.flow.getConditionCard('time_before_time')
@@ -146,7 +146,7 @@ class MyApp extends Homey.App {
           return Promise.resolve(false)
         }
 
-        return checkDateTime(this, args.timeOne, args.timeTwo, 'TimeOne', 'TimeTwo', 'time_before_time')
+        return Promise.resolve(checkDateTime(this, args.timeOne, args.timeTwo, 'TimeOne', 'TimeTwo', 'time_before_time'))
       })
 
     this.homey.flow.getConditionCard('datetime_before_datetime')
@@ -159,7 +159,7 @@ class MyApp extends Homey.App {
           return Promise.resolve(false)
         }
 
-        return checkDateTime(this, args.dateTimeOne, args.dateTimeTwo, 'DateTimeOne', 'DateTimeTwo', 'datetime_before_datetime')
+        return Promise.resolve(checkDateTime(this, args.dateTimeOne, args.dateTimeTwo, 'DateTimeOne', 'DateTimeTwo', 'datetime_before_datetime'))
       })
 
     this.homey.flow.getConditionCard('is_random_true_false')

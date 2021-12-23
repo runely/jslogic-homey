@@ -4,6 +4,7 @@
   "main": "app.js",
   "devDependencies": {
     "homey": "2.23.7",
+    "jest": "27.4.5",
     "standard": "16.0.4"
   },
   "dependencies": {
@@ -12,10 +13,24 @@
   },
   "scripts": {
     "refresh": "rm -rf node_modules/ && rm package-lock.json && npm i",
-    "test": "standard",
+    "test": "standard && jest",
     "fix": "standard --fix",
     "homey-run": "homey app run",
     "homey-install": "npm run test && homey app install",
     "homey-publish": "npm run test && homey app publish"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/build/"
+    ],
+    "testMatch": [
+      "**/tests/**/*test.[jt]s?(x)",
+      "**/?(*.)+.(spec|test).[jt]s?(x)"
+    ]
   }
 }

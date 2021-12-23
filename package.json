@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@sentry/node": "6.16.1",
-    "moment": "2.29.1"
+    "moment-timezone": "0.5.34"
   },
   "scripts": {
     "refresh": "rm -rf node_modules/ && rm package-lock.json && npm i",

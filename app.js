@@ -3,8 +3,9 @@
 const { sentry, init } = require('./lib/sentry-io') // { sentry, init, startTransaction }
 
 const Homey = require('homey')
-const moment = require('moment')
 
+const pad = require('./lib/pad-number')
+const moment = require('./lib/moment-datetime')
 const checkDateTime = require('./lib/check-date-time')
 
 const tokens = []
@@ -23,7 +24,7 @@ class MyApp extends Homey.App {
     // actions
     this.homey.flow.getActionCard('get_formatted_date')
       .registerRunListener(async (args, state) => {
-        const day = moment().add(args.daysToAdd, 'days')
+        const day = moment(this.homey.clock.getTimezone()).add(args.daysToAdd, 'days')
 
         await tokens[0].setValue(day.format(args.format))
 
@@ -182,7 +183,7 @@ class MyApp extends Homey.App {
           return Promise.resolve(false)
         }
 
-        const today = new Date().getDate()
+        const today = moment(this.homey.clock.getTimezone()).get('date')
         const first = args.dayOne
         const second = args.dayTwo
 
@@ -230,9 +231,7 @@ class MyApp extends Homey.App {
           return Promise.resolve(false)
         }
 
-        const today = new Date().getMonth()
-        const first = args.monthOne
-        const second = args.monthTwo
+        const today = moment(this.homey.clock.getTimezone()).get('month')
 
         this.log(`monthnum_between_monthnum: Todays month: '${today}'`)
         this.log(`monthnum_between_monthnum: First  month: '${first}'`)
@@ -276,14 +275,14 @@ class MyApp extends Homey.App {
           return Promise.resolve(false)
         }
 
-        const today = new Date()
-        const todayYear = today.getFullYear()
-        const firstDate = args.dayOne
-        const firstMonth = args.monthOne
-        const secondDate = args.dayTwo
-        const secondMonth = args.monthTwo
-        const first = new Date(todayYear, firstMonth, firstDate, today.getHours(), today.getMinutes(), today.getSeconds())
-        const second = new Date(secondMonth < firstMonth || (secondMonth === firstMonth && secondDate < firstDate) ? (todayYear + 1) : todayYear, secondMonth, secondDate, today.getHours(), today.getMinutes(), today.getSeconds())
+        const today = moment(this.homey.clock.getTimezone())
+        const todayYear = today.get('year')
+        const firstDate = Number(args.dayOne)
+        const firstMonth = Number(args.monthOne) + 1
+        const secondDate = Number(args.dayTwo)
+        const secondMonth = Number(args.monthTwo) + 1
+        const first = moment(this.homey.clock.getTimezone(), `${todayYear}-${pad(firstMonth)}-${pad(firstDate)}T${pad(today.get('hour'))}:${pad(today.get('minute'))}:${pad(today.get('second'))}`)
+        const second = moment(this.homey.clock.getTimezone(), `${secondMonth < firstMonth || (secondMonth === firstMonth && secondDate < firstDate) ? (todayYear + 1) : todayYear}-${pad(secondMonth)}-${pad(secondDate)}T${pad(today.get('hour'))}:${pad(today.get('minute'))}:${pad(today.get('second'))}`)
 
         this.log(`daymonthnum_between_daymonthnum: Today: '${today}'`)
         this.log(`daymonthnum_between_daymonthnum: First: '${first}'`)

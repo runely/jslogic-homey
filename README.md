@@ -38,6 +38,7 @@ In the following conditions you can choose to use case sensitity or not:
     - Dependency updates
     - New condition: 'Day and month is (between|not between)
     - Using timezone to prevent any possible bugs since SDK3 runs on UTC..
+    - Bugfix: Convert month numbers to Number to prevent any logic check bugs
 - 1.0.0
     - Dependency updates
     - Updated to SDKv3. App now requires Homey firmware >= 5.0.0. Those with Homey firmware < 5.0.0 will still have v0.2.0 (unless user uninstalls 0.2.0, then 1.0.0 is they're only option)

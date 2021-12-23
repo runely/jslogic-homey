@@ -232,6 +232,8 @@ class MyApp extends Homey.App {
         }
 
         const today = moment(this.homey.clock.getTimezone()).get('month')
+        const first = Number(args.monthOne)
+        const second = Number(args.monthTwo)
 
         this.log(`monthnum_between_monthnum: Todays month: '${today}'`)
         this.log(`monthnum_between_monthnum: First  month: '${first}'`)

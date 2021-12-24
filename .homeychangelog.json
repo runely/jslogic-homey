@@ -31,5 +31,8 @@
   },
   "1.0.0": {
     "en": "Updated to SDKv3"
+  },
+  "1.1.0": {
+    "en": "Added condition 'Day and month is between|not between'. Bugfixes"
   }
 }

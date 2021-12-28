@@ -34,6 +34,8 @@ In the following conditions you can choose to use case sensitity or not:
 ## Changelog
 
 
+- 1.1.1
+    - Pulled flow logic out into they're own files
 - 1.1.0
     - Dependency updates
     - New condition: 'Day and month is (between|not between)'

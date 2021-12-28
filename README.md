@@ -36,7 +36,7 @@ In the following conditions you can choose to use case sensitity or not:
 
 - 1.1.0
     - Dependency updates
-    - New condition: 'Day and month is (between|not between)
+    - New condition: 'Day and month is (between|not between)'
     - Using timezone to prevent any possible bugs since SDK3 runs on UTC..
     - Bugfix: Convert month numbers to Number to prevent any logic check bugs
 - 1.0.0

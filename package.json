@@ -19,6 +19,10 @@
     "homey-install": "npm run test && homey app install",
     "homey-publish": "npm run test && homey app publish"
   },
+  "repository": {
+    "url": "https://github.com/runely/jslogic-homey"
+  },
+  "license": "GPL-3.0-or-later",
   "standard": {
     "env": [
       "jest"

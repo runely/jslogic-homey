@@ -76,6 +76,20 @@ In the following conditions you can choose to use case sensitity or not:
 - 0.0.1
     - Initial version
 
+## Local development
+
+1. `git clone git@github.com:runely/jslogic-homey.git`
+1. `npm i`
+1. Create a `env.json` file with this content:
+    ```json
+    {
+        "SENTRY_DSN": "SENTRY_DNS_CLIENT_KEY",
+        "SENTRY_TRACE_SAMPLE_RATE": "0",
+        "SENTRY_ENV": "production"
+    }
+    ```
+1. `npm run homey-run` or `npm run homey-install`
+
 # Thanks
 
 - Translators

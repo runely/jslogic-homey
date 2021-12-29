@@ -43,11 +43,6 @@
     "url": "https://github.com/runely/jslogic-homey/issues"
   },
   "source": "https://github.com/runely/jslogic-homey",
-  "sentry": {
-    "dsn": "https://4ad8fb0045af4848965d2dd1d9987820@o483714.ingest.sentry.io/5536752",
-    "traceSampleRate": 0,
-    "environment": "production"
-  },
   "permissions": [],
   "flow": {
     "conditions": [

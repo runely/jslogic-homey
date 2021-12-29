@@ -28,6 +28,18 @@ module.exports = async options => {
     return true
   }
 
+  // second is lower than first and today is greater than first and greater than second (still inside for this year)
+  if (second < first && today >= first && today >= second) {
+    app.log(`monthnum_between_monthnum: Second(${second}) is < first(${first}) && today(${today}) is (>= to first(${first}) && >= to second(${second})). Inside for this year!`)
+    return true
+  }
+
+  // second is lower than first and today is lower than first and lower than second (still inside for next year)
+  if (second < first && today < first && today <= second) {
+    app.log(`monthnum_between_monthnum: Second(${second}) is < first(${first}) && today(${today}) is (< to first(${first}) && <= to second(${second})). Inside for next year!`)
+    return true
+  }
+
   app.log('monthnum_between_monthnum: Not inside!')
   return false
 }

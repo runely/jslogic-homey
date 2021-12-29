@@ -3,7 +3,7 @@
 const { sentry, init } = require('./lib/sentry-io') // { sentry, init, startTransaction }
 
 const Homey = require('homey')
-const { flow: { actions, conditions } } = require('./app.json')
+const { flow: { actions, conditions } } = Homey.manifest
 
 const tokens = []
 

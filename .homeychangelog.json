@@ -34,5 +34,8 @@
   },
   "1.1.0": {
     "en": "Added condition 'Day and month is between|not between'. Bugfixes"
+  },
+  "1.1.1": {
+    "en": "Bugfixes. Rewritten and enhanced"
   }
 }

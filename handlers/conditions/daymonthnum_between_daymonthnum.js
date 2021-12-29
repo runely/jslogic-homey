@@ -29,15 +29,14 @@ const getSecondYear = (today, firstYear, firstDate, firstMonth, secondDate, seco
 }
 
 module.exports = async options => {
-  const { timezone, args, app } = options
+  const { timezone, args, app, date } = options
 
   if (!args.dayOne || !args.monthOne || !args.dayTwo || !args.monthTwo) {
     app.log('daymonthnum_between_daymonthnum: Argument \'dayOne\' or \'monthOne\' or \'dayTwo\' or \'monthTwo\' missing...')
     return false
   }
 
-  const today = moment(timezone)
-  const todayYear = today.get('year')
+  const today = date ? moment(timezone, date) : moment(timezone)
   const firstDate = Number(args.dayOne)
   const firstMonth = Number(args.monthOne) + 1
   const secondDate = Number(args.dayTwo)

@@ -1,7 +1,10 @@
 module.exports = async options => {
   const { args, app } = options
 
-  if (!args.array || !args.value) return false
+  if (!args.array || !args.value) {
+    app.log('value_contains_array: Argument \'array\' or \'value\' missing...')
+    return false
+  }
 
   const array = args.array.split(';')
   const caseSensitive = args.casesenitive === 'true'

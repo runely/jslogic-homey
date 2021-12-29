@@ -1,14 +1,14 @@
 const moment = require('../../lib/moment-datetime')
 
 module.exports = async options => {
-  const { timezone, args, app } = options
+  const { timezone, args, app, day } = options
 
   if (!args.dayOne || !args.dayTwo) {
     app.log('daynum_between_daynum: Argument \'dayOne\' or \'dayTwo\' missing...')
     return false
   }
 
-  const today = moment(timezone).get('date')
+  const today = day || moment(timezone).get('date')
   const first = args.dayOne
   const second = args.dayTwo
 

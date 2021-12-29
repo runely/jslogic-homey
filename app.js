@@ -23,7 +23,7 @@ class JSLogic extends Homey.App {
 
     // register action runlisteners
     actions.forEach(({ id }) => {
-      console.log('Adding runListener for action', id)
+      this.log('Adding runListener for action', id)
       this.homey.flow.getActionCard(id)
         .registerRunListener(async (args, state) => {
           const action = require(`./handlers/actions/${id}`)
@@ -34,7 +34,7 @@ class JSLogic extends Homey.App {
 
     // register condition runlisteners
     conditions.forEach(({ id }) => {
-      console.log('Adding runListener for condition', id)
+      this.log('Adding runListener for condition', id)
       this.homey.flow.getConditionCard(id)
         .registerRunListener(async (args, state) => {
           const condition = require(`./handlers/conditions/${id}`)

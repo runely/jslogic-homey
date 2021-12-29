@@ -6,9 +6,9 @@ describe('Return true when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '28',
+        dayOne: 28,
         monthOne: '11',
-        dayTwo: '3',
+        dayTwo: 3,
         monthTwo: '0'
       },
       date: '2021-12-29T08:30:00'
@@ -21,9 +21,9 @@ describe('Return true when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '28',
+        dayOne: 28,
         monthOne: '11',
-        dayTwo: '3',
+        dayTwo: 3,
         monthTwo: '0'
       },
       date: '2022-01-02T08:30:00'
@@ -36,9 +36,9 @@ describe('Return true when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '19',
+        dayOne: 19,
         monthOne: '11',
-        dayTwo: '21',
+        dayTwo: 21,
         monthTwo: '11'
       },
       date: '2021-12-20T08:30:00'
@@ -51,9 +51,9 @@ describe('Return true when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '19',
+        dayOne: 19,
         monthOne: '11',
-        dayTwo: '19',
+        dayTwo: 19,
         monthTwo: '11'
       },
       date: '2021-12-19T08:30:00'
@@ -68,9 +68,9 @@ describe('Return false when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '19',
+        dayOne: 19,
         monthOne: '11',
-        dayTwo: '20',
+        dayTwo: 20,
         monthTwo: '11'
       },
       date: '2021-12-21T08:30:00'
@@ -83,9 +83,9 @@ describe('Return false when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '28',
+        dayOne: 28,
         monthOne: '11',
-        dayTwo: '31',
+        dayTwo: 31,
         monthTwo: '4'
       },
       date: '2022-06-30T08:30:00'
@@ -99,7 +99,7 @@ describe('Return false when', () => {
       ...mockOptions,
       args: {
         monthOne: '11',
-        dayTwo: '20',
+        dayTwo: 20,
         monthTwo: '11'
       }
     }
@@ -111,8 +111,8 @@ describe('Return false when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '19',
-        dayTwo: '20',
+        dayOne: 19,
+        dayTwo: 20,
         monthTwo: '11'
       }
     }
@@ -124,7 +124,7 @@ describe('Return false when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '19',
+        dayOne: 19,
         monthOne: '11',
         monthTwo: '11'
       }
@@ -137,23 +137,9 @@ describe('Return false when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '19',
+        dayOne: 19,
         monthOne: '11',
-        dayTwo: '20'
-      }
-    }
-    const result = await check(options)
-    expect(result).toBe(false)
-  })
-
-  test('"dayOne" is an empty string', async () => {
-    const options = {
-      ...mockOptions,
-      args: {
-        dayOne: '',
-        monthOne: '11',
-        dayTwo: '20',
-        monthTwo: '11'
+        dayTwo: 20
       }
     }
     const result = await check(options)
@@ -164,23 +150,9 @@ describe('Return false when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '19',
+        dayOne: 19,
         monthOne: '',
-        dayTwo: '20',
-        monthTwo: '11'
-      }
-    }
-    const result = await check(options)
-    expect(result).toBe(false)
-  })
-
-  test('"dayTwo" is an empty string', async () => {
-    const options = {
-      ...mockOptions,
-      args: {
-        dayOne: '19',
-        monthOne: '11',
-        dayTwo: '',
+        dayTwo: 20,
         monthTwo: '11'
       }
     }
@@ -192,9 +164,9 @@ describe('Return false when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '19',
+        dayOne: 19,
         monthOne: '11',
-        dayTwo: '20',
+        dayTwo: 20,
         monthTwo: ''
       }
     }

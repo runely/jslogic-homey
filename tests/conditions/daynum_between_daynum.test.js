@@ -6,10 +6,10 @@ describe('Return true when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '21',
-        dayTwo: '28'
+        dayOne: 21,
+        dayTwo: 28
       },
-      day: '25'
+      day: 25
     }
     const result = await check(options)
     expect(result).toBe(true)
@@ -19,10 +19,10 @@ describe('Return true when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '28',
-        dayTwo: '15'
+        dayOne: 28,
+        dayTwo: 15
       },
-      day: '10'
+      day: 10
     }
     const result = await check(options)
     expect(result).toBe(true)
@@ -34,10 +34,10 @@ describe('Return false when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '19',
-        dayTwo: '20'
+        dayOne: 19,
+        dayTwo: 20
       },
-      day: '10'
+      day: 10
     }
     const result = await check(options)
     expect(result).toBe(false)
@@ -47,7 +47,7 @@ describe('Return false when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayTwo: '20'
+        dayTwo: 20
       }
     }
     const result = await check(options)
@@ -58,31 +58,7 @@ describe('Return false when', () => {
     const options = {
       ...mockOptions,
       args: {
-        dayOne: '19'
-      }
-    }
-    const result = await check(options)
-    expect(result).toBe(false)
-  })
-
-  test('"dayOne" is an empty string', async () => {
-    const options = {
-      ...mockOptions,
-      args: {
-        dayOne: '',
-        dayTwo: '20'
-      }
-    }
-    const result = await check(options)
-    expect(result).toBe(false)
-  })
-
-  test('"dayTwo" is an empty string', async () => {
-    const options = {
-      ...mockOptions,
-      args: {
-        dayOne: '19',
-        dayTwo: ''
+        dayOne: 19
       }
     }
     const result = await check(options)

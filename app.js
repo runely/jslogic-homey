@@ -7,7 +7,7 @@ const { flow: { actions, conditions } } = require('./app.json')
 
 const tokens = []
 
-class MyApp extends Homey.App {
+class JSLogic extends Homey.App {
   async onInit () {
     this.log(`${Homey.manifest.name.en} v${Homey.manifest.version} is running on ${this.homey.version}...`)
 
@@ -49,4 +49,4 @@ class MyApp extends Homey.App {
   }
 }
 
-module.exports = MyApp
+module.exports = JSLogic

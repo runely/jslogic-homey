@@ -18,6 +18,7 @@
 - Random (true|false)
 - Date number is (between|not between)
 - Month is (between|not between)
+- Date number and Month is (between|not between)
 
 ## Case sesitivty
 

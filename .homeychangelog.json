@@ -37,5 +37,8 @@
   },
   "1.1.1": {
     "en": "Bugfixes. Rewritten and enhanced"
+  },
+  "1.2.0": {
+    "en": "New condition: 'Is \"weekday\" (one of|not one of)...'"
   }
 }

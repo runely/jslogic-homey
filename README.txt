@@ -14,6 +14,7 @@ Conditions:
 - Random (true|false)
 - Date number is (between|not between)
 - Month is (between|not between)
+- Check if weekday is equal to one of the given weekdays
 
 Case sesitivty
 

@@ -1,5 +1,14 @@
 {
-    "flowTokens": {
-        "formatted_date": "Formatted date"
-    }
+  "flowTokens": {
+      "formatted_date": "Formatted date"
+  },
+  "weekdays": {
+      "weekdayMonday": "Monday",
+      "weekdayTuesday": "Tuesday",
+      "weekdayWednesday": "Wednesday",
+      "weekdayThursday": "Thursday",
+      "weekdayFriday": "Friday",
+      "weekdaySaturday": "Saturday",
+      "weekdaySunday": "Sunday"
+  }
 }

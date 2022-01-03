@@ -14,6 +14,7 @@ Condities:
 - Willekeurig (waar | onwaar)
 - Het Dagnummer ligt (tussen|niet tussen)
 - De Maand is (tussen|niet tussen)
+- Controleer of de dag van de week gelijk is aan één van de specifiek dagen van de week
 
 Hoofdlettergevoeligheid
 

@@ -1,0 +1,29 @@
+{
+  "id": "weekday_one_of",
+  "title": {
+    "en": "Is \"weekday\" !{{one of|not one of}}...",
+    "nl": "Is \"de dag van de week\" !{{een van de|niet een van}}...",
+    "no": "Er \"ukedagen\" !{{en av|ikke en av}}..."
+  },
+  "titleFormatted": {
+    "en": "Is \"weekday\" !{{one of|not one of}} [[weekdays]]",
+    "nl": "Is \"de dag van de week\" !{{een van de|niet een van}} [[weekdays]]",
+    "no": "Er \"ukedagen\" !{{en av|ikke en av}} [[weekdays]]"
+  },
+  "hint": {
+    "en": "Is \"weekday\" [one of items]? Array items split by ';'",
+    "nl": "Is \"de dag van de week\" [een van de lijstwaarden]? Reeks items gesplitst door ';'",
+    "no": "Er \"ukedagen\" [en av listeverdiene]? Listeverdier skilles med ';'"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "weekdays",
+      "placeholder": {
+        "en": "Monday;Friday",
+        "nl": "Maandag;Vrijdag",
+        "no": "Mandag;Fredag"
+      }
+    }
+  ]
+}

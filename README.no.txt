@@ -14,6 +14,7 @@ Conditions:
 - Tilfeldig (sann|usann)
 - Dagsnummeret er (mellom|ikke mellom)
 - Måneden er (mellom|ikke mellom)
+- Sjekk om ukedagen er lik en av de angitte ukedagene
 
 Skiller på store og små bokstaver
 

@@ -19,6 +19,7 @@
 - Date number is (between|not between)
 - Month is (between|not between)
 - Date number and Month is (between|not between)
+- Check if weekday is equal to one of the given weekdays
 
 ## Case sesitivty
 
@@ -34,7 +35,8 @@ In the following conditions you can choose to use case sensitity or not:
 
 ## Changelog
 
-
+- 1.2.0
+    - New condition: 'Is "weekday" (one of|not one of)...'
 - 1.1.1
     - Pulled flow logic out into they're own files
     - Bugfixes

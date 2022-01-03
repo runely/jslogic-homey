@@ -41,7 +41,7 @@ class JSLogic extends Homey.App {
           const result = await condition({
             timezone,
             args,
-            app: this
+            app: this.homey
           })
           return Promise.resolve(result)
         })

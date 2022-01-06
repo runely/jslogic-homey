@@ -40,5 +40,8 @@
   },
   "1.2.0": {
     "en": "New condition: 'Is \"weekday\" (one of|not one of)...'"
+  },
+  "1.2.1": {
+    "en": "Better naming for condition 'Is value exactly (one of|not one of)...'"
   }
 }

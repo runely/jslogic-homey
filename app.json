@@ -901,12 +901,12 @@
         "title": {
           "en": "Is value exactly !{{one of|not one of}}...",
           "nl": "Is waarde exact !{{één van de|niet één van de}}...",
-          "no": "Er tekst helt lik !{{en av|ikke en av}}..."
+          "no": "Er tekst !{{helt lik en av|ikke helt lik en av}}..."
         },
         "titleFormatted": {
           "en": "Is [[value]] exactly !{{one of|not one of}} [[array]]? Case sensitive ([[casesenitive]])",
           "nl": "Is [[value]] exact !{{één van de|niet één van de}} [[array]]? Hoofdlettergevoelig ([[casesenitive]])",
-          "no": "Er [[value]] helt lik !{{en av|ikke en av}} [[array]]? Case sensitive ([[casesenitive]])"
+          "no": "Er [[value]] !{{helt lik en av|ikke helt lik en av}} [[array]]? Case sensitive ([[casesenitive]])"
         },
         "hint": {
           "en": "Is [value] exactly [one of items]?",

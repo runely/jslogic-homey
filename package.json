@@ -5,7 +5,7 @@
   "devDependencies": {
     "@types/homey": "npm:homey-apps-sdk-v3-types@0.2.2",
     "homey": "2.23.7",
-    "jest": "27.4.5",
+    "jest": "27.5.1",
     "standard": "16.0.4"
   },
   "dependencies": {

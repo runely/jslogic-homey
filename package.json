@@ -14,7 +14,7 @@
   },
   "scripts": {
     "refresh": "rm -rf node_modules/ && rm package-lock.json && npm i",
-    "test": "standard && jest",
+    "test": "standard && env TZ=UTC jest",
     "fix": "standard --fix",
     "homey-run": "homey app run",
     "homey-install": "npm run test && homey app install",

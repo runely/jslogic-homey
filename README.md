@@ -35,6 +35,8 @@ In the following conditions you can choose to use case sensitity or not:
 
 ## Changelog
 
+- 1.2.2
+    - Dependency updates
 - 1.2.1
     - Better naming for condition 'Is value exactly (one of|not one of)...'
 - 1.2.0

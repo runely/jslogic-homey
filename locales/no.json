@@ -1,14 +1,14 @@
 {
   "flowTokens": {
-      "formatted_date": "Formatert dato"
+    "formatted_date": "Formatert dato"
   },
   "weekdays": {
-      "weekdayMonday": "Mandag",
-      "weekdayTuesday": "Tirsdag",
-      "weekdayWednesday": "Onsdag",
-      "weekdayThursday": "Torsdag",
-      "weekdayFriday": "Fredag",
-      "weekdaySaturday": "Lørdag",
-      "weekdaySunday": "Søndag"
+    "weekdayMonday": "Mandag",
+    "weekdayTuesday": "Tirsdag",
+    "weekdayWednesday": "Onsdag",
+    "weekdayThursday": "Torsdag",
+    "weekdayFriday": "Fredag",
+    "weekdaySaturday": "Lørdag",
+    "weekdaySunday": "Søndag"
   }
 }

@@ -47,8 +47,7 @@
           "label": {
             "en": "January",
             "no": "Januar",
-            "nl": "Januari",
-            "de": "Januar"
+            "nl": "Januari"
           }
         },
         {
@@ -56,8 +55,7 @@
           "label": {
             "en": "February",
             "no": "Februar",
-            "nl": "Februari",
-            "de": "Februar"
+            "nl": "Februari"
           }
         },
         {
@@ -65,8 +63,7 @@
           "label": {
             "en": "March",
             "no": "Mars",
-            "nl": "Maart",
-            "de": "März"
+            "nl": "Maart"
           }
         },
         {
@@ -74,8 +71,7 @@
           "label": {
             "en": "April",
             "no": "April",
-            "nl": "April",
-            "de": "April"
+            "nl": "April"
           }
         },
         {
@@ -83,8 +79,7 @@
           "label": {
             "en": "May",
             "no": "Mai",
-            "nl": "Mei",
-            "de": "Kann"
+            "nl": "Mei"
           }
         },
         {
@@ -92,8 +87,7 @@
           "label": {
             "en": "June",
             "no": "Juni",
-            "nl": "Juni",
-            "de": "Juni"
+            "nl": "Juni"
           }
         },
         {
@@ -101,8 +95,7 @@
           "label": {
             "en": "July",
             "no": "Juli",
-            "nl": "Juli",
-            "de": "Juli"
+            "nl": "Juli"
           }
         },
         {
@@ -110,8 +103,7 @@
           "label": {
             "en": "August",
             "no": "August",
-            "nl": "Augustus",
-            "de": "August"
+            "nl": "Augustus"
           }
         },
         {
@@ -119,8 +111,7 @@
           "label": {
             "en": "September",
             "no": "September",
-            "nl": "September",
-            "de": "September"
+            "nl": "September"
           }
         },
         {
@@ -128,8 +119,7 @@
           "label": {
             "en": "October",
             "no": "Oktober",
-            "nl": "Oktober",
-            "de": "Oktober"
+            "nl": "Oktober"
           }
         },
         {
@@ -137,8 +127,7 @@
           "label": {
             "en": "November",
             "no": "November",
-            "nl": "November",
-            "de": "November"
+            "nl": "November"
           }
         },
         {
@@ -146,8 +135,7 @@
           "label": {
             "en": "December",
             "no": "Desember",
-            "nl": "December",
-            "de": "Dezember"
+            "nl": "December"
           }
         }
       ]
@@ -183,8 +171,7 @@
           "label": {
             "en": "January",
             "no": "Januar",
-            "nl": "Januari",
-            "de": "Januar"
+            "nl": "Januari"
           }
         },
         {
@@ -192,8 +179,7 @@
           "label": {
             "en": "February",
             "no": "Februar",
-            "nl": "Februari",
-            "de": "Februar"
+            "nl": "Februari"
           }
         },
         {
@@ -201,8 +187,7 @@
           "label": {
             "en": "March",
             "no": "Mars",
-            "nl": "Maart",
-            "de": "März"
+            "nl": "Maart"
           }
         },
         {
@@ -210,8 +195,7 @@
           "label": {
             "en": "April",
             "no": "April",
-            "nl": "April",
-            "de": "April"
+            "nl": "April"
           }
         },
         {
@@ -219,8 +203,7 @@
           "label": {
             "en": "May",
             "no": "Mai",
-            "nl": "Mei",
-            "de": "Kann"
+            "nl": "Mei"
           }
         },
         {
@@ -228,8 +211,7 @@
           "label": {
             "en": "June",
             "no": "Juni",
-            "nl": "Juni",
-            "de": "Juni"
+            "nl": "Juni"
           }
         },
         {
@@ -237,8 +219,7 @@
           "label": {
             "en": "July",
             "no": "Juli",
-            "nl": "Juli",
-            "de": "Juli"
+            "nl": "Juli"
           }
         },
         {
@@ -246,8 +227,7 @@
           "label": {
             "en": "August",
             "no": "August",
-            "nl": "Augustus",
-            "de": "August"
+            "nl": "Augustus"
           }
         },
         {
@@ -255,8 +235,7 @@
           "label": {
             "en": "September",
             "no": "September",
-            "nl": "September",
-            "de": "September"
+            "nl": "September"
           }
         },
         {
@@ -264,8 +243,7 @@
           "label": {
             "en": "October",
             "no": "Oktober",
-            "nl": "Oktober",
-            "de": "Oktober"
+            "nl": "Oktober"
           }
         },
         {
@@ -273,8 +251,7 @@
           "label": {
             "en": "November",
             "no": "November",
-            "nl": "November",
-            "de": "November"
+            "nl": "November"
           }
         },
         {
@@ -282,8 +259,7 @@
           "label": {
             "en": "December",
             "no": "Desember",
-            "nl": "December",
-            "de": "Dezember"
+            "nl": "December"
           }
         }
       ]

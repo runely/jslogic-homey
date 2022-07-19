@@ -8,7 +8,7 @@ module.exports = async options => {
     return false
   }
 
-  const today = day || moment(timezone).get('date')
+  const today = day || moment({ timezone }).get('date')
   const first = args.dayOne
   const second = args.dayTwo
 

@@ -8,7 +8,7 @@ module.exports = async options => {
     return false
   }
 
-  const today = month || moment(timezone).get('month')
+  const today = month || moment({ timezone }).get('month')
   const first = Number(args.monthOne)
   const second = Number(args.monthTwo)
 

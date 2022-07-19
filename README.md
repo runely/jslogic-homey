@@ -37,6 +37,7 @@ In the following conditions you can choose to use case sensitity or not:
 
 - 1.3.0
     - Chore: No need to return value in `Promise.resolve`
+    - Chore: Possible to not always pass `timezone` or `date`
 - 1.2.3
     - Dependency updates
 - 1.2.2

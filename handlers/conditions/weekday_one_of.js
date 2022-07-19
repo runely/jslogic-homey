@@ -55,7 +55,7 @@ module.exports = async options => {
   const weekdaysArray = createWeekdaysArray(app)
   const weekdayStrings = args.weekdays.split(';')
   const weekdays = convertWeekdayStringToNum(weekdayStrings, weekdaysArray)
-  const value = day || moment(timezone).get('weekday')
+  const value = day || moment({ timezone }).get('weekday')
 
   app.log('weekday_one_of: Weekdays:', weekdays.join(','), '--', 'WeekdayStrings:', weekdayStrings.join(','))
   app.log('weekday_one_of: Todays weekday:', value)

@@ -36,15 +36,15 @@ module.exports = async options => {
     return false
   }
 
-  const today = date ? moment(timezone, date) : moment(timezone)
+  const today = date ? moment({ timezone, date }) : moment({ timezone })
   const firstDate = Number(args.dayOne)
   const firstMonth = Number(args.monthOne) + 1
   const secondDate = Number(args.dayTwo)
   const secondMonth = Number(args.monthTwo) + 1
   const firstYear = getFirstYear(today, firstDate, firstMonth, secondDate, secondMonth)
   const secondYear = getSecondYear(today, firstYear, firstDate, firstMonth, secondDate, secondMonth)
-  const first = moment(timezone, `${firstYear}-${pad(firstMonth)}-${pad(firstDate)}T${pad(today.get('hour'))}:${pad(today.get('minute'))}:${pad(today.get('second'))}`)
-  const second = moment(timezone, `${secondYear}-${pad(secondMonth)}-${pad(secondDate)}T${pad(today.get('hour'))}:${pad(today.get('minute'))}:${pad(today.get('second'))}`)
+  const first = moment({ timezone, date: `${firstYear}-${pad(firstMonth)}-${pad(firstDate)}T${pad(today.get('hour'))}:${pad(today.get('minute'))}:${pad(today.get('second'))}` })
+  const second = moment({ timezone, date: `${secondYear}-${pad(secondMonth)}-${pad(secondDate)}T${pad(today.get('hour'))}:${pad(today.get('minute'))}:${pad(today.get('second'))}` })
 
   app.log(`daymonthnum_between_daymonthnum: Today: '${today}'`)
   app.log(`daymonthnum_between_daymonthnum: First: '${first}'`)

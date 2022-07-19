@@ -36,7 +36,7 @@ In the following conditions you can choose to use case sensitity or not:
 ## Changelog
 
 - 1.3.0
-    - No need to return value in `Promise.resolve`
+    - Chore: No need to return value in `Promise.resolve`
 - 1.2.3
     - Dependency updates
 - 1.2.2

@@ -28,7 +28,7 @@ class JSLogic extends Homey.App {
         .registerRunListener(async (args, state) => {
           const action = require(`./handlers/actions/${id}`)
           const result = await action(timezone, tokens, args)
-          return Promise.resolve(result)
+          return result
         })
     })
 
@@ -43,7 +43,7 @@ class JSLogic extends Homey.App {
             args,
             app: this.homey
           })
-          return Promise.resolve(result)
+          return result
         })
     })
   }

@@ -78,18 +78,22 @@ class JSLogic extends Homey.App {
     // registers a timeout to trigger the "date_month_becomes" card at 00:00 every night
     const dateMonthBecomes = () => {
       const now = moment({ timezone })
+      const nextTimeout = getNextTimeout(timezone)
   
       this.log('dateMonthBecomes: Triggering "date_month_becomes" card')
       this.homey.flow.getTriggerCard('date_month_becomes').trigger(null, { date: now.get('date'), month: now.get('month') })
       try {
         this.homey.clearTimeout(this.timeouts.dateMonthBecomes)
       } catch {}
-      this.timeouts.dateMonthBecomes = this.homey.setTimeout(dateMonthBecomes, getNextTimeout(timezone))
+      this.timeouts.dateMonthBecomes = this.homey.setTimeout(dateMonthBecomes, nextTimeout)
+      this.log(`dateMonthBecomes: Next timeout ${moment({ timezone }).add(nextTimeout, 'milliseconds').format('DD.MM.YY HH:mm:ss')}`)
     }
 
+    const nextTimeout = getNextTimeout(timezone)
     this.timeouts = {
-      dateMonthBecomes: this.homey.setTimeout(dateMonthBecomes, getNextTimeout(timezone))
+      dateMonthBecomes: this.homey.setTimeout(dateMonthBecomes, nextTimeout)
     }
+    this.log(`onInit/dateMonthBecomes: Next timeout ${moment({ timezone }).add(nextTimeout, 'milliseconds').format('DD.MM.YY HH:mm:ss')}`)
   }
 }
 

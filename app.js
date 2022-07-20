@@ -79,7 +79,7 @@ class JSLogic extends Homey.App {
     const dateMonthBecomes = () => {
       const now = moment({ timezone })
       const nextTimeout = getNextTimeout(timezone)
-  
+
       this.log('dateMonthBecomes: Triggering "date_month_becomes" card')
       this.homey.flow.getTriggerCard('date_month_becomes').trigger(null, { date: now.get('date'), month: now.get('month') })
       try {

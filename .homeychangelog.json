@@ -49,5 +49,8 @@
   },
   "1.2.3": {
     "en": "Dependency updates"
+  },
+  "1.3.0": {
+    "en": "New trigger: 'Date and month becomes'"
   }
 }

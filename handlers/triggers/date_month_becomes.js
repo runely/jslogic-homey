@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = async options => {
+module.exports = options => {
   const { args, state, app } = options
 
   if (!args.date || !args.month) {

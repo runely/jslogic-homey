@@ -54,9 +54,9 @@ class JSLogic extends Homey.App {
     triggers.forEach(({ id }) => {
       this.log('Adding runlistener for trigger', id)
       this.homey.flow.getTriggerCard(id)
-        .registerRunListener(async (args, state) => {
+        .registerRunListener((args, state) => {
           const trigger = require(`./handlers/triggers/${id}`)
-          const result = await trigger({
+          const result = trigger({
             args,
             state,
             app: this.homey

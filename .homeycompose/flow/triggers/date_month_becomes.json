@@ -1,0 +1,139 @@
+{
+  "id": "date_month_becomes",
+  "title": {
+    "en": "Date and month becomes",
+    "nl": "Datum en maand wordt",
+    "no": "Dagen og måneden blir"
+  },
+  "titleFormatted": {
+    "en": "Date and month becomes [[date]] [[month]]",
+    "nl": "Datum en maand wordt [[date]] [[month]]",
+    "no": "Dagen og måneden blir [[date]] [[month]]"
+  },
+  "args": [
+    {
+      "type": "number",
+      "name": "date",
+      "min": 1,
+      "max": 31,
+      "step": 1,
+      "placeholder": {
+        "en": "1-31",
+        "nl": "1-31",
+        "no": "1-31"
+      },
+      "title": {
+        "en": "Date number",
+        "nl": "Datumnummer",
+        "no": "Dagsnummer"
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "month",
+      "title": {
+        "en": "Month",
+        "nl": "Maand",
+        "no": "Måned"
+      },
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "January",
+            "no": "Januar",
+            "nl": "Januari"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "February",
+            "no": "Februar",
+            "nl": "Februari"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "March",
+            "no": "Mars",
+            "nl": "Maart"
+          }
+        },
+        {
+          "id": "3",
+          "label": {
+            "en": "April",
+            "no": "April",
+            "nl": "April"
+          }
+        },
+        {
+          "id": "4",
+          "label": {
+            "en": "May",
+            "no": "Mai",
+            "nl": "Mei"
+          }
+        },
+        {
+          "id": "5",
+          "label": {
+            "en": "June",
+            "no": "Juni",
+            "nl": "Juni"
+          }
+        },
+        {
+          "id": "6",
+          "label": {
+            "en": "July",
+            "no": "Juli",
+            "nl": "Juli"
+          }
+        },
+        {
+          "id": "7",
+          "label": {
+            "en": "August",
+            "no": "August",
+            "nl": "Augustus"
+          }
+        },
+        {
+          "id": "8",
+          "label": {
+            "en": "September",
+            "no": "September",
+            "nl": "September"
+          }
+        },
+        {
+          "id": "9",
+          "label": {
+            "en": "October",
+            "no": "Oktober",
+            "nl": "Oktober"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "November",
+            "no": "November",
+            "nl": "November"
+          }
+        },
+        {
+          "id": "11",
+          "label": {
+            "en": "December",
+            "no": "Desember",
+            "nl": "December"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,10 @@
 const { sentry, init } = require('./lib/sentry-io') // { sentry, init, startTransaction }
 
 const Homey = require('homey')
-const { flow: { actions, conditions } } = Homey.manifest
+const moment = require('./lib/moment-datetime')
+const getNextTimeout = require('./lib/get-next-timeout-ms')
+
+const { flow: { actions, conditions, triggers } } = Homey.manifest
 
 const tokens = []
 
@@ -46,6 +49,47 @@ class JSLogic extends Homey.App {
           return result
         })
     })
+
+    // register trigger runlisteners
+    triggers.forEach(({ id }) => {
+      this.log('Adding runlistener for trigger', id)
+      this.homey.flow.getTriggerCard(id)
+        .registerRunListener(async (args, state) => {
+          const trigger = require(`./handlers/triggers/${id}`)
+          const result = await trigger({
+            args,
+            state,
+            app: this.homey
+          })
+          return result
+        })
+    })
+
+    this.homey.on('unload', () => {
+      if (!this.timeouts) return
+
+      Object.getOwnPropertyNames(this.timeouts).forEach(timeout => {
+        try {
+          this.homey.clearTimeout(timeout)
+        } catch {}
+      })
+    })
+
+    // registers a timeout to trigger the "date_month_becomes" card at 00:00 every night
+    const dateMonthBecomes = () => {
+      const now = moment({ timezone })
+  
+      this.log('dateMonthBecomes: Triggering "date_month_becomes" card')
+      this.homey.flow.getTriggerCard('date_month_becomes').trigger(null, { date: now.get('date'), month: now.get('month') })
+      try {
+        this.homey.clearTimeout(this.timeouts.dateMonthBecomes)
+      } catch {}
+      this.timeouts.dateMonthBecomes = this.homey.setTimeout(dateMonthBecomes, getNextTimeout(timezone))
+    }
+
+    this.timeouts = {
+      dateMonthBecomes: this.homey.setTimeout(dateMonthBecomes, getNextTimeout(timezone))
+    }
   }
 }
 

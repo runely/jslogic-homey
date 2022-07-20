@@ -16,6 +16,9 @@ Conditions:
 - Month is (between|not between)
 - Check if weekday is equal to one of the given weekdays
 
+Triggers
+- Date and month becomes :: Triggers when the current date changes to the chosen date and month (00:00)
+
 Case sesitivty
 
 In the following conditions you can choose to use case sensitity or not:

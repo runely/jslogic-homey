@@ -16,6 +16,9 @@ Conditions:
 - Måneden er (mellom|ikke mellom)
 - Sjekk om ukedagen er lik en av de angitte ukedagene
 
+Triggers
+- Dagen og måneden blir :: Triggers når dagens dato endres til valgt dag og måned (00:00)
+
 Skiller på store og små bokstaver
 
 I de følgende conditions kan du velge å skille på store og små bokstaver eller ikke:

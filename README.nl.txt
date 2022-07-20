@@ -16,6 +16,9 @@ Condities:
 - De Maand is (tussen|niet tussen)
 - Controleer of de dag van de week gelijk is aan één van de specifiek dagen van de week
 
+Triggers
+- Datum en maand worden :: Wordt geactiveerd wanneer de huidige datum verandert in de gekozen datum en maand (00:00)
+
 Hoofdlettergevoeligheid
 
 In de volgende condities kan je kiezen of je hoofdlettergevoeligheid aan of uit zet:

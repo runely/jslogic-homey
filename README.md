@@ -21,6 +21,9 @@
 - Date number and Month is (between|not between)
 - Check if weekday is equal to one of the given weekdays
 
+### Triggers
+- **Date and month becomes** - *Triggers when the current date changes to the chosen date and month (00:00)*
+
 ## Case sesitivty
 
 In the following conditions you can choose to use case sensitity or not:
@@ -38,6 +41,7 @@ In the following conditions you can choose to use case sensitity or not:
 - 1.3.0
     - Chore: No need to return value in `Promise.resolve`
     - Chore: Possible to not always pass `timezone` or `date`
+    - New trigger: `Date and month becomes`
 - 1.2.3
     - Dependency updates
 - 1.2.2

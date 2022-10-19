@@ -38,6 +38,8 @@ In the following conditions you can choose to use case sensitity or not:
 
 ## Changelog
 
+- 1.3.2
+    - Dependency updates
 - 1.3.1
     - Dependency updates
 - 1.3.0

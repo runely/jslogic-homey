@@ -9,7 +9,7 @@
     "standard": "17.0.0"
   },
   "dependencies": {
-    "@sentry/node": "7.16.0",
+    "@sentry/node": "7.20.0",
     "moment-timezone": "0.5.38"
   },
   "scripts": {

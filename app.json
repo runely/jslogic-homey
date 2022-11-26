@@ -853,6 +853,77 @@
         ]
       },
       {
+        "id": "number_is_between",
+        "title": {
+          "en": "Number !{{is|is not}} between",
+          "nl": "Number !{{is|is not}} between",
+          "no": "Nummer !{{er|er ikke}} mellom"
+        },
+        "titleFormatted": {
+          "en": "[[value1]] !{{is|is not}} between [[value2]] and [[value3]] (includes: [[includes]])",
+          "nl": "[[value1]] !{{is|is not}} between [[value2]] and [[value3]] (includes: [[includes]])",
+          "no": "[[value1]] !{{er|er ikke}} mellom [[value2]] og [[value3]] (inkluderer: [[includes]])"
+        },
+        "hint": {
+          "en": "True if value1 is between value2 and value3",
+          "nl": "True if value1 is between value2 and value3",
+          "no": "Sann dersom value1 er mellom value2 og value3"
+        },
+        "args": [
+          {
+            "type": "number",
+            "name": "value1",
+            "placeholder": {
+              "en": "value1"
+            },
+            "step": 1
+          },
+          {
+            "type": "number",
+            "name": "value2",
+            "placeholder": {
+              "en": "value2"
+            },
+            "step": 1
+          },
+          {
+            "type": "number",
+            "name": "value3",
+            "placeholder": {
+              "en": "value3"
+            },
+            "step": 1
+          },
+          {
+            "type": "dropdown",
+            "name": "includes",
+            "title": {
+              "en": "Is values included?",
+              "nl": "Is values included?",
+              "no": "Er verdiene inkludert?"
+            },
+            "values": [
+              {
+                "id": "true",
+                "label": {
+                  "en": "True",
+                  "nl": "Waar",
+                  "no": "True"
+                }
+              },
+              {
+                "id": "false",
+                "label": {
+                  "en": "False",
+                  "nl": "Onwaar",
+                  "no": "False"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "time_before_time",
         "title": {
           "en": "Is Time !{{before|not before}} Time",

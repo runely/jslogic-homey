@@ -20,6 +20,7 @@
 - Month is (between|not between)
 - Date number and Month is (between|not between)
 - Check if weekday is equal to one of the given weekdays
+- Number(value1) is (between|not between) value2 and value3
 
 ### Triggers
 - **Date and month becomes** - *Triggers when the current date changes to the chosen date and month (00:00)*
@@ -38,6 +39,8 @@ In the following conditions you can choose to use case sensitity or not:
 
 ## Changelog
 
+- 1.4.0
+    - New condition `Number (is|is not) between`
 - 1.3.3
     - Dependency updates
 - 1.3.2

@@ -41,6 +41,7 @@ In the following conditions you can choose to use case sensitity or not:
 
 - 1.4.0
     - New condition `Number (is|is not) between`
+    - Removed sentry cause it weren't used
 - 1.3.3
     - Dependency updates
 - 1.3.2

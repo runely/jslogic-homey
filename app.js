@@ -1,7 +1,5 @@
 'use strict'
 
-const { sentry, init } = require('./lib/sentry-io') // { sentry, init, startTransaction }
-
 const Homey = require('homey')
 const moment = require('./lib/moment-datetime')
 const getNextTimeout = require('./lib/get-next-timeout-ms')
@@ -13,10 +11,6 @@ const tokens = []
 class JSLogic extends Homey.App {
   async onInit () {
     this.log(`${Homey.manifest.name.en} v${Homey.manifest.version} is running on ${this.homey.version}...`)
-
-    // initialize sentry.io
-    init(this.homey)
-    this.sentry = sentry
 
     // flow tokens
     tokens.push(await this.homey.flow.createToken('formatted_date', { type: 'string', title: this.homey.__('flowTokens.formatted_date') }))

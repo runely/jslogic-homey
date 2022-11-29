@@ -19,9 +19,9 @@ Conditions:
 Triggers
 - Date and month becomes :: Triggers when the current date changes to the chosen date and month (00:00)
 
-Case sesitivty
+Case sensitivity
 
-In the following conditions you can choose to use case sensitity or not:
+In the following conditions you can choose to use case sensitivity or not:
 - 'Value contains one of...'
 - 'Is value exactly one of...'
 
@@ -29,4 +29,4 @@ In the following conditions you can choose to use case sensitity or not:
         Value and array will be treated as is
 
     When not case sensitive
-        Value and array will both be lower cased
+        Value and array will both be lowercased

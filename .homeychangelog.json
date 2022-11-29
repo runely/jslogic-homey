@@ -64,5 +64,8 @@
   },
   "1.4.0": {
     "en": "New condition card: Number is between"
+  },
+  "1.4.1": {
+    "en": "Fixed some typos"
   }
 }

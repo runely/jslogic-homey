@@ -76,5 +76,8 @@
   },
   "1.4.4": {
     "en": "Dependency updates"
+  },
+  "1.4.5": {
+    "en": "Minimized footprint slightly"
   }
 }

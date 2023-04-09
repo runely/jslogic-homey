@@ -39,6 +39,8 @@ In the following conditions you can choose to use case sensitivity or not:
 
 ## Changelog
 
+- 1.4.6
+    - Dependency updates
 - 1.4.5
     - Minimized footprint
 - 1.4.4

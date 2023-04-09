@@ -1,0 +1,73 @@
+{
+  "id": "get_formatted_datetime",
+  "title": {
+    "en": "Get formatted date and time",
+    "nl": "Opgemaakte datum en tijd ophalen",
+    "no": "Hent formatert dato- og tidspunkt"
+  },
+  "titleFormatted": {
+    "en": "Get date and time [[toAdd]] [[type]] ahead in [[format]] format",
+    "nl": "Datum en tijd ophalen [[toAdd]] [[type]] vooruit in [[format]] formaat",
+    "no": "Hent dato- og tidspunkt [[toAdd]] [[type]] frem i tid i [[format]] format"
+  },
+  "args": [
+    {
+      "name": "toAdd",
+      "type": "number",
+      "min": 1,
+      "step": 1,
+      "placeholder": {
+        "en": "Amount",
+        "nl": "Aantal",
+        "no": "Antall"
+      }
+    },
+    {
+      "name": "type",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "Minute(s)",
+            "nl": "Minuten",
+            "no": "Minutt(er)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Hour(s)",
+            "nl": "Uur",
+            "no": "Time(r)"
+          }
+        },
+        {
+          "id": "3",
+          "label": {
+            "en": "Day(s)",
+            "nl": "Dagen",
+            "no": "Dag(er)"
+          }
+        },
+        {
+          "id": "4",
+          "label": {
+            "en": "Week(s)",
+            "nl": "Weken",
+            "no": "Uke(r)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "format",
+      "placeholder": {
+        "en": "Format, like 'MM-DD-YYYY HH:mm:ss'",
+        "nl": "Formaat, zoals 'DD-MM-YYYY HH:mm:ss'",
+        "no": "Format, som 'DD-MM-YYYY HH:mm:ss'"
+      }
+    }
+  ]
+}

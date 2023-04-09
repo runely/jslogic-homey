@@ -1,6 +1,7 @@
 {
   "flowTokens": {
-    "formatted_date": "Formatted date"
+    "formatted_date": "Formatted date",
+    "formatted_datetime": "Formatted date and time"
   },
   "weekdays": {
     "weekdayMonday": "Monday",

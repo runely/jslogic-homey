@@ -6,6 +6,7 @@
 
 ### Actions
 - **Get formatted date** - *Adds the formatted date to the global tag 'Formatted date'* (`DEPRECATED`)
+- **Get formatted date and time** - *Adds the formatted date and time to the global tag 'Formatted date and time'*
 
 ### Conditions:
 - Check if specified value is equal to one of the values in an array
@@ -41,6 +42,7 @@ In the following conditions you can choose to use case sensitivity or not:
 
 - 1.5.0
     - Deprecated flow card `Get formatted date`
+    - Created a new better allround flow card for formatting date and time: `Get formatted date and time`
     - Dependency updates
 - 1.4.5
     - Minimized footprint

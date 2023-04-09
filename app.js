@@ -6,14 +6,13 @@ const getNextTimeout = require('./lib/get-next-timeout-ms')
 
 const { flow: { actions, conditions, triggers } } = Homey.manifest
 
-const tokens = []
-
 class JSLogic extends Homey.App {
   async onInit () {
     this.log(`${Homey.manifest.name.en} v${Homey.manifest.version} is running on ${this.homey.version}...`)
 
-    // flow tokens
-    tokens.push(await this.homey.flow.createToken('formatted_date', { type: 'string', title: this.homey.__('flowTokens.formatted_date') }))
+    // create flow tokens
+    await this.homey.flow.createToken('formatted_date', { type: 'string', title: this.homey.__('flowTokens.formatted_date') })
+    await this.homey.flow.createToken('formatted_datetime', { type: 'string', title: this.homey.__('flowTokens.formatted_datetime') })
 
     // timezone
     const timezone = this.homey.clock.getTimezone()
@@ -24,7 +23,7 @@ class JSLogic extends Homey.App {
       this.homey.flow.getActionCard(id)
         .registerRunListener(async (args, state) => {
           const action = require(`./handlers/actions/${id}`)
-          const result = await action(timezone, tokens, args)
+          const result = await action(timezone, args, this)
           return result
         })
     })

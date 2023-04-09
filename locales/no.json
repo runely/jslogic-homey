@@ -1,6 +1,7 @@
 {
   "flowTokens": {
-    "formatted_date": "Formatert dato"
+    "formatted_date": "Formatert dato",
+    "formatted_datetime": "Formatert dato- og tidspunkt"
   },
   "weekdays": {
     "weekdayMonday": "Mandag",

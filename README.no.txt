@@ -2,6 +2,7 @@ Gir Homey muligheten til å bruke JavaScript logikk gjennom flytkort
 
 Actions:
 - Hent formatert dato :: Legger den formatterte datoen i den globale taggen 'Formatert dato' :: DEPRECATED
+- Hent formatert dato- og tidspunkt :: Legger den formatterte datoen i den globale taggen 'Formatert dato- og tidspunkt'
 
 Conditions:
 - Sjekk om angitt tekst er helt lik en av listeverdiene

@@ -1192,6 +1192,7 @@
     "actions": [
       {
         "id": "get_formatted_date",
+        "deprecated": true,
         "title": {
           "en": "Get formatted date",
           "nl": "Krijg opgemaakte datum",

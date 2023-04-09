@@ -1,7 +1,7 @@
 Give Homey the possibility to use JavaScript logic through flow cards
 
 Actions:
-- Get formatted date :: Adds the formatted date to the global tag 'Formatted date'
+- Get formatted date :: Adds the formatted date to the global tag 'Formatted date' :: DEPRECATED
 
 Conditions:
 - Check if specified value is equal to one of the values in an array

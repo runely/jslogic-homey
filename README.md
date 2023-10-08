@@ -40,6 +40,8 @@ In the following conditions you can choose to use case sensitivity or not:
 
 ## Changelog
 
+- 1.5.1
+    - Dependency updates
 - 1.5.0
     - Deprecated flow card `Get formatted date`
     - Created a new better allround flow card for formatting date and time: `Get formatted date and time`

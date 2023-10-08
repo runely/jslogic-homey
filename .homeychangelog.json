@@ -82,5 +82,8 @@
   },
   "1.5.0": {
     "en": "Deprecated 'Get formatted date'. Created a new better allround flow card for formatting date and time: 'Get formatted date and time'. Dependency updates"
+  },
+  "1.5.1": {
+    "en": "Dependency updates"
   }
 }

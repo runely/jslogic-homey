@@ -8,7 +8,7 @@
     "standard": "17.1.0"
   },
   "dependencies": {
-    "moment-timezone": "0.5.43"
+    "moment-timezone": "0.5.44"
   },
   "scripts": {
     "refresh": "rm -rf node_modules/ && rm package-lock.json && npm i",

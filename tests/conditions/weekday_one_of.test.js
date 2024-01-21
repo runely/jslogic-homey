@@ -11,13 +11,14 @@ const weekdayStrings = Object.values(weekdays)
 
 describe('Return true when', () => {
   weekdayStrings.forEach((weekday, index) => {
-    test(`"Weekday" is ${weekday} and ${weekday} is one of the selected weekdays`, async () => {
+    const correctIndex = weekday === 'Sunday' ? 0 : index + 1
+    test(`"Weekday" is ${weekday} (${correctIndex}) and ${weekday} is one of the selected weekdays`, async () => {
       const options = {
         ...mockOptions,
         args: {
           weekdays: weekdayStrings.join(';')
         },
-        day: index + 1
+        day: correctIndex
       }
       const result = await check(options)
       expect(result).toBe(true)
@@ -51,13 +52,14 @@ describe('Return true when', () => {
 
 describe('Return false when', () => {
   weekdayStrings.forEach((weekday, index) => {
-    test(`"Weekday" is ${weekday} and ${weekday} is NOT one of the selected weekdays`, async () => {
+    const correctIndex = weekday === 'Sunday' ? 0 : index + 1
+    test(`"Weekday" is ${weekday} (${correctIndex}) and ${weekday} is NOT one of the selected weekdays`, async () => {
       const options = {
         ...mockOptions,
         args: {
           weekdays: weekdayStrings.filter(w => w !== weekday).join(';')
         },
-        day: index + 1
+        day: correctIndex
       }
       const result = await check(options)
       expect(result).toBe(false)

@@ -39,7 +39,7 @@ const createWeekdaysArray = app => {
     },
     {
       name: app.__('weekdays.weekdaySunday'),
-      number: 7
+      number: 0
     }
   ]
 }

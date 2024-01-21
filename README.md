@@ -40,6 +40,8 @@ In the following conditions you can choose to use case sensitivity or not:
 
 ## Changelog
 
+- 1.5.3
+    - Dependency updates
 - 1.5.2
     - Dependency updates
 - 1.5.1
@@ -125,14 +127,6 @@ In the following conditions you can choose to use case sensitivity or not:
 
 1. `git clone git@github.com:runely/jslogic-homey.git`
 1. `npm i`
-1. Create a `env.json` file with this content:
-    ```json
-    {
-        "SENTRY_DSN": "SENTRY_DNS_CLIENT_KEY",
-        "SENTRY_TRACE_SAMPLE_RATE": "0",
-        "SENTRY_ENV": "production"
-    }
-    ```
 1. `npm run homey-run` or `npm run homey-install`
 
 # Thanks

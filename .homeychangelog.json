@@ -91,5 +91,8 @@
   },
   "1.5.3": {
     "en": "Dependency updates. Bugfix: Sunday was read wrong and has never worked in the condidition card: Is weekday one of..."
+  },
+  "1.5.4": {
+    "en": "Dependency updates"
   }
 }

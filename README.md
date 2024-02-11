@@ -40,6 +40,8 @@ In the following conditions you can choose to use case sensitivity or not:
 
 ## Changelog
 
+- 1.5.4
+    - Dependency updates
 - 1.5.3
     - Dependency updates
     - Bugfix: Sunday was read wrong and has never worked in the condidition card `Is "weekday" one of...`

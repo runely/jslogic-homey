@@ -40,6 +40,8 @@ In the following conditions you can choose to use case sensitivity or not:
 
 ## Changelog
 
+- 1.5.5
+    - Dependency updates
 - 1.5.4
     - Dependency updates
 - 1.5.3

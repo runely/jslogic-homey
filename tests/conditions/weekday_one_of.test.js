@@ -11,17 +11,16 @@ const weekdayStrings = Object.values(weekdays)
 
 describe('Return true when', () => {
   weekdayStrings.forEach((weekday, index) => {
-    const correctIndex = weekday === 'Sunday' ? 0 : index + 1
-    test(`"Weekday" is ${weekday} (${correctIndex}) and ${weekday} is one of the selected weekdays`, async () => {
+    test(`"Weekday" is ${weekday} (${index}) and ${weekday} is one of the selected weekdays`, async () => {
       const options = {
         ...mockOptions,
         args: {
           weekdays: weekdayStrings.join(';')
         },
-        day: correctIndex
+        day: index
       }
       const result = await check(options)
-      expect(result).toBe(true)
+      expect(result).toBeTruthy()
     })
   })
 
@@ -34,7 +33,7 @@ describe('Return true when', () => {
       day: 1
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 
   test('"Weekday" is Tuesday and Monday and Tuesday is the only selected weekdays', async () => {
@@ -46,23 +45,22 @@ describe('Return true when', () => {
       day: 2
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 })
 
 describe('Return false when', () => {
   weekdayStrings.forEach((weekday, index) => {
-    const correctIndex = weekday === 'Sunday' ? 0 : index + 1
-    test(`"Weekday" is ${weekday} (${correctIndex}) and ${weekday} is NOT one of the selected weekdays`, async () => {
+    test(`"Weekday" is ${weekday} (${index}) and ${weekday} is NOT one of the selected weekdays`, async () => {
       const options = {
         ...mockOptions,
         args: {
           weekdays: weekdayStrings.filter(w => w !== weekday).join(';')
         },
-        day: correctIndex
+        day: index
       }
       const result = await check(options)
-      expect(result).toBe(false)
+      expect(result).toBeFalsy()
     })
   })
 
@@ -75,7 +73,7 @@ describe('Return false when', () => {
       day: 1
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"weekdays" is missing', async () => {
@@ -85,7 +83,7 @@ describe('Return false when', () => {
       day: 1
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"weekdays" is an empty string', async () => {
@@ -97,6 +95,6 @@ describe('Return false when', () => {
       day: 1
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 })

@@ -4,12 +4,12 @@
     "formatted_datetime": "Formatert dato- og tidspunkt"
   },
   "weekdays": {
+    "weekdaySunday": "Søndag",
     "weekdayMonday": "Mandag",
     "weekdayTuesday": "Tirsdag",
     "weekdayWednesday": "Onsdag",
     "weekdayThursday": "Torsdag",
     "weekdayFriday": "Fredag",
-    "weekdaySaturday": "Lørdag",
-    "weekdaySunday": "Søndag"
+    "weekdaySaturday": "Lørdag"
   }
 }

@@ -4,12 +4,12 @@
     "formatted_datetime": "Geformatteerde datum en tijd"
   },
   "weekdays": {
+    "weekdaySunday": "Zondag",
     "weekdayMonday": "Maandag",
     "weekdayTuesday": "Dinsdag",
     "weekdayWednesday": "Woensdag",
     "weekdayThursday": "Donderdag",
     "weekdayFriday": "Vrijdag",
-    "weekdaySaturday": "Zaterdag",
-    "weekdaySunday": "Zondag"
+    "weekdaySaturday": "Zaterdag"
   }
 }

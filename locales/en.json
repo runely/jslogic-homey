@@ -4,12 +4,12 @@
     "formatted_datetime": "Formatted date and time"
   },
   "weekdays": {
+    "weekdaySunday": "Sunday",
     "weekdayMonday": "Monday",
     "weekdayTuesday": "Tuesday",
     "weekdayWednesday": "Wednesday",
     "weekdayThursday": "Thursday",
     "weekdayFriday": "Friday",
-    "weekdaySaturday": "Saturday",
-    "weekdaySunday": "Sunday"
+    "weekdaySaturday": "Saturday"
   }
 }

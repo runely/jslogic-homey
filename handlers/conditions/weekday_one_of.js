@@ -1,18 +1,16 @@
 const moment = require('../../lib/moment-datetime')
 
-const convertWeekdayStringToNum = (weekdayStrings, weekdays) => {
-  const array = []
-  weekdayStrings.forEach(weekday => {
-    const found = weekdays.find(w => w.name.toLowerCase() === weekday.toLowerCase())
-    if (found) {
-      array.push(found.number)
-    }
-  })
-  return array
-}
+const convertWeekdayStringToNum = (weekdayStrings, weekdays) =>
+  weekdays
+    .filter(weekDay => weekdayStrings.find(wd => wd.toLowerCase() === weekDay.name.toLowerCase()))
+    .map(weekDay => weekDay.number)
 
 const createWeekdaysArray = app => {
   return [
+    {
+      name: app.__('weekdays.weekdaySunday'),
+      number: 0
+    },
     {
       name: app.__('weekdays.weekdayMonday'),
       number: 1
@@ -36,10 +34,6 @@ const createWeekdaysArray = app => {
     {
       name: app.__('weekdays.weekdaySaturday'),
       number: 6
-    },
-    {
-      name: app.__('weekdays.weekdaySunday'),
-      number: 0
     }
   ]
 }
@@ -55,7 +49,9 @@ module.exports = async options => {
   const weekdaysArray = createWeekdaysArray(app)
   const weekdayStrings = args.weekdays.split(';')
   const weekdays = convertWeekdayStringToNum(weekdayStrings, weekdaysArray)
-  const value = day || moment({ timezone }).get('weekday')
+  const value = Number.isInteger(day)
+    ? day
+    : moment({ timezone }).get('weekday')
 
   app.log('weekday_one_of: Weekdays:', weekdays.join(','), '--', 'WeekdayStrings:', weekdayStrings.join(','))
   app.log('weekday_one_of: Todays weekday:', value)

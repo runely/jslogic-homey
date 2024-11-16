@@ -3,6 +3,8 @@ node_modules/
 **/.DS_Store
 build/
 
+# JetBrains Rider
+**/.idea/**/*
 
 # Added by Homey CLI
 /.homeybuild/

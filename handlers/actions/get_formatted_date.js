@@ -7,6 +7,12 @@ module.exports = async (timezone, args, app) => {
     app.log('get_formatted_date: Token "formatted_date" not found')
     return false
   }
-  await token.setValue(day.format(args.format))
-  return true
+
+  try {
+    await token.setValue(day.format(args.format))
+    return true
+  } catch (ex) {
+    app.error('[ERROR] - Failed to set value on formatted_date token:', ex)
+    return false
+  }
 }

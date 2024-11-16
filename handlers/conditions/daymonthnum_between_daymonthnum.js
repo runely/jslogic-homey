@@ -5,8 +5,15 @@ const getFirstYear = (today, firstDate, firstMonth, secondDate, secondMonth) => 
   const year = today.get('year')
   const month = (today.get('month') + 1)
   const date = today.get('date')
-  if (month === 1 && date <= 15 && firstMonth === 12 && firstDate >= 15 && secondMonth === 1 && secondDate <= 15) return year - 1
-  else if (firstMonth < month || (firstMonth === month && firstDate < date)) return year
+
+  if (month === 1 && date <= 15 && firstMonth === 12 && firstDate >= 15 && secondMonth === 1 && secondDate <= 15) {
+    return year - 1
+  }
+
+  if (firstMonth < month || (firstMonth === month && firstDate < date)) {
+    return year
+  }
+
   return year
 }
 
@@ -14,18 +21,24 @@ const getSecondYear = (today, firstYear, firstDate, firstMonth, secondDate, seco
   const year = today.get('year') < firstYear ? firstYear : today.get('year')
   const month = (today.get('month') + 1)
   const date = today.get('date')
+
   if (secondMonth < firstMonth) {
-    if (month < secondMonth || (month === secondMonth && date < secondDate)) return year // this year
-    else return year + 1 // next year
-  } else if (secondMonth === firstMonth) {
+    if (month < secondMonth || (month === secondMonth && date < secondDate)) {
+      return year // this year
+    }
+
+    return year + 1 // next year
+  }
+
+  if (secondMonth === firstMonth) {
     if (secondDate < firstDate) {
       return year + 1 // next year
-    } else {
-      return year // same year
     }
-  } else {
-    return year // same year
+
+    return year // same year}
   }
+
+  return year // same year
 }
 
 module.exports = async options => {

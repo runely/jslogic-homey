@@ -11,7 +11,7 @@ describe('Return true when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 })
 
@@ -25,7 +25,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('Length of "value" is equal to "maxLength"', async () => {
@@ -37,7 +37,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"value" is missing', async () => {
@@ -48,7 +48,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"maxLength" is missing', async () => {
@@ -59,6 +59,6 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 })

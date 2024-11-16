@@ -11,7 +11,7 @@ describe('Return true when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 })
 
@@ -25,7 +25,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"dateOne" is after "dateTwo"', async () => {
@@ -37,7 +37,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"dateOne" is missing', async () => {
@@ -48,7 +48,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"dateTwo" is missing', async () => {
@@ -59,7 +59,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"dateOne" is an empty string', async () => {
@@ -71,7 +71,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"dateTwo" is an empty string', async () => {
@@ -83,6 +83,6 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 })

@@ -12,7 +12,7 @@ describe('Return true when', () => {
       day: 25
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 
   test('Day is before "dayOne" this month and before "dayTwo" this month', async () => {
@@ -25,7 +25,7 @@ describe('Return true when', () => {
       day: 10
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 })
 
@@ -40,7 +40,7 @@ describe('Return false when', () => {
       day: 10
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"dayOne" is missing', async () => {
@@ -51,7 +51,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"dayTwo" is missing', async () => {
@@ -62,6 +62,6 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 })

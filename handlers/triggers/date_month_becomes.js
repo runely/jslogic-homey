@@ -7,6 +7,7 @@ module.exports = options => {
     app.log('date_month_becomes: "args.date" and/or "args.month" is missing')
     return false
   }
+
   if (!state.date || !state.month) {
     app.log('date_month_becomes: "state.date" and/or "state.month" is missing')
     return false

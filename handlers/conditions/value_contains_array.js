@@ -22,6 +22,7 @@ module.exports = async options => {
     const arrayItem = !caseSensitive ? item.toLowerCase() : item
     return value.includes(arrayItem)
   })
+
   app.log('value_contains_array: Value contains one of:', result)
   return result
 }

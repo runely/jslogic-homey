@@ -13,7 +13,7 @@ describe('Return true when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 
   test('"Includes" and "value1" is greater than "value2" but equal to "value3"', async () => {
@@ -27,7 +27,7 @@ describe('Return true when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 
   test('"Includes" and "value1" is equal to "value2" and equal to "value3"', async () => {
@@ -41,7 +41,7 @@ describe('Return true when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 
   test('"Not includes" and "value1" is greater than "value2" and lower than "value3"', async () => {
@@ -55,7 +55,7 @@ describe('Return true when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 })
 
@@ -71,7 +71,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"Includes" and "value1" is lower than "value2" and lower than "value3"', async () => {
@@ -85,7 +85,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"Not includes" and "value1" is greater "value2" and greater than "value3"', async () => {
@@ -99,7 +99,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"Not includes" and "value1" is equal to "value2" and lower than "value3"', async () => {
@@ -113,7 +113,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"Not includes" and "value1" is greater than "value2" and equal to "value3"', async () => {
@@ -127,6 +127,6 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 })

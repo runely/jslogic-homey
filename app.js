@@ -17,44 +17,41 @@ class JSLogic extends Homey.App {
     // timezone
     const timezone = this.homey.clock.getTimezone()
 
-    // register action runlisteners
+    // register action runListeners
     actions.forEach(({ id }) => {
       this.log('Adding runListener for action', id)
       this.homey.flow.getActionCard(id)
         .registerRunListener(async (args, state) => {
           const action = require(`./handlers/actions/${id}`)
-          const result = await action(timezone, args, this)
-          return result
+          return await action(timezone, args, this)
         })
     })
 
-    // register condition runlisteners
+    // register condition runListeners
     conditions.forEach(({ id }) => {
       this.log('Adding runListener for condition', id)
       this.homey.flow.getConditionCard(id)
         .registerRunListener(async (args, state) => {
           const condition = require(`./handlers/conditions/${id}`)
-          const result = await condition({
+          return await condition({
             timezone,
             args,
             app: this.homey
           })
-          return result
         })
     })
 
-    // register trigger runlisteners
+    // register trigger runListeners
     triggers.forEach(({ id }) => {
-      this.log('Adding runlistener for trigger', id)
+      this.log('Adding runListener for trigger', id)
       this.homey.flow.getTriggerCard(id)
         .registerRunListener((args, state) => {
           const trigger = require(`./handlers/triggers/${id}`)
-          const result = trigger({
+          return trigger({
             args,
             state,
             app: this.homey
           })
-          return result
         })
     })
 

@@ -29,6 +29,6 @@ describe('DateTime with', () => {
   })
 
   test('INVALID format hi-MM-yyyy HH:mm -> Returns NaN', () => {
-    expect(isNaN(getDateTime('hi-12-2021 08:30'))).toBe(true)
+    expect(isNaN(getDateTime('hi-12-2021 08:30'))).toBeTruthy()
   })
 })

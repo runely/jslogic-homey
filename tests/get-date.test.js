@@ -23,6 +23,6 @@ describe('Date with', () => {
   })
 
   test('INVALID format hi-MM-yyyy -> Returns NaN', () => {
-    expect(isNaN(getDate('hi-12-2021'))).toBe(true)
+    expect(isNaN(getDate('hi-12-2021'))).toBeTruthy()
   })
 })

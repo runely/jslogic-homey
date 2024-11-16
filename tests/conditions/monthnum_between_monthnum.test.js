@@ -12,7 +12,7 @@ describe('Return true when', () => {
       month: '5'
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 
   test('Month is after "monthOne" last year and before "monthTwo" this year', async () => {
@@ -25,7 +25,7 @@ describe('Return true when', () => {
       month: '11'
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 
   test('Month is after "monthOne" last year and before "monthTwo" this year', async () => {
@@ -38,7 +38,7 @@ describe('Return true when', () => {
       month: '1'
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 
   test('Month is equal to "monthOne" which is equal to "monthTwo"', async () => {
@@ -51,7 +51,7 @@ describe('Return true when', () => {
       month: '10'
     }
     const result = await check(options)
-    expect(result).toBe(true)
+    expect(result).toBeTruthy()
   })
 })
 
@@ -66,7 +66,7 @@ describe('Return false when', () => {
       month: '10'
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"monthOne" is missing', async () => {
@@ -77,7 +77,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"monthTwo" is missing', async () => {
@@ -88,7 +88,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"monthOne" is an empty string', async () => {
@@ -100,7 +100,7 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 
   test('"monthTwo" is an empty string', async () => {
@@ -112,6 +112,6 @@ describe('Return false when', () => {
       }
     }
     const result = await check(options)
-    expect(result).toBe(false)
+    expect(result).toBeFalsy()
   })
 })

@@ -35,7 +35,7 @@ const getSecondYear = (today, firstYear, firstDate, firstMonth, secondDate, seco
       return year + 1 // next year
     }
 
-    return year // same year}
+    return year // same year
   }
 
   return year // same year

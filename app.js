@@ -11,8 +11,10 @@ class JSLogic extends Homey.App {
     this.log(`${Homey.manifest.name.en} v${Homey.manifest.version} is running on ${this.homey.version}...`)
 
     // create flow tokens
-    await this.homey.flow.createToken('formatted_date', { type: 'string', title: this.homey.__('flowTokens.formatted_date') })
-    await this.homey.flow.createToken('formatted_datetime', { type: 'string', title: this.homey.__('flowTokens.formatted_datetime') })
+    await this.homey.flow.createToken('formatted_date',
+      { type: 'string', title: this.homey.__('flowTokens.formatted_date'), value: null })
+    await this.homey.flow.createToken('formatted_datetime',
+      { type: 'string', title: this.homey.__('flowTokens.formatted_datetime'), value: null })
 
     // timezone
     const timezone = this.homey.clock.getTimezone()
@@ -21,7 +23,7 @@ class JSLogic extends Homey.App {
     actions.forEach(({ id }) => {
       this.log('Adding runListener for action', id)
       this.homey.flow.getActionCard(id)
-        .registerRunListener(async (args, state) => {
+        .registerRunListener(async (args, _) => {
           const action = require(`./handlers/actions/${id}`)
           return await action(timezone, args, this)
         })
@@ -31,7 +33,7 @@ class JSLogic extends Homey.App {
     conditions.forEach(({ id }) => {
       this.log('Adding runListener for condition', id)
       this.homey.flow.getConditionCard(id)
-        .registerRunListener(async (args, state) => {
+        .registerRunListener(async (args, _) => {
           const condition = require(`./handlers/conditions/${id}`)
           return await condition({
             timezone,

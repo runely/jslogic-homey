@@ -1,3 +1,5 @@
+const { describe, test, expect } = require('@jest/globals')
+
 const check = require('../../handlers/conditions/value_too_long')
 const mockOptions = require('../lib/mock-options')
 

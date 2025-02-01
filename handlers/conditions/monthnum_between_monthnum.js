@@ -12,7 +12,7 @@ module.exports = async options => {
   const first = Number(args.monthOne)
   const second = Number(args.monthTwo)
 
-  app.log(`monthnum_between_monthnum: Todays month: '${today}'`)
+  app.log(`monthnum_between_monthnum: Today's month: '${today}'`)
   app.log(`monthnum_between_monthnum: First  month: '${first}'`)
   app.log(`monthnum_between_monthnum: Second month: '${second}'`)
 

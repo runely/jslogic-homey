@@ -1,3 +1,5 @@
+const { describe, test, expect } = require('@jest/globals')
+
 const check = require('../../handlers/conditions/weekday_one_of')
 const mockOptions = require('../lib/mock-options')
 const { weekdays } = require('../../locales/en.json')

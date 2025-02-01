@@ -1,3 +1,5 @@
+const { describe, test, expect } = require('@jest/globals')
+
 const getTime = require('../lib/get-time')
 const moment = require('../lib/moment-datetime')
 const now = moment()

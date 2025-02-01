@@ -12,7 +12,7 @@ module.exports = async options => {
   const first = args.dayOne
   const second = args.dayTwo
 
-  app.log(`daynum_between_daynum: Todays date: '${today}'`)
+  app.log(`daynum_between_daynum: Today's date: '${today}'`)
   app.log(`daynum_between_daynum: First  date: '${first}'`)
   app.log(`daynum_between_daynum: Second date: '${second}'`)
 

@@ -54,9 +54,9 @@ module.exports = async options => {
     : moment({ timezone }).get('weekday')
 
   app.log('weekday_one_of: Weekdays:', weekdays.join(','), '--', 'WeekdayStrings:', weekdayStrings.join(','))
-  app.log('weekday_one_of: Todays weekday:', value)
+  app.log("weekday_one_of: Today's weekday:", value)
 
   const result = weekdays.some(item => value === item)
-  app.log('weekday_one_of: Todays weekday is one of:', result)
+  app.log("weekday_one_of: Today's weekday is one of:", result)
   return result
 }

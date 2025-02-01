@@ -1,3 +1,5 @@
+const { describe, test, expect } = require('@jest/globals')
+
 const check = require('../../handlers/conditions/value_empty')
 const mockOptions = require('../lib/mock-options')
 
@@ -54,6 +56,28 @@ describe('Return false when', () => {
       args: {
         array: ['hi', 'hei', 'yo'].join(';'),
         casesenitive: 'false'
+      }
+    }
+    const result = await check(options)
+    expect(result).toBeFalsy()
+  })
+
+  test('"value" is undefined', async () => {
+    const options = {
+      ...mockOptions,
+      args: {
+        value: undefined
+      }
+    }
+    const result = await check(options)
+    expect(result).toBeFalsy()
+  })
+
+  test('"value" is null', async () => {
+    const options = {
+      ...mockOptions,
+      args: {
+        value: null
       }
     }
     const result = await check(options)

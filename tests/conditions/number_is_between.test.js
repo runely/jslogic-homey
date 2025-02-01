@@ -1,3 +1,5 @@
+const { describe, test, expect } = require('@jest/globals')
+
 const check = require('../../handlers/conditions/number_is_between')
 const mockOptions = require('../lib/mock-options')
 

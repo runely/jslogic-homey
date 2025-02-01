@@ -103,5 +103,8 @@
   },
   "1.5.7": {
     "en": "Dependency updates"
+  },
+  "1.6.0": {
+    "en": "Lint fixes and Dependency updates"
   }
 }

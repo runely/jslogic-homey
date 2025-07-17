@@ -1,4 +1,5 @@
-'use strict'
+import sourceMapSupport from 'source-map-support'
+sourceMapSupport.install()
 
 const Homey = require('homey')
 const moment = require('./lib/moment-datetime')

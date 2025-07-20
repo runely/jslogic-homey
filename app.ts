@@ -1,14 +1,75 @@
-import sourceMapSupport from 'source-map-support'
-sourceMapSupport.install()
+import { ActionCard, ConditionCard, FlowCard, Timeouts, TriggerCard } from "./types/types";
+import ExtendedHomeyApp from "./types/ExtendedHomeyApp";
 
-const Homey = require('homey')
-const moment = require('./lib/moment-datetime')
-const getNextTimeout = require('./lib/get-next-timeout-ms')
+import Homey from 'homey'
+import { Moment } from "moment-timezone";
 
-const { flow: { actions, conditions, triggers } } = Homey.manifest
+import moment from './lib/moment-datetime'
+import getNextTimeout from './lib/get-next-timeout-ms'
 
-class JSLogic extends Homey.App {
-  async onInit () {
+const actions: FlowCard[] = [
+  {
+    id: 'get_formatted_date'
+  },
+  {
+    id: 'get_formatted_datetime'
+  }
+]
+
+const conditions: FlowCard[] = [
+  {
+    id: 'date_before_date'
+  },
+  {
+    id: 'datetime_before_datetime'
+  },
+  {
+    id: 'daymonthnum_between_daymonthnum'
+  },
+  {
+    id: 'daynum_between_daynum'
+  },
+  {
+    id: 'is_random_true_false'
+  },
+  {
+    id: 'monthnum_between_monthnum'
+  },
+  {
+    id: 'number_is_between'
+  },
+  {
+    id: 'time_before_time'
+  },
+  {
+    id: 'value_contains_array'
+  },
+  {
+    id: 'value_empty'
+  },
+  {
+    id: 'value_in_array'
+  },
+  {
+    id: 'value_too_long'
+  },
+  {
+    id: 'weekday_one_of'
+  }
+]
+
+const triggers: FlowCard[] = [
+  {
+    id: 'date_month_becomes'
+  }
+]
+
+const timeouts: Timeouts = {
+  dateMonthBecomes: null
+}
+
+class JSLogic extends ExtendedHomeyApp {
+  async onInit (): Promise<void> {
     this.log(`${Homey.manifest.name.en} v${Homey.manifest.version} is running on ${this.homey.version}...`)
 
     // create flow tokens
@@ -25,8 +86,12 @@ class JSLogic extends Homey.App {
       this.log('Adding runListener for action', id)
       this.homey.flow.getActionCard(id)
         .registerRunListener(async (args, _) => {
-          const action = require(`./handlers/actions/${id}`)
-          return await action(timezone, args, this)
+          const { default: action } = await import(`./handlers/actions/${id}`) as { default: ActionCard }
+          return await action({
+            timezone,
+            args,
+            app: this
+          })
         })
     })
 
@@ -35,11 +100,11 @@ class JSLogic extends Homey.App {
       this.log('Adding runListener for condition', id)
       this.homey.flow.getConditionCard(id)
         .registerRunListener(async (args, _) => {
-          const condition = require(`./handlers/conditions/${id}`)
+          const { default: condition } = await import(`./handlers/conditions/${id}`) as { default: ConditionCard }
           return await condition({
             timezone,
             args,
-            app: this.homey
+            app: this
           })
         })
     })
@@ -48,20 +113,22 @@ class JSLogic extends Homey.App {
     triggers.forEach(({ id }) => {
       this.log('Adding runListener for trigger', id)
       this.homey.flow.getTriggerCard(id)
-        .registerRunListener((args, state) => {
-          const trigger = require(`./handlers/triggers/${id}`)
-          return trigger({
+        .registerRunListener(async (args, state) => {
+          const { default: trigger } = await import(`./handlers/triggers/${id}`) as { default: TriggerCard }
+          return await trigger({
             args,
             state,
-            app: this.homey
+            app: this
           })
         })
     })
 
     this.homey.on('unload', () => {
-      if (!this.timeouts) return
+      if (timeouts.dateMonthBecomes === null) {
+        return
+      }
 
-      Object.getOwnPropertyNames(this.timeouts).forEach(timeout => {
+      Object.getOwnPropertyNames(timeouts).forEach(timeout => {
         try {
           this.homey.clearTimeout(timeout)
         } catch {}
@@ -69,23 +136,25 @@ class JSLogic extends Homey.App {
     })
 
     // registers a timeout to trigger the "date_month_becomes" card at 00:00 every night
-    const dateMonthBecomes = () => {
-      const now = moment({ timezone })
-      const nextTimeout = getNextTimeout(timezone)
+    const dateMonthBecomes = (): void => {
+      const now: Moment = moment({ timezone })
+      const nextTimeout: number = getNextTimeout(timezone)
 
       this.log('dateMonthBecomes: Triggering "date_month_becomes" card')
-      this.homey.flow.getTriggerCard('date_month_becomes').trigger(null, { date: now.get('date'), month: now.get('month') })
+      this.homey.flow.getTriggerCard('date_month_becomes').trigger(undefined, { date: now.get('date'), month: now.get('month') })
+        .catch(error => this.logError('onInit/dateMonthBecomes: Failed when triggering triggerCard', error))
+
       try {
-        this.homey.clearTimeout(this.timeouts.dateMonthBecomes)
+        this.homey.clearTimeout(timeouts.dateMonthBecomes)
       } catch {}
-      this.timeouts.dateMonthBecomes = this.homey.setTimeout(dateMonthBecomes, nextTimeout)
+      timeouts.dateMonthBecomes = this.homey.setTimeout(dateMonthBecomes, nextTimeout)
+
       this.log(`dateMonthBecomes: Next timeout ${moment({ timezone }).add(nextTimeout, 'milliseconds').format('DD.MM.YY HH:mm:ss')}`)
     }
 
     const nextTimeout = getNextTimeout(timezone)
-    this.timeouts = {
-      dateMonthBecomes: this.homey.setTimeout(dateMonthBecomes, nextTimeout)
-    }
+    timeouts.dateMonthBecomes = this.homey.setTimeout(dateMonthBecomes, nextTimeout)
+
     this.log(`onInit/dateMonthBecomes: Next timeout ${moment({ timezone }).add(nextTimeout, 'milliseconds').format('DD.MM.YY HH:mm:ss')}`)
   }
 }

@@ -1,6 +1,8 @@
-tests
+tests/
+build/
+types/
 renovate.json
 LICENSE
 *.md
 README*
-build
+*config.*

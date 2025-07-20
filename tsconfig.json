@@ -12,6 +12,6 @@
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
-  "include": ["*.ts", "lib", "handlers"],
-  "exclude": ["node_modules", "build", ".homeybuild", "tests"]
+  "include": ["*.ts", "lib/**/*.ts", "handlers/**/*.ts", "tests/**/*.ts"],
+  "exclude": ["node_modules", "build", ".homeybuild"]
 }

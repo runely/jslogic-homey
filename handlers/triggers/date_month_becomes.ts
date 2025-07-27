@@ -1,25 +1,24 @@
-import { TriggerCardOptions } from "../../types/types";
-import { MockTriggerCardOptions } from "../../types/tests.types";
+import { MockTriggerCardOptions } from '../../types/tests.types';
+import { TriggerCardArgs, TriggerCardOptions, TriggerCardState } from '../../types/types';
 
-export default (options: TriggerCardOptions | MockTriggerCardOptions): Promise<boolean> => {
-  const { args, state, app } = options
+import hasData from '../../lib/has-data';
 
-  if (!args || !args.date || !args.month) {
-    app.logError('date_month_becomes: "args.date" and/or "args.month" is missing')
-    return Promise.resolve(false);
+export default async (options: TriggerCardOptions | MockTriggerCardOptions): Promise<boolean> => {
+  const { app } = options;
+  const { date: argsDate, month: argsMonth } = options.args as TriggerCardArgs;
+  const { date: stateDate, month: stateMonth } = options.state as TriggerCardState;
+
+  if (argsDate === undefined || !hasData<number>(argsDate) || argsMonth === undefined || !hasData<string>(argsMonth)) {
+    app.logError('date_month_becomes: "args.date" and/or "args.month" is missing');
+    return false;
   }
 
-  if (!state || !state.date || !state.month) {
-    app.logError('date_month_becomes: "state.date" and/or "state.month" is missing')
-    return Promise.resolve(false)
+  if (stateDate === undefined || !hasData<number>(stateDate) || stateMonth === undefined || !hasData<string>(stateMonth)) {
+    app.logError('date_month_becomes: "state.date" and/or "state.month" is missing');
+    return false;
   }
-  
-  const argsDate = Number.parseInt(args.date)
-  const argsMonth = Number.parseInt(args.month)
-  const stateDate = Number.parseInt(state.date)
-  const stateMonth = Number.parseInt(state.month)
 
-  const result = argsDate === stateDate && argsMonth === stateMonth
-  app.log(`date_month_becomes: Is ${argsDate} === ${stateDate} && ${argsMonth} === ${stateMonth} ?? ${result}`)
-  return Promise.resolve(result)
-}
+  const result = argsDate === stateDate && argsMonth === stateMonth;
+  app.log(`date_month_becomes: Is ${argsDate} === ${stateDate} && ${argsMonth} === ${stateMonth} ?? ${result.toString()}`);
+  return result;
+};

@@ -1,15 +1,17 @@
-import { ConditionCardOptions } from "../../types/types";
-import { MockConditionCardOptions } from "../../types/tests.types";
+import { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
+import { MockConditionCardOptions } from '../../types/tests.types';
 
-import checkDateTime from '../../lib/check-date-time'
+import checkDateTime from '../../lib/check-date-time';
+import hasData from '../../lib/has-data';
 
 export default async (options: ConditionCardOptions | MockConditionCardOptions): Promise<boolean> => {
-  const { timezone, args, app } = options
+  const { timezone, app } = options;
+  const { dateOne, dateTwo, } = options.args as ConditionCardArgs;
 
-  if (!args || !args.dateOne || !args.dateTwo) {
-    app.logError('date_before_date: Argument \'dateOne\' and/or \'dateTwo\' missing...')
-    return false
+  if (dateOne === undefined || !hasData<string>(dateOne) || dateTwo === undefined || !hasData<string>(dateTwo)) {
+    app.logError('date_before_date: Argument \'dateOne\' and/or \'dateTwo\' missing...');
+    return false;
   }
 
-  return checkDateTime(app, args.dateOne, args.dateTwo, 'DateOne', 'DateTwo', 'date_before_date', timezone)
-}
+  return checkDateTime(app, dateOne, dateTwo, 'DateOne', 'DateTwo', 'date_before_date', timezone);
+};

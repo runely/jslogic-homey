@@ -1,8 +1,8 @@
-import { describe, test, expect } from '@jest/globals'
+import { describe, test, expect } from '@jest/globals';
 import { MockConditionCardOptions } from "../../types/tests.types";
 
-import { mockConditionCardOptions } from "../lib/mock-options";
 import check from '../../handlers/conditions/value_in_array';
+import { mockConditionCardOptions } from "../lib/mock-options";
 
 describe('Return true when', () => {
   test('"value" equals one off array items case sensitive', async () => {
@@ -13,11 +13,11 @@ describe('Return true when', () => {
         casesenitive: 'true',
         value: 'hello'
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeTruthy()
-  })
+    const result = await check(options);
+    expect(result).toBeTruthy();
+  });
 
   test('"value" equals one off array items not case sensitive', async () => {
     const options: MockConditionCardOptions = {
@@ -27,12 +27,12 @@ describe('Return true when', () => {
         casesenitive: 'false',
         value: 'hello'
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeTruthy()
-  })
-})
+    const result = await check(options);
+    expect(result).toBeTruthy();
+  });
+});
 
 describe('Return false when', () => {
   test('"value" does not equal one off array items case sensitive', async () => {
@@ -43,11 +43,11 @@ describe('Return false when', () => {
         casesenitive: 'true',
         value: 'hello'
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeFalsy()
-  })
+    const result = await check(options);
+    expect(result).toBeFalsy();
+  });
 
   test('"value" does not equal one off array items not case sensitive', async () => {
     const options: MockConditionCardOptions = {
@@ -57,11 +57,11 @@ describe('Return false when', () => {
         casesenitive: 'false',
         value: 'hello'
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeFalsy()
-  })
+    const result = await check(options);
+    expect(result).toBeFalsy();
+  });
 
   test('"value" is missing', async () => {
     const options: MockConditionCardOptions = {
@@ -70,11 +70,11 @@ describe('Return false when', () => {
         array: ['hi', 'hei', 'yo'].join(';'),
         casesenitive: 'false'
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeFalsy()
-  })
+    const result = await check(options);
+    expect(result).toBeFalsy();
+  });
 
   test('"array" is missing', async () => {
     const options: MockConditionCardOptions = {
@@ -83,11 +83,11 @@ describe('Return false when', () => {
         casesenitive: 'false',
         value: 'hello'
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeFalsy()
-  })
+    const result = await check(options);
+    expect(result).toBeFalsy();
+  });
 
   test('"value" is an empty string', async () => {
     const options: MockConditionCardOptions = {
@@ -97,11 +97,11 @@ describe('Return false when', () => {
         casesenitive: 'false',
         value: ''
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeFalsy()
-  })
+    const result = await check(options);
+    expect(result).toBeFalsy();
+  });
 
   test('"array" is an empty string', async () => {
     const options: MockConditionCardOptions = {
@@ -111,9 +111,9 @@ describe('Return false when', () => {
         casesenitive: 'false',
         value: 'hello'
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeFalsy()
-  })
-})
+    const result = await check(options);
+    expect(result).toBeFalsy();
+  });
+});

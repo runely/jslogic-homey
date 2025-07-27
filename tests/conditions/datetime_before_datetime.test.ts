@@ -1,8 +1,8 @@
-import { describe, test, expect } from '@jest/globals'
+import { describe, test, expect } from '@jest/globals';
 import { MockConditionCardOptions } from "../../types/tests.types";
 
+import check from '../../handlers/conditions/datetime_before_datetime';
 import { mockConditionCardOptions } from "../lib/mock-options";
-import check from '../../handlers/conditions/datetime_before_datetime'
 
 describe('Return true when', () => {
   test('"dateTimeOne" is before "dateTimeTwo"', async () => {
@@ -12,12 +12,12 @@ describe('Return true when', () => {
         dateTimeOne: '01.09.2021 08:30',
         dateTimeTwo: '01.09.2021 09:00'
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeTruthy()
-  })
-})
+    const result = await check(options);
+    expect(result).toBeTruthy();
+  });
+});
 
 describe('Return false when', () => {
   test('"dateTimeOne" is equal to "dateTimeTwo"', async () => {
@@ -27,11 +27,11 @@ describe('Return false when', () => {
         dateTimeOne: '01.09.2021 08:30',
         dateTimeTwo: '01.09.2021 08:30'
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeFalsy()
-  })
+    const result = await check(options);
+    expect(result).toBeFalsy();
+  });
 
   test('"dateTimeOne" is after "dateTimeTwo"', async () => {
     const options: MockConditionCardOptions = {
@@ -40,11 +40,11 @@ describe('Return false when', () => {
         dateTimeOne: '01.09.2021 09:00',
         dateTimeTwo: '01.09.2021 08:30'
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeFalsy()
-  })
+    const result = await check(options);
+    expect(result).toBeFalsy();
+  });
 
   test('"dateTimeOne" is missing', async () => {
     const options: MockConditionCardOptions = {
@@ -52,11 +52,11 @@ describe('Return false when', () => {
       args: {
         dateTimeTwo: '01.09.2021 09:00'
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeFalsy()
-  })
+    const result = await check(options);
+    expect(result).toBeFalsy();
+  });
 
   test('"dateTimeTwo" is missing', async () => {
     const options: MockConditionCardOptions = {
@@ -64,11 +64,11 @@ describe('Return false when', () => {
       args: {
         dateTimeOne: '01.09.2021 08:30'
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeFalsy()
-  })
+    const result = await check(options);
+    expect(result).toBeFalsy();
+  });
 
   test('"dateTimeOne" is an empty string', async () => {
     const options: MockConditionCardOptions = {
@@ -77,11 +77,11 @@ describe('Return false when', () => {
         dateTimeOne: '',
         dateTimeTwo: '01.10.2021 09:00'
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeFalsy()
-  })
+    const result = await check(options);
+    expect(result).toBeFalsy();
+  });
 
   test('"dateTimeTwo" is an empty string', async () => {
     const options: MockConditionCardOptions = {
@@ -90,9 +90,9 @@ describe('Return false when', () => {
         dateTimeOne: '01.09.2021 08:30',
         dateTimeTwo: ''
       }
-    }
+    };
 
-    const result = await check(options)
-    expect(result).toBeFalsy()
-  })
-})
+    const result = await check(options);
+    expect(result).toBeFalsy();
+  });
+});

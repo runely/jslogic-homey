@@ -12,7 +12,9 @@ module.exports = {
         'plugin:jest/recommended'
     ],
     rules: {
-        // eventuelle overstyringer her
+        "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_$" }],
+        "@typescript-eslint/semi": ["error", "always"],
+        "prefer-const": ["error", { "destructuring": "all" }],
     },
     env: {
         jest: true,

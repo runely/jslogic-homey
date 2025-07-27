@@ -1,27 +1,31 @@
-import { ConditionCardOptions } from "../../types/types";
-import { MockConditionCardOptions } from "../../types/tests.types";
+import { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
+import { MockConditionCardOptions } from '../../types/tests.types';
+
+import hasData from '../../lib/has-data';
 
 export default async (options: ConditionCardOptions | MockConditionCardOptions): Promise<boolean> => {
-  const { args, app } = options
+  const { app } = options;
+  const { array, casesenitive, value } = options.args as ConditionCardArgs;
 
-  if (!args || !args.array || !args.value) {
-    app.logError('value_contains_array: Argument \'array\' or \'value\' missing...')
-    return false
+  if (array === undefined || !hasData<string>(array) || value === undefined || !hasData<string>(value) ||
+    casesenitive === undefined || !hasData<string>(casesenitive)) {
+    app.logError('value_contains_array: Argument \'array\' or \'value\' or \'casesenitive\' missing...');
+    return false;
   }
 
-  const array: string[] = args.array.split(';')
-  const caseSensitive: boolean = args.casesenitive === 'true'
-  const value: string = caseSensitive ? args.value.trim() : args.value.trim().toLowerCase()
+  const arraySplit: string[] = array.split(';');
+  const caseSensitive: boolean = casesenitive === 'true';
+  const actualValue: string = caseSensitive ? value.trim() : value.trim().toLowerCase();
 
-  app.log('value_contains_array: Case sensitive:', caseSensitive)
-  app.log('value_contains_array: Array items:', array)
-  app.log('value_contains_array: Value:', value)
+  app.log('value_contains_array: Case sensitive:', caseSensitive);
+  app.log('value_contains_array: Array items:', arraySplit);
+  app.log('value_contains_array: Value:', actualValue);
 
-  const result: boolean = array.some(item => {
-    const arrayItem = !caseSensitive ? item.toLowerCase() : item
-    return value.includes(arrayItem)
-  })
+  const result: boolean = arraySplit.some(item => {
+    const arrayItem = !caseSensitive ? item.toLowerCase() : item;
+    return actualValue.includes(arrayItem);
+  });
 
-  app.log('value_contains_array: Value contains one of:', result)
-  return result
-}
+  app.log('value_contains_array: Value contains one of:', result);
+  return result;
+};

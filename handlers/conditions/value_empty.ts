@@ -1,16 +1,17 @@
-import { ConditionCardOptions } from "../../types/types";
-import { MockConditionCardOptions } from "../../types/tests.types";
+import { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
+import { MockConditionCardOptions } from '../../types/tests.types';
 
 export default async (options: ConditionCardOptions | MockConditionCardOptions): Promise<boolean> => {
-  const { args, app } = options
+  const { app } = options;
+  const { value } = options.args as ConditionCardArgs;
 
-  if (typeof args.value !== 'string') {
-    app.logError('value_empty: Argument \'value\' missing...')
-    return false
+  if (value === undefined) {
+    app.logError('value_empty: Argument \'value\' missing...');
+    return false;
   }
 
-  app.log('value_empty: Value:', args.value)
-  const result = args.value === '' || args.value === ' '
-  app.log('value_empty: Is value undefined, empty or one whitespace:', result)
-  return result
-}
+  app.log(`value_empty: Value: '${value}'`);
+  const result = value.trim() === '';
+  app.log('value_empty: Is value empty or whitespace:', result);
+  return result;
+};

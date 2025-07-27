@@ -1,20 +1,23 @@
-import { ConditionCardOptions } from "../../types/types";
-import { MockConditionCardOptions } from "../../types/tests.types";
+import { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
+import { MockConditionCardOptions } from '../../types/tests.types';
+
+import hasData from "../../lib/has-data";
 
 export default async (options: ConditionCardOptions | MockConditionCardOptions): Promise<boolean> => {
-  const { args, app } = options
+  const { app } = options;
+  const { maxLength, value } = options.args as ConditionCardArgs;
 
-  if (!args || !args.maxLength || !args.value) {
-    app.logError('value_too_long: Argument \'maxLength\' or \'value\' missing...')
-    return false
+  if (maxLength === undefined || !hasData<number>(maxLength) || value === undefined || !hasData<string>(value)) {
+    app.logError('value_too_long: Argument \'maxLength\' or \'value\' missing...');
+    return false;
   }
 
-  const value: string = args.value.trim()
-  app.log('value_too_long: Value:', value)
-  app.log('value_too_long: Length:', value.length)
-  app.log('value_too_long: MaxLength:', args.maxLength)
+  const actualValue: string = value.trim();
+  app.log('value_too_long: Value:', actualValue);
+  app.log('value_too_long: Length:', actualValue.length);
+  app.log('value_too_long: MaxLength:', maxLength);
 
-  const result: boolean = value.length < args.maxLength
-  app.log('value_too_long: Is value length shorter than maxLength:', result)
-  return result
-}
+  const result: boolean = actualValue.length < maxLength;
+  app.log('value_too_long: Is value length shorter than maxLength:', result);
+  return result;
+};

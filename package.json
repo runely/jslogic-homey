@@ -10,7 +10,7 @@
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.57.1",
-    "eslint-config-athom": "^2.1.1",
+    "eslint-config-athom": "^3.0.0",
     "eslint-plugin-jest": "^27.9.0",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.4",

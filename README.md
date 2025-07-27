@@ -1,4 +1,5 @@
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![ts](https://badgen.net/badge/Built%20With/TypeScript/blue)
+![image]({https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white})
 
 # JavaScript Logic
 

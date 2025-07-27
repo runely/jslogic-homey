@@ -1,6 +1,6 @@
-import { ActionCard, ConditionCard, FlowCard, Timeouts, TriggerCard } from './types/types';
+import { ActionCard, ConditionCard, Timeouts, TriggerCard } from './types/types';
 import ExtendedHomeyApp from './types/ExtendedHomeyApp';
-import { HomeyManifest } from "./types/HomeyManifest";
+import { HomeyManifest } from './types/HomeyManifest';
 
 import Homey from 'homey';
 import { Moment } from 'moment-timezone';
@@ -8,63 +8,6 @@ import { Moment } from 'moment-timezone';
 import formatMoment from './lib/format-moment';
 import getNextTimeout from './lib/get-next-timeout-ms';
 import moment from './lib/moment-datetime';
-
-const actions: FlowCard[] = [
-  {
-    id: 'get_formatted_date'
-  },
-  {
-    id: 'get_formatted_datetime'
-  }
-];
-
-const conditions: FlowCard[] = [
-  {
-    id: 'date_before_date'
-  },
-  {
-    id: 'datetime_before_datetime'
-  },
-  {
-    id: 'daymonthnum_between_daymonthnum'
-  },
-  {
-    id: 'daynum_between_daynum'
-  },
-  {
-    id: 'is_random_true_false'
-  },
-  {
-    id: 'monthnum_between_monthnum'
-  },
-  {
-    id: 'number_is_between'
-  },
-  {
-    id: 'time_before_time'
-  },
-  {
-    id: 'value_contains_array'
-  },
-  {
-    id: 'value_empty'
-  },
-  {
-    id: 'value_in_array'
-  },
-  {
-    id: 'value_too_long'
-  },
-  {
-    id: 'weekday_one_of'
-  }
-];
-
-const triggers: FlowCard[] = [
-  {
-    id: 'date_month_becomes'
-  }
-];
 
 const timeouts: Timeouts = {
   dateMonthBecomes: null
@@ -74,6 +17,8 @@ class JSLogic extends ExtendedHomeyApp {
   async onInit (): Promise<void> {
     const manifest = Homey.manifest as HomeyManifest;
     this.log(`${manifest.name.en} v${manifest.version} is running on ${this.homey.version}...`);
+    
+    const { flow: { actions, conditions, triggers } } = manifest;
 
     // create flow tokens
     await this.homey.flow.createToken('formatted_date',

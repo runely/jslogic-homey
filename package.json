@@ -22,7 +22,7 @@
   "scripts": {
     "refresh": "rm -rf node_modules/ && rm package-lock.json && npm i",
     "build": "tsc",
-    "test": "node --version && eslint . --ext .ts && env TZ=UTC jest",
+    "test": "eslint . --ext .ts && env TZ=UTC jest",
     "fix": "eslint . --ext .ts --fix",
     "homey-run": "homey app run --clean --remote",
     "homey-install": "npm run test && homey app install",

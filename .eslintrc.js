@@ -15,6 +15,7 @@ module.exports = {
         "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_$" }],
         "@typescript-eslint/semi": ["error", "always"],
         "prefer-const": ["error", { "destructuring": "all" }],
+        "@typescript-eslint/quotes": ["error", "single"]
     },
     env: {
         jest: true,

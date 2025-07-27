@@ -3,7 +3,7 @@ import ExtendedHomeyApp from '../../types/ExtendedHomeyApp';
 
 import { DurationInputArg2 } from 'moment-timezone';
 
-import hasData from "../../lib/has-data";
+import hasData from '../../lib/has-data';
 import moment from '../../lib/moment-datetime';
 
 const convertToType = (num: string | number, app: ExtendedHomeyApp): DurationInputArg2 => {

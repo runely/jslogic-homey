@@ -1,4 +1,4 @@
-import { ConditionCardArgs, TriggerCardArgs, TriggerCardState } from "./types";
+import { ConditionCardArgs, TriggerCardArgs, TriggerCardState } from './types';
 
 export interface MockConditionCardOptions {
   timezone?: string

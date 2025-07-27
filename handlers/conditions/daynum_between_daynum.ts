@@ -1,7 +1,7 @@
 import { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
 import { MockConditionCardOptions } from '../../types/tests.types';
 
-import hasData from "../../lib/has-data";
+import hasData from '../../lib/has-data';
 import moment from '../../lib/moment-datetime';
 
 export default (options: ConditionCardOptions | MockConditionCardOptions): boolean => {

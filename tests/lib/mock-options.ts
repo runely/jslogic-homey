@@ -1,4 +1,4 @@
-import { MockConditionCardOptions, MockTriggerCardOptions } from "../../types/tests.types";
+import { MockConditionCardOptions, MockTriggerCardOptions } from '../../types/tests.types';
 
 const mockConditionCardOptions: MockConditionCardOptions = {
   timezone: 'Europe/Oslo',

@@ -2,7 +2,7 @@ import { ConditionCardArgs, ConditionCardOptions, Weekday } from '../../types/ty
 import ExtendedHomeyApp from '../../types/ExtendedHomeyApp';
 import { MockConditionCardOptions, MockApp } from '../../types/tests.types';
 
-import hasData from "../../lib/has-data";
+import hasData from '../../lib/has-data';
 import moment from '../../lib/moment-datetime';
 
 const convertWeekdayStringsToNum = (weekdayStrings: string[], weekdays: Weekday[]): number[] =>
@@ -60,9 +60,9 @@ export default (options: ConditionCardOptions | MockConditionCardOptions): boole
     : moment({ timezone }).get('weekday');
 
   app.log('weekday_one_of: Weekdays:', actualWeekdays.join(','), '--', 'WeekdayStrings:', weekdayStrings.join(','));
-  app.log("weekday_one_of: Today's weekday:", value);
+  app.log('weekday_one_of: Today\'s weekday:', value);
 
   const result = actualWeekdays.some(item => value === item);
-  app.log("weekday_one_of: Today's weekday is one of:", result);
+  app.log('weekday_one_of: Today\'s weekday is one of:', result);
   return result;
 };

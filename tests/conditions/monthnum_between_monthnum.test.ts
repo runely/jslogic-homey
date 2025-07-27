@@ -1,8 +1,8 @@
 import { describe, test, expect } from '@jest/globals';
-import { MockConditionCardOptions } from "../../types/tests.types";
+import { MockConditionCardOptions } from '../../types/tests.types';
 
 import check from '../../handlers/conditions/monthnum_between_monthnum';
-import { mockConditionCardOptions } from "../lib/mock-options";
+import { mockConditionCardOptions } from '../lib/mock-options';
 
 describe('Return true when', () => {
   test('Month is after "monthOne" this month and before "monthTwo" this month', () => {

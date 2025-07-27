@@ -1,8 +1,8 @@
 import { describe, test, expect } from '@jest/globals';
-import { MockConditionCardOptions } from "../../types/tests.types";
+import { MockConditionCardOptions } from '../../types/tests.types';
 
 import check from '../../handlers/conditions/weekday_one_of';
-import { mockConditionCardOptions } from "../lib/mock-options";
+import { mockConditionCardOptions } from '../lib/mock-options';
 import { weekdays } from '../../locales/en.json';
 
 mockConditionCardOptions.app.homey = {

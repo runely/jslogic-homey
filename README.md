@@ -32,14 +32,16 @@ In the following conditions you can choose to use case sensitivity or not:
 - **Value contains one of...**
 - **Is value exactly one of...**
 
-    ### Case sensitive
+    ### Case-sensitive
     Value and array will be treated as is
 
-    ### Not case sensitive
+    ### Not case-sensitive
     Value and array will both be lowercased
 
 ## Changelog
 
+- 2.0.0
+  - Migrated to TypeScript
 - 1.6.2
   - Dependency updates
 - 1.6.1
@@ -58,14 +60,14 @@ In the following conditions you can choose to use case sensitivity or not:
     - Dependency updates
 - 1.5.3
     - Dependency updates
-    - Bugfix: Sunday was read wrong and has never worked in the condidition card `Is "weekday" one of...`
+    - Bugfix: Sunday was read wrong and has never worked in the condition card `Is "weekday" one of...`
 - 1.5.2
     - Dependency updates
 - 1.5.1
     - Dependency updates
 - 1.5.0
     - Deprecated flow card `Get formatted date`
-    - Created a new better allround flow card for formatting date and time: `Get formatted date and time`
+    - Created a new better all round flow card for formatting date and time: `Get formatted date and time`
     - Dependency updates
 - 1.4.5
     - Minimized footprint
@@ -100,13 +102,13 @@ In the following conditions you can choose to use case sensitivity or not:
 - 1.2.0
     - New condition: 'Is "weekday" (one of|not one of)...'
 - 1.1.1
-    - Pulled flow logic out into they're own files
+    - Pulled flow logic out into their own files
     - Bugfixes
     - Added tests all around so new versions is stable with (hopefully) no bugs
 - 1.1.0
     - Dependency updates
     - New condition: 'Day and month is (between|not between)'
-    - Using timezone to prevent any possible bugs since SDK3 runs on UTC..
+    - Using timezone to prevent any possible bugs since SDK3 runs on UTC...
     - Bugfix: Convert month numbers to Number to prevent any logic check bugs
 - 1.0.0
     - Dependency updates
@@ -143,8 +145,8 @@ In the following conditions you can choose to use case sensitivity or not:
 ## Local development
 
 1. `git clone git@github.com:runely/jslogic-homey.git`
-1. `npm i`
-1. `npm run homey-run` or `npm run homey-install`
+2. `npm i`
+3. `npm run homey-run` or `npm run homey-install`
 
 # Thanks
 

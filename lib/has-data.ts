@@ -11,5 +11,5 @@ export default function hasData<T> (value: T): boolean {
     return true;
   }
 
-  return Object.keys(value).length !== 0;
+  return Object.keys(value as object).length !== 0;
 }

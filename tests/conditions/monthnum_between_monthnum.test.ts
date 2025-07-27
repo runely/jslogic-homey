@@ -5,7 +5,7 @@ import check from '../../handlers/conditions/monthnum_between_monthnum';
 import { mockConditionCardOptions } from "../lib/mock-options";
 
 describe('Return true when', () => {
-  test('Month is after "monthOne" this month and before "monthTwo" this month', async () => {
+  test('Month is after "monthOne" this month and before "monthTwo" this month', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -15,11 +15,11 @@ describe('Return true when', () => {
       month: 5
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeTruthy();
   });
 
-  test('Month is after "monthOne" last year and before "monthTwo" this year', async () => {
+  test('Month is after "monthOne" last year and before "monthTwo" this year', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -29,11 +29,11 @@ describe('Return true when', () => {
       month: 11
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeTruthy();
   });
 
-  test('Month is after "monthOne" last year and before "monthTwo" next year', async () => {
+  test('Month is after "monthOne" last year and before "monthTwo" next year', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -43,11 +43,11 @@ describe('Return true when', () => {
       month: 1
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeTruthy();
   });
 
-  test('Month is equal to "monthOne" which is equal to "monthTwo"', async () => {
+  test('Month is equal to "monthOne" which is equal to "monthTwo"', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -57,13 +57,13 @@ describe('Return true when', () => {
       month: 10
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeTruthy();
   });
 });
 
 describe('Return false when', () => {
-  test('Month is before "monthOne" and before "monthTwo"', async () => {
+  test('Month is before "monthOne" and before "monthTwo"', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -73,11 +73,11 @@ describe('Return false when', () => {
       month: 10
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"monthOne" is missing', async () => {
+  test('"monthOne" is missing', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -85,11 +85,11 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"monthTwo" is missing', async () => {
+  test('"monthTwo" is missing', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -97,11 +97,11 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"monthOne" is an empty string', async () => {
+  test('"monthOne" is an empty string', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -110,11 +110,11 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"monthTwo" is an empty string', async () => {
+  test('"monthTwo" is an empty string', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -123,7 +123,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 });

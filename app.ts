@@ -105,7 +105,7 @@ class JSLogic extends ExtendedHomeyApp {
       this.homey.flow.getConditionCard(id)
         .registerRunListener(async (args, _) => {
           const { default: condition } = await import(`./handlers/conditions/${id}`) as { default: ConditionCard };
-          return await condition({
+          return condition({
             timezone,
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             args, // Disabled because Homey.FlowCard.RunCallback specifies args and state as any
@@ -120,7 +120,7 @@ class JSLogic extends ExtendedHomeyApp {
       this.homey.flow.getTriggerCard(id)
         .registerRunListener(async (args, state) => {
           const { default: trigger } = await import(`./handlers/triggers/${id}`) as { default: TriggerCard };
-          return await trigger({
+          return trigger({
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             args, // Disabled because Homey.FlowCard.RunCallback specifies args and state as any
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

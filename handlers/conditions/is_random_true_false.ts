@@ -1,6 +1,6 @@
 import { ConditionCardOptions } from '../../types/types';
 
-export default async (options: ConditionCardOptions): Promise<boolean> => {
+export default (options: ConditionCardOptions): boolean => {
   const { app } = options;
 
   const random: number = Math.random();

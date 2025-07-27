@@ -1,7 +1,7 @@
 import { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
 import { MockConditionCardOptions } from '../../types/tests.types';
 
-export default async (options: ConditionCardOptions | MockConditionCardOptions): Promise<boolean> => {
+export default (options: ConditionCardOptions | MockConditionCardOptions): boolean => {
   const { app } = options;
   const { value } = options.args as ConditionCardArgs;
 

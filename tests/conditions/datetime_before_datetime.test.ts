@@ -5,7 +5,7 @@ import check from '../../handlers/conditions/datetime_before_datetime';
 import { mockConditionCardOptions } from "../lib/mock-options";
 
 describe('Return true when', () => {
-  test('"dateTimeOne" is before "dateTimeTwo"', async () => {
+  test('"dateTimeOne" is before "dateTimeTwo"', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -14,13 +14,13 @@ describe('Return true when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeTruthy();
   });
 });
 
 describe('Return false when', () => {
-  test('"dateTimeOne" is equal to "dateTimeTwo"', async () => {
+  test('"dateTimeOne" is equal to "dateTimeTwo"', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -29,11 +29,11 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"dateTimeOne" is after "dateTimeTwo"', async () => {
+  test('"dateTimeOne" is after "dateTimeTwo"', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -42,11 +42,11 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"dateTimeOne" is missing', async () => {
+  test('"dateTimeOne" is missing', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -54,11 +54,11 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"dateTimeTwo" is missing', async () => {
+  test('"dateTimeTwo" is missing', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -66,11 +66,11 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"dateTimeOne" is an empty string', async () => {
+  test('"dateTimeOne" is an empty string', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -79,11 +79,11 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"dateTimeTwo" is an empty string', async () => {
+  test('"dateTimeTwo" is an empty string', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -92,7 +92,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 });

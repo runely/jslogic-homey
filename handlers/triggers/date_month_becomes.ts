@@ -3,7 +3,7 @@ import { TriggerCardArgs, TriggerCardOptions, TriggerCardState } from '../../typ
 
 import hasData from '../../lib/has-data';
 
-export default async (options: TriggerCardOptions | MockTriggerCardOptions): Promise<boolean> => {
+export default (options: TriggerCardOptions | MockTriggerCardOptions): boolean => {
   const { app } = options;
   const { date: argsDate, month: argsMonth } = options.args as TriggerCardArgs;
   const { date: stateDate, month: stateMonth } = options.state as TriggerCardState;

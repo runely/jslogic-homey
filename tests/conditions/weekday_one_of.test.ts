@@ -19,7 +19,7 @@ const weekdayStrings = Object.values(weekdays);
 
 describe('Return true when', () => {
   weekdayStrings.forEach((weekday, index) => {
-    test(`"Weekday" is ${weekday} (${index}) and ${weekday} is one of the selected weekdays`, async () => {
+    test(`"Weekday" is ${weekday} (${index}) and ${weekday} is one of the selected weekdays`, () => {
       const options: MockConditionCardOptions = {
         ...mockConditionCardOptions,
         args: {
@@ -28,12 +28,12 @@ describe('Return true when', () => {
         day: index
       };
 
-      const result = await check(options);
+      const result = check(options);
       expect(result).toBeTruthy();
     });
   });
 
-  test('"Weekday" is Monday and Monday is the only selected weekday', async () => {
+  test('"Weekday" is Monday and Monday is the only selected weekday', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -42,11 +42,11 @@ describe('Return true when', () => {
       day: 1
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeTruthy();
   });
 
-  test('"Weekday" is Tuesday and Monday and Tuesday is the only selected weekdays', async () => {
+  test('"Weekday" is Tuesday and Monday and Tuesday is the only selected weekdays', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -55,14 +55,14 @@ describe('Return true when', () => {
       day: 2
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeTruthy();
   });
 });
 
 describe('Return false when', () => {
   weekdayStrings.forEach((weekday, index) => {
-    test(`"Weekday" is ${weekday} (${index}) and ${weekday} is NOT one of the selected weekdays`, async () => {
+    test(`"Weekday" is ${weekday} (${index}) and ${weekday} is NOT one of the selected weekdays`, () => {
       const options: MockConditionCardOptions = {
         ...mockConditionCardOptions,
         args: {
@@ -71,12 +71,12 @@ describe('Return false when', () => {
         day: index
       };
 
-      const result = await check(options);
+      const result = check(options);
       expect(result).toBeFalsy();
     });
   });
 
-  test('"Weekday" is Monday and Tuesday is the only selected weekday', async () => {
+  test('"Weekday" is Monday and Tuesday is the only selected weekday', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -85,22 +85,22 @@ describe('Return false when', () => {
       day: 1
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"weekdays" is missing', async () => {
+  test('"weekdays" is missing', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {},
       day: 1
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"weekdays" is an empty string', async () => {
+  test('"weekdays" is an empty string', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -109,7 +109,7 @@ describe('Return false when', () => {
       day: 1
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 });

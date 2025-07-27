@@ -49,7 +49,7 @@ const getSecondYear = (today: Moment, firstYear: number, firstDate: number, firs
   return year; // same year
 };
 
-export default async (options: ConditionCardOptions | MockConditionCardOptions): Promise<boolean> => {
+export default (options: ConditionCardOptions | MockConditionCardOptions): boolean => {
   const { timezone, app, date } = options;
   const { dayOne, dayTwo, monthOne, monthTwo } = options.args as ConditionCardArgs;
 

@@ -43,7 +43,7 @@ const createWeekdaysArray = (app: ExtendedHomeyApp | MockApp): Weekday[] => {
   ];
 };
 
-export default async (options: ConditionCardOptions | MockConditionCardOptions): Promise<boolean> => {
+export default (options: ConditionCardOptions | MockConditionCardOptions): boolean => {
   const { timezone, app, day } = options;
   const { weekdays } = options.args as ConditionCardArgs;
 

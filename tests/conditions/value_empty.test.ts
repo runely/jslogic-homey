@@ -5,7 +5,7 @@ import check from '../../handlers/conditions/value_empty';
 import { mockConditionCardOptions } from "../lib/mock-options";
 
 describe('Return true when', () => {
-  test('"value" is an empty string', async () => {
+  test('"value" is an empty string', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -13,11 +13,11 @@ describe('Return true when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeTruthy();
   });
 
-  test('"value" is one whitespace', async () => {
+  test('"value" is one whitespace', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -25,11 +25,11 @@ describe('Return true when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeTruthy();
   });
 
-  test('"value" is 10 whitespace', async () => {
+  test('"value" is 10 whitespace', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -37,13 +37,13 @@ describe('Return true when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeTruthy();
   });
 });
 
 describe('Return false when', () => {
-  test('"value" is one letter', async () => {
+  test('"value" is one letter', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -51,11 +51,11 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"value" is one word', async () => {
+  test('"value" is one word', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -63,11 +63,11 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"value" is missing', async () => {
+  test('"value" is missing', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -76,11 +76,11 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"value" is undefined', async () => {
+  test('"value" is undefined', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -88,20 +88,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
-
-  // TODO: What happens if a token is set to null ??? 
-  /* test('"value" is null', async () => {
-    const options: MockConditionCardOptions = {
-      ...mockConditionCardOptions,
-      args: {
-        value: null
-      }
-    }
-
-    const result = await check(options)
-    expect(result).toBeFalsy()
-  }) */
 });

@@ -5,7 +5,7 @@ import check from '../../handlers/conditions/daynum_between_daynum';
 import { mockConditionCardOptions } from "../lib/mock-options";
 
 describe('Return true when', () => {
-  test('Day is after "dayOne" this month and before "dayTwo" this month', async () => {
+  test('Day is after "dayOne" this month and before "dayTwo" this month', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -15,11 +15,11 @@ describe('Return true when', () => {
       day: 25
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeTruthy();
   });
 
-  test('Day is before "dayOne" this month and before "dayTwo" this month', async () => {
+  test('Day is before "dayOne" this month and before "dayTwo" this month', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -29,13 +29,13 @@ describe('Return true when', () => {
       day: 10
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeTruthy();
   });
 });
 
 describe('Return false when', () => {
-  test('Day is before "dayOne" and before "dayTwo"', async () => {
+  test('Day is before "dayOne" and before "dayTwo"', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -45,11 +45,11 @@ describe('Return false when', () => {
       day: 10
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"dayOne" is missing', async () => {
+  test('"dayOne" is missing', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -57,11 +57,11 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 
-  test('"dayTwo" is missing', async () => {
+  test('"dayTwo" is missing', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -69,7 +69,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = await check(options);
+    const result = check(options);
     expect(result).toBeFalsy();
   });
 });

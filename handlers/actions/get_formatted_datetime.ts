@@ -43,6 +43,6 @@ export default async (options: ActionCardOptions): Promise<boolean> => {
     return true;
   } catch (ex) {
     app.logError('Failed to set value on formatted_datetime token:', ex);
-    return false;
+    throw ex;
   }
 };

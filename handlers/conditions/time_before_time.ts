@@ -4,7 +4,7 @@ import { MockConditionCardOptions } from '../../types/tests.types';
 import checkDateTime from '../../lib/check-date-time';
 import hasData from '../../lib/has-data';
 
-export default async (options: ConditionCardOptions | MockConditionCardOptions): Promise<boolean> => {
+export default (options: ConditionCardOptions | MockConditionCardOptions): boolean => {
   const { timezone, app } = options;
   const { timeOne, timeTwo } = options.args as ConditionCardArgs;
 

@@ -18,7 +18,7 @@ export default async (options: ConditionCardOptions | MockConditionCardOptions):
   const second = Number(monthTwo);
 
   app.log(`monthnum_between_monthnum: Today's month: '${today}'`);
-  app.log(`monthnum_between_monthnum: First  month: '${first}'`);
+  app.log(`monthnum_between_monthnum: First month: '${first}'`);
   app.log(`monthnum_between_monthnum: Second month: '${second}'`);
 
   // today is inside first and second

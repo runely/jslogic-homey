@@ -2,7 +2,6 @@
   "name": "no.runely.jslogic",
   "version": "1.3.2",
   "main": "app.js",
-  "type": "module",
   "engines": {
     "node": ">=22.0.0"
   },
@@ -21,9 +20,9 @@
   },
   "scripts": {
     "refresh": "rm -rf node_modules/ && rm package-lock.json && npm i",
-    "build": "tsc --outDir build/",
+    "build": "tsc --noEmit",
     "test-check": "npx @biomejs/biome check",
-    "test": "npx @biomejs/biome check && npm run build && env TZ=UTC jest",
+    "test": "npm run test-check && npm run build && env TZ=UTC jest",
     "fix": "npx @biomejs/biome check --write",
     "homey-run": "homey app run --clean --remote",
     "homey-install": "npm run test && homey app install",

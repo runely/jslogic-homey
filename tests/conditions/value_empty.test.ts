@@ -1,7 +1,6 @@
-import { describe, test, expect } from '@jest/globals';
-import { MockConditionCardOptions } from '../../types/tests.types';
-
+import { describe, expect, test } from '@jest/globals';
 import check from '../../handlers/conditions/value_empty';
+import type { MockConditionCardOptions } from '../../types/tests.types';
 import { mockConditionCardOptions } from '../lib/mock-options';
 
 describe('Return true when', () => {
@@ -66,7 +65,9 @@ describe('Return false when', () => {
     const result = check(options);
     expect(result).toBeFalsy();
   });
+});
 
+describe('Throws an error when', () => {
   test('"value" is missing', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
@@ -76,8 +77,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect(() => check(options)).toThrow();
   });
 
   test('"value" is undefined', () => {
@@ -88,7 +88,6 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect(() => check(options)).toThrow();
   });
 });

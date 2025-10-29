@@ -1,6 +1,5 @@
-import { MomentDateTimeOptions } from '../types/types';
-
-import moment, { Moment } from 'moment-timezone';
+import moment, { type Moment } from 'moment-timezone';
+import type { MomentDateTimeOptions } from '../types/types';
 
 export default (options: MomentDateTimeOptions): Moment => {
   const { timezone, date } = options;

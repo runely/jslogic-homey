@@ -1,9 +1,8 @@
-import { ConditionCardArgs, ConditionCardOptions, Weekday } from '../../types/types';
-import ExtendedHomeyApp from '../../types/ExtendedHomeyApp';
-import { MockConditionCardOptions, MockApp } from '../../types/tests.types';
-
 import hasData from '../../lib/has-data';
 import moment from '../../lib/moment-datetime';
+import type ExtendedHomeyApp from '../../types/ExtendedHomeyApp';
+import type { MockApp, MockConditionCardOptions } from '../../types/tests.types';
+import type { ConditionCardArgs, ConditionCardOptions, Weekday } from '../../types/types';
 
 const convertWeekdayStringsToNum = (weekdayStrings: string[], weekdays: Weekday[]): number[] =>
   weekdays
@@ -48,21 +47,25 @@ export default (options: ConditionCardOptions | MockConditionCardOptions): boole
   const { weekdays } = options.args as ConditionCardArgs;
 
   if (weekdays === undefined || !hasData<string>(weekdays)) {
-    app.logError('weekday_one_of: Argument \'weekdays\' missing...');
-    return false;
+    app.logError("weekday_one_of: Argument 'weekdays' missing...");
+    throw new Error("'weekdays' is missing");
   }
 
   const weekdaysArray: Weekday[] = createWeekdaysArray(app);
   const weekdayStrings: string[] = weekdays.split(';');
   const actualWeekdays: number[] = convertWeekdayStringsToNum(weekdayStrings, weekdaysArray);
-  const value: number | undefined = Number.isInteger(day)
-    ? day
-    : moment({ timezone }).get('weekday');
+
+  if (actualWeekdays.length !== weekdayStrings.length) {
+    app.logError('weekday_one_of: One or more weekdays invalid...');
+    throw new Error('One or more weekdays invalid');
+  }
+
+  const value: number | undefined = Number.isInteger(day) ? day : moment({ timezone }).get('weekday');
 
   app.log('weekday_one_of: Weekdays:', actualWeekdays.join(','), '--', 'WeekdayStrings:', weekdayStrings.join(','));
-  app.log('weekday_one_of: Today\'s weekday:', value);
+  app.log("weekday_one_of: Today's weekday:", value);
 
   const result = actualWeekdays.some(item => value === item);
-  app.log('weekday_one_of: Today\'s weekday is one of:', result);
+  app.log("weekday_one_of: Today's weekday is one of:", result);
   return result;
 };

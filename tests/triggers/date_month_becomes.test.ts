@@ -1,7 +1,6 @@
-import { describe, test, expect } from '@jest/globals';
-import { MockTriggerCardOptions } from '../../types/tests.types';
-
+import { describe, expect, test } from '@jest/globals';
 import check from '../../handlers/triggers/date_month_becomes';
+import type { MockTriggerCardOptions } from '../../types/tests.types';
 import { mockTriggerCardOptions } from '../lib/mock-options';
 
 describe('Return false when', () => {
@@ -16,9 +15,8 @@ describe('Return false when', () => {
         month: '6'
       }
     };
-    
-    const result = check(options);
-    expect(result).toBeFalsy();
+
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('"args.month" is missing', () => {
@@ -33,8 +31,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('"state.date" is missing', () => {
@@ -49,8 +46,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('"state.month" is missing', () => {
@@ -65,8 +61,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('state and args is not a match', () => {

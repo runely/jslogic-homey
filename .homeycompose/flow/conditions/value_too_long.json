@@ -1,33 +1,33 @@
 {
-    "id": "value_too_long",
-    "title": {
-      "en": "Is value length !{{less|not less}} than",
-      "nl": "Is de lengte van de waarde !{{minder|niet minder}} dan",
-      "no": "Er tesktlengde !{{kortere|ikke kortere}} enn"
-    },
-    "titleFormatted": {
-      "en": "Is length of [[value]] !{{less|not less}} than [[maxLength]]",
-      "nl": "Is lengte van [[value]] !{{minder|niet minder}} dan [[maxLength]]",
-      "no": "Er tesktlengden på [[value]] !{{kortere|ikke kortere}} enn [[maxLength]]"
-    },
-    "args": [
-      {
-        "type": "text",
-        "name": "value",
-        "placeholder": {
-          "en": "Text value",
-          "nl": "Tekst waarde",
-          "no": "Tekst"
-        }
-      },
-      {
-          "type": "number",
-          "name": "maxLength",
-          "placeholder": {
-              "en": "Max length",
-              "nl": "Maximum lengte",
-              "no": "Makslengde"
-          }
+  "id": "value_too_long",
+  "title": {
+    "en": "Is value length !{{less|not less}} than",
+    "nl": "Is de lengte van de waarde !{{minder|niet minder}} dan",
+    "no": "Er tesktlengde !{{kortere|ikke kortere}} enn"
+  },
+  "titleFormatted": {
+    "en": "Is length of [[value]] !{{less|not less}} than [[maxLength]]",
+    "nl": "Is lengte van [[value]] !{{minder|niet minder}} dan [[maxLength]]",
+    "no": "Er tesktlengden på [[value]] !{{kortere|ikke kortere}} enn [[maxLength]]"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "value",
+      "placeholder": {
+        "en": "Text value",
+        "nl": "Tekst waarde",
+        "no": "Tekst"
       }
-    ]
-  }
+    },
+    {
+      "type": "number",
+      "name": "maxLength",
+      "placeholder": {
+        "en": "Max length",
+        "nl": "Maximum lengte",
+        "no": "Makslengde"
+      }
+    }
+  ]
+}

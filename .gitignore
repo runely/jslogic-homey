@@ -5,6 +5,7 @@ build/
 
 # JetBrains Rider
 **/.idea/**/*
+**/Folder.DotSettings.user
 
 # Added by Homey CLI
 /.homeybuild/

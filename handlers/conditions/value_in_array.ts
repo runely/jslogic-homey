@@ -1,15 +1,14 @@
-import { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
-import { MockConditionCardOptions } from '../../types/tests.types';
-
 import hasData from '../../lib/has-data';
+import type { MockConditionCardOptions } from '../../types/tests.types';
+import type { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
 
 export default (options: ConditionCardOptions | MockConditionCardOptions): boolean => {
   const { app } = options;
   const { array, casesenitive, value } = options.args as ConditionCardArgs;
 
   if (array === undefined || !hasData<string>(array) || value === undefined || !hasData<string>(value)) {
-    app.logError('value_in_array: Argument \'array\' and/or \'value\' missing...');
-    return false;
+    app.logError("value_in_array: Argument 'array' and/or 'value' missing...");
+    throw new Error("'array' and/or 'value' is missing");
   }
 
   const arraySplit: string[] = array.split(';');

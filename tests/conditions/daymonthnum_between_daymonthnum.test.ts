@@ -1,7 +1,6 @@
-import { describe, test, expect } from '@jest/globals';
-import { MockConditionCardOptions } from '../../types/tests.types';
-
+import { describe, expect, test } from '@jest/globals';
 import check from '../../handlers/conditions/daymonthnum_between_daymonthnum';
+import type { MockConditionCardOptions } from '../../types/tests.types';
 import { mockConditionCardOptions } from '../lib/mock-options';
 
 describe('Return true when', () => {
@@ -113,8 +112,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('"monthOne" is missing', () => {
@@ -127,8 +125,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('"dayTwo" is missing', () => {
@@ -141,8 +138,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('"monthTwo" is missing', () => {
@@ -155,8 +151,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('"monthOne" is an empty string', () => {
@@ -170,8 +165,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('"monthTwo" is an empty string', () => {
@@ -185,7 +179,6 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 });

@@ -1,7 +1,6 @@
-import { describe, test, expect } from '@jest/globals';
-import { MockConditionCardOptions } from '../../types/tests.types';
-
+import { describe, expect, test } from '@jest/globals';
 import check from '../../handlers/conditions/monthnum_between_monthnum';
+import type { MockConditionCardOptions } from '../../types/tests.types';
 import { mockConditionCardOptions } from '../lib/mock-options';
 
 describe('Return true when', () => {
@@ -19,7 +18,7 @@ describe('Return true when', () => {
     expect(result).toBeTruthy();
   });
 
-  test('Month is after "monthOne" last year and before "monthTwo" this year', () => {
+  test('Month is after "monthOne" this year and before "monthTwo" next year', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -33,7 +32,7 @@ describe('Return true when', () => {
     expect(result).toBeTruthy();
   });
 
-  test('Month is after "monthOne" last year and before "monthTwo" next year', () => {
+  test('Month is after "monthOne" next year and before "monthTwo" next year', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
@@ -60,23 +59,23 @@ describe('Return true when', () => {
     const result = check(options);
     expect(result).toBeTruthy();
   });
-});
 
-describe('Return false when', () => {
-  test('Month is before "monthOne" and before "monthTwo"', () => {
+  test('Month is after "monthOne" next year and equal to "monthTwo" next year', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
       args: {
-        monthOne: '19',
-        monthTwo: '20'
+        monthOne: '7',
+        monthTwo: '6'
       },
-      month: 10
+      month: 6
     };
 
     const result = check(options);
-    expect(result).toBeFalsy();
+    expect(result).toBeTruthy();
   });
+});
 
+describe('Return false when', () => {
   test('"monthOne" is missing', () => {
     const options: MockConditionCardOptions = {
       ...mockConditionCardOptions,
@@ -85,8 +84,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('"monthTwo" is missing', () => {
@@ -97,8 +95,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('"monthOne" is an empty string', () => {
@@ -110,8 +107,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('"monthTwo" is an empty string', () => {
@@ -123,7 +119,34 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
+  });
+});
+
+describe('Throw an error when', () => {
+  test('monthOne is more than actual months"', () => {
+    const options: MockConditionCardOptions = {
+      ...mockConditionCardOptions,
+      args: {
+        monthOne: '19',
+        monthTwo: '10'
+      },
+      month: 10
+    };
+
+    expect((): boolean => check(options)).toThrow();
+  });
+
+  test('monthTwo is more than actual months"', () => {
+    const options: MockConditionCardOptions = {
+      ...mockConditionCardOptions,
+      args: {
+        monthOne: '10',
+        monthTwo: '19'
+      },
+      month: 10
+    };
+
+    expect((): boolean => check(options)).toThrow();
   });
 });

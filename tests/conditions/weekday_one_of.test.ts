@@ -1,9 +1,8 @@
-import { describe, test, expect } from '@jest/globals';
-import { MockConditionCardOptions } from '../../types/tests.types';
-
+import { describe, expect, test } from '@jest/globals';
 import check from '../../handlers/conditions/weekday_one_of';
-import { mockConditionCardOptions } from '../lib/mock-options';
 import { weekdays } from '../../locales/en.json';
+import type { MockConditionCardOptions } from '../../types/tests.types';
+import { mockConditionCardOptions } from '../lib/mock-options';
 
 mockConditionCardOptions.app.homey = {
   __: (setting: string): string => {
@@ -96,8 +95,7 @@ describe('Return false when', () => {
       day: 1
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('"weekdays" is an empty string', () => {
@@ -109,7 +107,6 @@ describe('Return false when', () => {
       day: 1
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 });

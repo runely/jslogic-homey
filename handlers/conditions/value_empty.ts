@@ -1,13 +1,13 @@
-import { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
-import { MockConditionCardOptions } from '../../types/tests.types';
+import type { MockConditionCardOptions } from '../../types/tests.types';
+import type { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
 
 export default (options: ConditionCardOptions | MockConditionCardOptions): boolean => {
   const { app } = options;
   const { value } = options.args as ConditionCardArgs;
 
   if (value === undefined) {
-    app.logError('value_empty: Argument \'value\' missing...');
-    return false;
+    app.logError("value_empty: Argument 'value' missing...");
+    throw new Error("'value' is missing");
   }
 
   app.log(`value_empty: Value: '${value}'`);

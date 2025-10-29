@@ -1,13 +1,11 @@
 import Homey from 'homey';
 
 export default class ExtendedHomeyApp extends Homey.App {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  logWarn (...args: any[]): void {
+  logWarn(...args: unknown[]): void {
     this.log('[WARN] -', args);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  logError (...args: any[]): void {
+  logError(...args: unknown[]): void {
     this.log('[ERROR] -', args);
   }
 }

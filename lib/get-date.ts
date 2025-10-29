@@ -1,4 +1,4 @@
-import { Moment } from 'moment-timezone';
+import type { Moment } from 'moment-timezone';
 
 import moment from './moment-datetime';
 import pad from './pad-number';

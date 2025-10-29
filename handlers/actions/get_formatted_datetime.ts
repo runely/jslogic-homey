@@ -1,10 +1,8 @@
-import { ActionCardArgs, ActionCardOptions } from '../../types/types';
-import ExtendedHomeyApp from '../../types/ExtendedHomeyApp';
-
-import { DurationInputArg2 } from 'moment-timezone';
-
+import type { DurationInputArg2 } from 'moment-timezone';
 import hasData from '../../lib/has-data';
 import moment from '../../lib/moment-datetime';
+import type ExtendedHomeyApp from '../../types/ExtendedHomeyApp';
+import type { ActionCardArgs, ActionCardOptions } from '../../types/types';
 
 const convertToType = (num: string | number, app: ExtendedHomeyApp): DurationInputArg2 => {
   if ([1, '1'].includes(num)) {
@@ -26,16 +24,16 @@ export default async (options: ActionCardOptions): Promise<boolean> => {
   const { format, toAdd, type } = options.args as ActionCardArgs;
 
   if (type === undefined || !hasData<string | number>(type)) {
-    app.logError('get_formatted_datetime: Argument \'type\' missing...');
-    throw new Error('Argument \'type\' missing');
+    app.logError("get_formatted_datetime: Argument 'type' missing...");
+    throw new Error("Argument 'type' missing");
   }
 
   const convertedType = convertToType(type, app);
   const time = moment({ timezone }).add(toAdd, convertedType);
   const token = app.homey.flow.getToken('formatted_datetime');
   if (typeof token.setValue !== 'function') {
-    app.logError('get_formatted_datetime: Token "formatted_time" not found');
-    return false;
+    app.logError("get_formatted_datetime: Token 'formatted_time' not found");
+    throw new Error("Token 'formatted_time' not found");
   }
 
   try {

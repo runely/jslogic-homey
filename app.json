@@ -11,9 +11,7 @@
   "description": {
     "en": "Use advanced logic through JavaScript"
   },
-  "category": [
-    "tools"
-  ],
+  "category": ["tools"],
   "images": {
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
@@ -31,13 +29,7 @@
     ]
   },
   "tags": {
-    "en": [
-      "javascript",
-      "js",
-      "array",
-      "logic",
-      "advanced"
-    ]
+    "en": ["javascript", "js", "array", "logic", "advanced"]
   },
   "bugs": {
     "url": "https://github.com/runely/jslogic-homey/issues"

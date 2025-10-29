@@ -1,7 +1,6 @@
-import { describe, test, expect } from '@jest/globals';
-import { MockConditionCardOptions } from '../../types/tests.types';
-
+import { describe, expect, test } from '@jest/globals';
 import check from '../../handlers/conditions/number_is_between';
+import type { MockConditionCardOptions } from '../../types/tests.types';
 import { mockConditionCardOptions } from '../lib/mock-options';
 
 describe('Return true when', () => {

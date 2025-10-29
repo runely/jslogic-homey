@@ -1,5 +1,5 @@
-![ts](https://badgen.net/badge/Built%20With/TypeScript/blue)<br />
-![image](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
+![ts](https://badgen.net/badge/Built%20With/TypeScript/blue)
+[![Formatted with Biome](https://img.shields.io/badge/Formatted_with-Biome-60a5fa?style=flat&logo=biome)](https://biomejs.dev/)
 
 # JavaScript Logic
 
@@ -41,6 +41,9 @@ In the following conditions you can choose to use case sensitivity or not:
 
 ## Changelog
 
+- 2.1.0
+  - JavaScript Logic is limited to only run on Homey Firmware >= 12.9.0, because this has Node.js 22 as runtime
+  - Switched from eslint to biome for development formatting and linting
 - 2.0.0
   - Migrated to TypeScript
 - 1.6.2

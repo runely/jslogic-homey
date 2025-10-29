@@ -1,7 +1,6 @@
-import { describe, test, expect } from '@jest/globals';
-import { MockConditionCardOptions } from '../../types/tests.types';
-
+import { describe, expect, test } from '@jest/globals';
 import check from '../../handlers/conditions/value_too_long';
+import type { MockConditionCardOptions } from '../../types/tests.types';
 import { mockConditionCardOptions } from '../lib/mock-options';
 
 describe('Return true when', () => {
@@ -54,8 +53,7 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 
   test('"maxLength" is missing', () => {
@@ -66,7 +64,6 @@ describe('Return false when', () => {
       }
     };
 
-    const result = check(options);
-    expect(result).toBeFalsy();
+    expect((): boolean => check(options)).toThrow();
   });
 });

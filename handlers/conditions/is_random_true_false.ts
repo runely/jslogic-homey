@@ -1,4 +1,4 @@
-import { ConditionCardOptions } from '../../types/types';
+import type { ConditionCardOptions } from '../../types/types';
 
 export default (options: ConditionCardOptions): boolean => {
   const { app } = options;

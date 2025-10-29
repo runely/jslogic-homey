@@ -1,4 +1,4 @@
-export default function hasData<T> (value: T): boolean {
+export default function hasData<T>(value: T): boolean {
   if (Array.isArray(value)) {
     return value.length !== 0;
   }

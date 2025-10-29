@@ -1,6 +1,5 @@
-import { ActionCardArgs, ActionCardOptions } from '../../types/types';
-
 import moment from '../../lib/moment-datetime';
+import type { ActionCardArgs, ActionCardOptions } from '../../types/types';
 
 export default async (options: ActionCardOptions): Promise<boolean> => {
   const { timezone, app } = options;
@@ -9,8 +8,8 @@ export default async (options: ActionCardOptions): Promise<boolean> => {
   const day = moment({ timezone }).add(daysToAdd, 'days');
   const token = app.homey.flow.getToken('formatted_date');
   if (typeof token.setValue !== 'function') {
-    app.logError('get_formatted_date: Token "formatted_date" not found');
-    return false;
+    app.logError("get_formatted_date: Token 'formatted_date' not found");
+    throw new Error("Token 'formatted_date' not found");
   }
 
   try {

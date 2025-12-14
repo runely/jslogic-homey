@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**/*.ts", "**/*.json", "!package*.json", "!app.json"]
+    "includes": ["**/*.ts", "**/*.json", "!package*.json", "!app.json", "!.homeycompose/app.json"]
   },
   "formatter": {
     "enabled": true,

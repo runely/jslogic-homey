@@ -44,6 +44,7 @@ In the following conditions you can choose to use case sensitivity or not:
 - 2.1.0
   - JavaScript Logic is limited to only run on Homey Firmware >= 12.9.0, because this has Node.js 22 as runtime
   - Switched from eslint to biome for development formatting and linting
+  - Dependency updates
 - 2.0.0
   - Migrated to TypeScript
 - 1.6.2

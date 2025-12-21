@@ -118,5 +118,8 @@
   },
   "2.1.0": {
     "en": "- Limited to run on Homey Firmware >= 12.9.0 to use Node.js 22!!!! - Dependency updates"
+  },
+  "2.1.1": {
+    "en": "Dependency updates"
   }
 }

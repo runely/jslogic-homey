@@ -14,5 +14,5 @@
     "resolveJsonModule": true
   },
   "include": ["*.ts", "lib/**/*.ts", "handlers/**/*.ts"],
-  "exclude": ["node_modules", ".homeybuild", "tests"]
+  "exclude": ["node_modules", ".build", ".homeybuild", "tests"]
 }

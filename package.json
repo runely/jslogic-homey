@@ -12,7 +12,6 @@
     "@types/jest": "^30.0.0",
     "@types/node": "^25.5.0",
     "jest": "^30.3.0",
-    "ts-jest": "^29.4.6",
     "typescript": "^5.9.3"
   },
   "dependencies": {
@@ -22,7 +21,8 @@
     "refresh": "rm -rf node_modules/ && rm package-lock.json && npm i",
     "build": "tsc",
     "lint": "npx @biomejs/biome check",
-    "test": "npm run lint && tsc --noEmit && env TZ=UTC jest",
+    "build-tests": "tsc -p tsconfig_tests.json",
+    "test": "npm run lint && npm run build-tests && env TZ=UTC jest",
     "fix": "npx @biomejs/biome check --write",
     "homey-run": "homey app run --clean --remote",
     "homey-install": "npm run test && homey app install",
@@ -31,5 +31,14 @@
   "repository": {
     "url": "https://github.com/runely/jslogic-homey"
   },
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/.homeybuild/"
+    ],
+    "testMatch": [
+      "<rootDir>/.build/tests/**/*test.[jt]s?(x)",
+      "<rootDir>/.build/?(*.)+.(spec|test).[jt]s?(x)"
+    ]
+  }
 }

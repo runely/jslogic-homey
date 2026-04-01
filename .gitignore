@@ -1,7 +1,6 @@
 env.json
 node_modules/
 **/.DS_Store
-build/
 
 # JetBrains Rider
 **/.idea/**/*
@@ -9,3 +8,6 @@ build/
 
 # Added by Homey CLI
 /.homeybuild/
+
+# Output of built tests
+/.build/

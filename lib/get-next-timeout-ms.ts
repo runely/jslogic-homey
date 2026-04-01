@@ -1,6 +1,6 @@
 import type { Moment } from 'moment-timezone';
 
-import moment from './moment-datetime';
+import moment from './moment-datetime.js';
 
 export default (timezone: string): number => {
   const now: Moment = moment({ timezone });

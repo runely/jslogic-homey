@@ -1,7 +1,7 @@
 import { describe, expect, test } from '@jest/globals';
-import check from '../../handlers/conditions/time_before_time';
+import check from '../../handlers/conditions/time_before_time.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
-import { mockConditionCardOptions } from '../lib/mock-options';
+import { mockConditionCardOptions } from '../lib/mock-options.js';
 
 describe('Return true when', () => {
   test('"timeOne" is before "timeTwo"', () => {

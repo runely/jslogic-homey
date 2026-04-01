@@ -1,7 +1,7 @@
 import { describe, expect, test } from '@jest/globals';
 
-import getTime from '../lib/get-time';
-import moment from '../lib/moment-datetime';
+import getTime from '../lib/get-time.js';
+import moment from '../lib/moment-datetime.js';
 
 const now = moment({});
 

@@ -1,8 +1,8 @@
 import type { Moment } from 'moment-timezone';
-import formatMoment from '../../lib/format-moment';
-import hasData from '../../lib/has-data';
-import moment from '../../lib/moment-datetime';
-import pad from '../../lib/pad-number';
+import formatMoment from '../../lib/format-moment.js';
+import hasData from '../../lib/has-data.js';
+import moment from '../../lib/moment-datetime.js';
+import pad from '../../lib/pad-number.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
 import type { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
 

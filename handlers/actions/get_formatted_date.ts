@@ -1,4 +1,4 @@
-import moment from '../../lib/moment-datetime';
+import moment from '../../lib/moment-datetime.js';
 import type { ActionCardArgs, ActionCardOptions } from '../../types/types';
 
 export default async (options: ActionCardOptions): Promise<boolean> => {

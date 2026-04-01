@@ -41,6 +41,8 @@ In the following conditions you can choose to use case sensitivity or not:
 
 ## Changelog
 
+- 2.1.3
+  - Fixed a build issue that caused the app to not include any logic in the release build
 - 2.1.2
   - Dependency updates
 - 2.1.1

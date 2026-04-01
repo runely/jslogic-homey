@@ -1,6 +1,6 @@
 import { describe, expect, test } from '@jest/globals';
 
-import getDate from '../lib/get-date';
+import getDate from '../lib/get-date.js';
 
 describe('Date with', () => {
   test('valid format dd.MM.yyyy -> Returns moment', () => {

@@ -3,10 +3,10 @@ import type ExtendedHomeyApp from '../types/ExtendedHomeyApp';
 import type { MockApp } from '../types/tests.types';
 import type { CheckDateTimeType } from '../types/types';
 
-import formatMoment from './format-moment';
-import getDate from './get-date';
-import getDateTime from './get-date-time';
-import getTime from './get-time';
+import formatMoment from './format-moment.js';
+import getDate from './get-date.js';
+import getDateTime from './get-date-time.js';
+import getTime from './get-time.js';
 
 const check = (
   app: ExtendedHomeyApp | MockApp,

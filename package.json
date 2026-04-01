@@ -20,9 +20,9 @@
   },
   "scripts": {
     "refresh": "rm -rf node_modules/ && rm package-lock.json && npm i",
-    "build": "tsc --noEmit",
-    "test-check": "npx @biomejs/biome check",
-    "test": "npm run test-check && npm run build && env TZ=UTC jest",
+    "build": "tsc",
+    "lint": "npx @biomejs/biome check",
+    "test": "npm run lint && tsc --noEmit && env TZ=UTC jest",
     "fix": "npx @biomejs/biome check --write",
     "homey-run": "homey app run --clean --remote",
     "homey-install": "npm run test && homey app install",

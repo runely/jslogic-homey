@@ -1,7 +1,7 @@
 import { describe, expect, test } from '@jest/globals';
-import check from '../../handlers/conditions/number_is_between';
+import check from '../../handlers/conditions/number_is_between.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
-import { mockConditionCardOptions } from '../lib/mock-options';
+import { mockConditionCardOptions } from '../lib/mock-options.js';
 
 describe('Return true when', () => {
   test('"Includes" and "value1" is equal to "value2" but lower than "value3"', () => {

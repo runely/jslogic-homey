@@ -1,7 +1,7 @@
 import { describe, expect, test } from '@jest/globals';
-import check from '../../handlers/conditions/daynum_between_daynum';
+import check from '../../handlers/conditions/daynum_between_daynum.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
-import { mockConditionCardOptions } from '../lib/mock-options';
+import { mockConditionCardOptions } from '../lib/mock-options.js';
 
 describe('Return true when', () => {
   test('Day is after "dayOne" this month and before "dayTwo" this month', () => {

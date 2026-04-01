@@ -1,7 +1,7 @@
 import { describe, expect, test } from '@jest/globals';
-import check from '../../handlers/conditions/value_too_long';
+import check from '../../handlers/conditions/value_too_long.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
-import { mockConditionCardOptions } from '../lib/mock-options';
+import { mockConditionCardOptions } from '../lib/mock-options.js';
 
 describe('Return true when', () => {
   test('Length of "value" is shorter than "maxLength"', () => {

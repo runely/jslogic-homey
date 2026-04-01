@@ -1,6 +1,6 @@
 import type { DurationInputArg2 } from 'moment-timezone';
-import hasData from '../../lib/has-data';
-import moment from '../../lib/moment-datetime';
+import hasData from '../../lib/has-data.js';
+import moment from '../../lib/moment-datetime.js';
 import type ExtendedHomeyApp from '../../types/ExtendedHomeyApp';
 import type { ActionCardArgs, ActionCardOptions } from '../../types/types';
 

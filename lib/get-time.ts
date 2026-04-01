@@ -1,7 +1,7 @@
 import type { Moment } from 'moment-timezone';
 
-import moment from './moment-datetime';
-import pad from './pad-number';
+import moment from './moment-datetime.js';
+import pad from './pad-number.js';
 
 export default (time: string, timezone?: string): Moment => {
   const timeSplit: string[] = time.split(/[:.]/);

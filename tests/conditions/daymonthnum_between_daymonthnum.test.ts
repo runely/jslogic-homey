@@ -1,7 +1,7 @@
 import { describe, expect, test } from '@jest/globals';
-import check from '../../handlers/conditions/daymonthnum_between_daymonthnum';
+import check from '../../handlers/conditions/daymonthnum_between_daymonthnum.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
-import { mockConditionCardOptions } from '../lib/mock-options';
+import { mockConditionCardOptions } from '../lib/mock-options.js';
 
 describe('Return true when', () => {
   test('Today is after "dayMonthOne" this year and before "dayMonthTwo" next year', () => {

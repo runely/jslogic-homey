@@ -1,7 +1,7 @@
 import { describe, expect, test } from '@jest/globals';
-import check from '../../handlers/triggers/date_month_becomes';
+import check from '../../handlers/triggers/date_month_becomes.js';
 import type { MockTriggerCardOptions } from '../../types/tests.types';
-import { mockTriggerCardOptions } from '../lib/mock-options';
+import { mockTriggerCardOptions } from '../lib/mock-options.js';
 
 describe('Return false when', () => {
   test('"args.date" is missing', () => {

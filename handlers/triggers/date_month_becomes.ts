@@ -1,4 +1,4 @@
-import hasData from '../../lib/has-data';
+import hasData from '../../lib/has-data.js';
 import type { MockTriggerCardOptions } from '../../types/tests.types';
 import type { TriggerCardArgs, TriggerCardOptions, TriggerCardState } from '../../types/types';
 

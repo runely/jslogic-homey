@@ -1,5 +1,5 @@
-import hasData from '../../lib/has-data';
-import moment from '../../lib/moment-datetime';
+import hasData from '../../lib/has-data.js';
+import moment from '../../lib/moment-datetime.js';
 import type ExtendedHomeyApp from '../../types/ExtendedHomeyApp';
 import type { MockApp, MockConditionCardOptions } from '../../types/tests.types';
 import type { ConditionCardArgs, ConditionCardOptions, Weekday } from '../../types/types';

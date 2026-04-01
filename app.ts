@@ -1,8 +1,8 @@
 import Homey from 'homey';
 import type { Moment } from 'moment-timezone';
-import formatMoment from './lib/format-moment';
-import getNextTimeout from './lib/get-next-timeout-ms';
-import moment from './lib/moment-datetime';
+import formatMoment from './lib/format-moment.js';
+import getNextTimeout from './lib/get-next-timeout-ms.js';
+import moment from './lib/moment-datetime.js';
 import ExtendedHomeyApp from './types/ExtendedHomeyApp';
 import type { HomeyManifest } from './types/HomeyManifest';
 import type { ActionCard, ConditionCard, Timeouts, TriggerCard } from './types/types';
@@ -39,7 +39,7 @@ class JSLogic extends ExtendedHomeyApp {
     actions.forEach(({ id }) => {
       this.log('Adding runListener for action', id);
       this.homey.flow.getActionCard(id).registerRunListener(async (args, _) => {
-        const { default: action } = (await import(`./handlers/actions/${id}`)) as { default: ActionCard };
+        const { default: action } = (await import(`./handlers/actions/${id}.js`)) as { default: ActionCard };
         return await action({
           timezone,
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -53,7 +53,7 @@ class JSLogic extends ExtendedHomeyApp {
     conditions.forEach(({ id }) => {
       this.log('Adding runListener for condition', id);
       this.homey.flow.getConditionCard(id).registerRunListener(async (args, _) => {
-        const { default: condition } = (await import(`./handlers/conditions/${id}`)) as { default: ConditionCard };
+        const { default: condition } = (await import(`./handlers/conditions/${id}.js`)) as { default: ConditionCard };
         return condition({
           timezone,
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -67,7 +67,7 @@ class JSLogic extends ExtendedHomeyApp {
     triggers.forEach(({ id }) => {
       this.log('Adding runListener for trigger', id);
       this.homey.flow.getTriggerCard(id).registerRunListener(async (args, state) => {
-        const { default: trigger } = (await import(`./handlers/triggers/${id}`)) as { default: TriggerCard };
+        const { default: trigger } = (await import(`./handlers/triggers/${id}.js`)) as { default: TriggerCard };
         return trigger({
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           args, // Disabled because Homey.FlowCard.RunCallback specifies args and state as any

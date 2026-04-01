@@ -1,6 +1,6 @@
 import { describe, expect, test } from '@jest/globals';
 
-import pad from '../lib/pad-number';
+import pad from '../lib/pad-number.js';
 
 describe('Number', () => {
   test('higher than 10 is not padded', () => {

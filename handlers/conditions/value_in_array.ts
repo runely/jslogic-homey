@@ -1,4 +1,4 @@
-import hasData from '../../lib/has-data';
+import hasData from '../../lib/has-data.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
 import type { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
 

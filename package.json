@@ -6,7 +6,7 @@
     "node": ">=22.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.9",
+    "@biomejs/biome": "2.4.13",
     "@tsconfig/node24": "^24.0.4",
     "@types/homey": "npm:homey-apps-sdk-v3-types@0.3.12",
     "@types/jest": "^30.0.0",

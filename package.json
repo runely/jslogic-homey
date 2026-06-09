@@ -11,11 +11,11 @@
     "@types/homey": "npm:homey-apps-sdk-v3-types@0.3.12",
     "@types/jest": "^30.0.0",
     "@types/node": "^25.9.2",
-    "jest": "^30.3.0",
+    "jest": "^30.4.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "moment-timezone": "^0.6.1"
+    "moment-timezone": "^0.6.2"
   },
   "scripts": {
     "refresh": "rm -rf node_modules/ && rm package-lock.json && npm i",

@@ -39,7 +39,8 @@ class JSLogic extends ExtendedHomeyApp {
     actions.forEach(({ id }) => {
       this.log('Adding runListener for action', id);
       this.homey.flow.getActionCard(id).registerRunListener(async (args, _) => {
-        const { default: action } = (await import(`./handlers/actions/${id}.js`)) as { default: ActionCard };
+        // eslint-disable-next-line @typescript-eslint/no-require-imports - Required for Homey to read the flows correctly...
+        const action = (require(`./handlers/actions/${id}.js`) as { default: ActionCard }).default;
         return await action({
           timezone,
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -53,7 +54,8 @@ class JSLogic extends ExtendedHomeyApp {
     conditions.forEach(({ id }) => {
       this.log('Adding runListener for condition', id);
       this.homey.flow.getConditionCard(id).registerRunListener(async (args, _) => {
-        const { default: condition } = (await import(`./handlers/conditions/${id}.js`)) as { default: ConditionCard };
+        // eslint-disable-next-line @typescript-eslint/no-require-imports - Required for Homey to read the flows correctly...
+        const condition = (require(`./handlers/conditions/${id}.js`) as { default: ConditionCard }).default;
         return condition({
           timezone,
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -67,7 +69,8 @@ class JSLogic extends ExtendedHomeyApp {
     triggers.forEach(({ id }) => {
       this.log('Adding runListener for trigger', id);
       this.homey.flow.getTriggerCard(id).registerRunListener(async (args, state) => {
-        const { default: trigger } = (await import(`./handlers/triggers/${id}.js`)) as { default: TriggerCard };
+        // eslint-disable-next-line @typescript-eslint/no-require-imports - Required for Homey to read the flows correctly...
+        const trigger = (require(`./handlers/triggers/${id}.js`) as { default: TriggerCard }).default;
         return trigger({
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           args, // Disabled because Homey.FlowCard.RunCallback specifies args and state as any

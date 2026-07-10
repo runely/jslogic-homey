@@ -49,6 +49,7 @@ In the following conditions you can choose to use case sensitivity or not:
     - Disabled script execution for npm ci
     - Use tagged commits for actions
   - Dev dependency updates
+  - Migrated from `jest` to `node:test`
 - 2.1.4
   - Dependency updates
 - 2.1.3

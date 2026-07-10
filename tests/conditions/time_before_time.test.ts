@@ -1,4 +1,5 @@
-import { describe, expect, test } from '@jest/globals';
+import assert from 'node:assert/strict';
+import { describe, test } from 'node:test';
 import check from '../../handlers/conditions/time_before_time.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
 import { mockConditionCardOptions } from '../lib/mock-options.js';
@@ -14,7 +15,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 });
 
@@ -29,7 +30,7 @@ describe('Return false when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeFalsy();
+    assert.ok(!result);
   });
 
   test('"timeOne" is after "timeTwo"', () => {
@@ -42,7 +43,7 @@ describe('Return false when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeFalsy();
+    assert.ok(!result);
   });
 
   test('"timeOne" is missing', () => {
@@ -53,7 +54,7 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 
   test('"timeTwo" is missing', () => {
@@ -64,7 +65,7 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 
   test('"timeOne" is an empty string', () => {
@@ -76,7 +77,7 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 
   test('"timeTwo" is an empty string', () => {
@@ -88,6 +89,6 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 });

@@ -1,4 +1,5 @@
-import { describe, expect, test } from '@jest/globals';
+import assert from 'node:assert/strict';
+import { describe, test } from 'node:test';
 import check from '../../handlers/triggers/date_month_becomes.js';
 import type { MockTriggerCardOptions } from '../../types/tests.types';
 import { mockTriggerCardOptions } from '../lib/mock-options.js';
@@ -16,7 +17,7 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 
   test('"args.month" is missing', () => {
@@ -31,7 +32,7 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 
   test('"state.date" is missing', () => {
@@ -46,7 +47,7 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 
   test('"state.month" is missing', () => {
@@ -61,7 +62,7 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 
   test('state and args is not a match', () => {
@@ -78,7 +79,7 @@ describe('Return false when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeFalsy();
+    assert.ok(!result);
   });
 });
 
@@ -97,6 +98,6 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 });

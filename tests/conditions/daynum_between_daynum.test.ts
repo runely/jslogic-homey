@@ -1,4 +1,5 @@
-import { describe, expect, test } from '@jest/globals';
+import assert from 'node:assert/strict';
+import { describe, test } from 'node:test';
 import check from '../../handlers/conditions/daynum_between_daynum.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
 import { mockConditionCardOptions } from '../lib/mock-options.js';
@@ -15,7 +16,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 
   test('Day is before "dayOne" this month and before "dayTwo" this month', () => {
@@ -29,7 +30,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 });
 
@@ -45,7 +46,7 @@ describe('Return false when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeFalsy();
+    assert.ok(!result);
   });
 
   test('"dayOne" is missing', () => {
@@ -56,7 +57,7 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 
   test('"dayTwo" is missing', () => {
@@ -67,6 +68,6 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 });

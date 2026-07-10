@@ -1,4 +1,5 @@
-import { describe, expect, test } from '@jest/globals';
+import assert from 'node:assert/strict';
+import { describe, test } from 'node:test';
 import check from '../../handlers/conditions/weekday_one_of.js';
 import { weekdays } from '../../locales/en.json';
 import type { MockConditionCardOptions } from '../../types/tests.types';
@@ -28,7 +29,7 @@ describe('Return true when', () => {
       };
 
       const result = check(options);
-      expect(result).toBeTruthy();
+      assert.ok(result);
     });
   });
 
@@ -42,7 +43,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 
   test('"Weekday" is Tuesday and Monday and Tuesday is the only selected weekdays', () => {
@@ -55,7 +56,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 });
 
@@ -71,7 +72,7 @@ describe('Return false when', () => {
       };
 
       const result = check(options);
-      expect(result).toBeFalsy();
+      assert.ok(!result);
     });
   });
 
@@ -85,7 +86,7 @@ describe('Return false when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeFalsy();
+    assert.ok(!result);
   });
 
   test('"weekdays" is missing', () => {
@@ -95,7 +96,7 @@ describe('Return false when', () => {
       day: 1
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 
   test('"weekdays" is an empty string', () => {
@@ -107,6 +108,6 @@ describe('Return false when', () => {
       day: 1
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 });

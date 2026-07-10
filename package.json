@@ -1,6 +1,6 @@
 {
   "name": "no.runely.jslogic",
-  "version": "2.1.4",
+  "version": "3.0.0",
   "main": "app.js",
   "engines": {
     "node": ">=22.0.0"

@@ -44,6 +44,10 @@ In the following conditions you can choose to use case sensitivity or not:
 - 3.0.0
   - Upgraded TypeScript from 5.x to 6.x
   - BREAKING: Migrated from `moment` to `luxon`. Different datetime format!
+  - GitHub action:
+    - Enabled PR only
+    - Disabled script execution for npm ci
+    - Use tagged commits for actions
 - 2.1.4
   - Dependency updates
 - 2.1.3

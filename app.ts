@@ -1,8 +1,8 @@
 import Homey from 'homey';
-import type { Moment } from 'moment-timezone';
-import formatMoment from './lib/format-moment.js';
+import type { DateTime } from 'luxon';
+import formatDateTime from './lib/format-datetime.js';
 import getNextTimeout from './lib/get-next-timeout-ms.js';
-import moment from './lib/moment-datetime.js';
+import luxonDateTime from './lib/luxon-datetime.js';
 import ExtendedHomeyApp from './types/ExtendedHomeyApp';
 import type { HomeyManifest } from './types/HomeyManifest';
 import type { ActionCard, ConditionCard, Timeouts, TriggerCard } from './types/types';
@@ -95,13 +95,13 @@ class JSLogic extends ExtendedHomeyApp {
 
     // registers a timeout to trigger the "date_month_becomes" card at 00:00 every night
     const dateMonthBecomes = (): void => {
-      const now: Moment = moment({ timezone });
+      const now: DateTime = luxonDateTime({ timezone });
       const nextTimeout: number = getNextTimeout(timezone);
 
       this.log('dateMonthBecomes: Triggering "date_month_becomes" card');
       this.homey.flow
         .getTriggerCard('date_month_becomes')
-        .trigger(undefined, { date: now.get('date'), month: now.get('month') })
+        .trigger(undefined, { date: now.day, month: now.month - 1 })
         .catch(error => this.logError('onInit/dateMonthBecomes: Failed when triggering triggerCard', error));
 
       try {
@@ -109,14 +109,16 @@ class JSLogic extends ExtendedHomeyApp {
       } catch {}
       timeouts.dateMonthBecomes = this.homey.setTimeout(dateMonthBecomes, nextTimeout);
 
-      this.log(`dateMonthBecomes: Next timeout ${formatMoment(moment({ timezone }).add(nextTimeout, 'milliseconds'))}`);
+      this.log(
+        `dateMonthBecomes: Next timeout ${formatDateTime(luxonDateTime({ timezone }).plus({ milliseconds: nextTimeout }))}`
+      );
     };
 
     const nextTimeout = getNextTimeout(timezone);
     timeouts.dateMonthBecomes = this.homey.setTimeout(dateMonthBecomes, nextTimeout);
 
     this.log(
-      `onInit/dateMonthBecomes: Next timeout ${formatMoment(moment({ timezone }).add(nextTimeout, 'milliseconds'))}`
+      `onInit/dateMonthBecomes: Next timeout ${formatDateTime(luxonDateTime({ timezone }).plus({ milliseconds: nextTimeout }))}`
     );
   }
 }

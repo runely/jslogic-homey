@@ -1,14 +1,14 @@
-import type { Moment } from 'moment-timezone';
+import type { DateTime } from 'luxon';
 
-import moment from './moment-datetime.js';
+import luxonDateTime from './luxon-datetime.js';
 import pad from './pad-number.js';
 
-export default (time: string, timezone?: string): Moment => {
+export default (time: string, timezone?: string): DateTime => {
   const timeSplit: string[] = time.split(/[:.]/);
-  const now: Moment = moment({ timezone });
+  const now: DateTime = luxonDateTime({ timezone });
 
-  return moment({
+  return luxonDateTime({
     timezone,
-    date: `${now.get('year')}-${pad(now.get('month') + 1)}-${pad(now.get('date'))}T${pad(timeSplit[0])}:${pad(timeSplit[1])}:00`
+    date: `${now.year}-${pad(now.month)}-${pad(now.day)}T${pad(timeSplit[0])}:${pad(timeSplit[1])}:00`
   });
 };

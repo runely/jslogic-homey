@@ -1,10 +1,10 @@
-import type { Moment } from 'moment-timezone';
+import type { DateTime } from 'luxon';
 
-import moment from './moment-datetime.js';
+import luxonDateTime from './luxon-datetime.js';
 import pad from './pad-number.js';
 
-export default (date: string, timezone?: string): Moment => {
+export default (date: string, timezone?: string): DateTime => {
   const dateSplit: string[] = date.split(/[/.-]/);
 
-  return moment({ timezone, date: `${dateSplit[2]}-${pad(dateSplit[1])}-${pad(dateSplit[0])}` });
+  return luxonDateTime({ timezone, date: `${dateSplit[2]}-${pad(dateSplit[1])}-${pad(dateSplit[0])}` });
 };

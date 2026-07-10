@@ -1,5 +1,5 @@
 import hasData from '../../lib/has-data.js';
-import moment from '../../lib/moment-datetime.js';
+import luxonDateTime from '../../lib/luxon-datetime.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
 import type { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
 
@@ -12,7 +12,7 @@ export default (options: ConditionCardOptions | MockConditionCardOptions): boole
     throw new Error("'monthOne' and/or 'monthTwo' is missing");
   }
 
-  const today: number = month ?? moment({ timezone }).get('month');
+  const today: number = month ?? luxonDateTime({ timezone }).month - 1;
   const first = Number(monthOne);
   const second = Number(monthTwo);
 

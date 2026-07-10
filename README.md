@@ -41,8 +41,9 @@ In the following conditions you can choose to use case sensitivity or not:
 
 ## Changelog
 
-- 2.1.5
+- 3.0.0
   - Upgraded TypeScript from 5.x to 6.x
+  - BREAKING: Migrated from `moment` to `luxon`. Different datetime format!
 - 2.1.4
   - Dependency updates
 - 2.1.3

@@ -1,14 +1,11 @@
-import type { Moment } from 'moment-timezone';
+import type { DateTime } from 'luxon';
 
-import moment from './moment-datetime.js';
+import luxonDateTime from './luxon-datetime.js';
 
 export default (timezone: string): number => {
-  const now: Moment = moment({ timezone });
-  const then: Moment = moment({ timezone })
-    .set('hours', 0)
-    .set('minutes', 0)
-    .set('seconds', 0)
-    .set('milliseconds', 0)
-    .add(1, 'days');
-  return then.diff(now, 'milliseconds');
+  const now: DateTime = luxonDateTime({ timezone });
+  const then: DateTime = luxonDateTime({ timezone })
+    .set({ hour: 0, minute: 0, second: 0, millisecond: 0 })
+    .plus({ days: 1 });
+  return then.diff(now).milliseconds;
 };

@@ -6,6 +6,11 @@
     "nl": "Krijg opgemaakte datum",
     "no": "Hent formatert dato"
   },
+  "hint": {
+    "en": "Only luxon tokens supported: https://github.com/moment/luxon/blob/master/docs/formatting.md#table-of-tokens",
+    "nl": "Alleen luxon-tokens worden ondersteund: https://github.com/moment/luxon/blob/master/docs/formatting.md#table-of-tokens",
+    "no": "Kun luxon tokens er støttet: https://github.com/moment/luxon/blob/master/docs/formatting.md#table-of-tokens"
+  },
   "titleFormatted": {
     "en": "Get date [[daysToAdd]] days ahead in [[format]] format",
     "nl": "Krijg de datum [[daysToAdd]] dagen vooruit in [[format]] formaat",
@@ -25,9 +30,9 @@
       "type": "text",
       "name": "format",
       "placeholder": {
-        "en": "Format, like 'MM-DD-YYYY'",
-        "nl": "Formaat, zoals 'DD-MM-YYYY'",
-        "no": "Format, som 'DD-MM-YYYY'"
+        "en": "Format, like 'MM-dd-yyyy'",
+        "nl": "Formaat, zoals 'dd-MM-yyyy'",
+        "no": "Format, som 'dd-MM-yyyy'"
       }
     }
   ]

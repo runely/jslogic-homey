@@ -1,4 +1,5 @@
-import { describe, expect, test } from '@jest/globals';
+import assert from 'node:assert/strict';
+import { describe, test } from 'node:test';
 import check from '../../handlers/conditions/number_is_between.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
 import { mockConditionCardOptions } from '../lib/mock-options.js';
@@ -16,7 +17,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 
   test('"Includes" and "value1" is greater than "value2" but equal to "value3"', () => {
@@ -31,7 +32,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 
   test('"Includes" and "value1" is equal to "value2" and equal to "value3"', () => {
@@ -46,7 +47,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 
   test('"Not includes" and "value1" is greater than "value2" and lower than "value3"', () => {
@@ -61,7 +62,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 });
 
@@ -78,7 +79,7 @@ describe('Return false when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeFalsy();
+    assert.ok(!result);
   });
 
   test('"Includes" and "value1" is lower than "value2" and lower than "value3"', () => {
@@ -93,7 +94,7 @@ describe('Return false when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeFalsy();
+    assert.ok(!result);
   });
 
   test('"Not includes" and "value1" is greater "value2" and greater than "value3"', () => {
@@ -108,7 +109,7 @@ describe('Return false when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeFalsy();
+    assert.ok(!result);
   });
 
   test('"Not includes" and "value1" is equal to "value2" and lower than "value3"', () => {
@@ -123,7 +124,7 @@ describe('Return false when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeFalsy();
+    assert.ok(!result);
   });
 
   test('"Not includes" and "value1" is greater than "value2" and equal to "value3"', () => {
@@ -138,6 +139,6 @@ describe('Return false when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeFalsy();
+    assert.ok(!result);
   });
 });

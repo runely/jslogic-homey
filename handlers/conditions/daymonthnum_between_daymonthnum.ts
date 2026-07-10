@@ -1,21 +1,21 @@
-import type { Moment } from 'moment-timezone';
-import formatMoment from '../../lib/format-moment.js';
+import type { DateTime } from 'luxon';
+import formatDateTime from '../../lib/format-datetime.js';
 import hasData from '../../lib/has-data.js';
-import moment from '../../lib/moment-datetime.js';
+import luxonDateTime from '../../lib/luxon-datetime.js';
 import pad from '../../lib/pad-number.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
 import type { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
 
 const getFirstYear = (
-  today: Moment,
+  today: DateTime,
   firstDate: number,
   firstMonth: number,
   secondDate: number,
   secondMonth: number
 ): number => {
-  const year: number = today.get('year');
-  const month: number = today.get('month') + 1;
-  const date: number = today.get('date');
+  const year: number = today.year;
+  const month: number = today.month;
+  const date: number = today.day;
 
   if (month === 1 && date <= 15 && firstMonth === 12 && firstDate >= 15 && secondMonth === 1 && secondDate <= 15) {
     return year - 1;
@@ -29,17 +29,17 @@ const getFirstYear = (
 };
 
 const getSecondYear = (
-  today: Moment,
+  today: DateTime,
   firstYear: number,
   firstDate: number,
   firstMonth: number,
   secondDate: number,
   secondMonth: number
 ): number => {
-  const tempYear: number = today.get('year');
+  const tempYear: number = today.year;
   const year: number = tempYear < firstYear ? firstYear : tempYear;
-  const month: number = today.get('month') + 1;
-  const date: number = today.get('date');
+  const month: number = today.month;
+  const date: number = today.day;
 
   if (secondMonth < firstMonth) {
     if (month < secondMonth || (month === secondMonth && date < secondDate)) {
@@ -80,7 +80,7 @@ export default (options: ConditionCardOptions | MockConditionCardOptions): boole
     throw new Error("'dayOne' and/or 'monthOne' and/or 'dayTwo' and/or 'monthTwo' is missing...");
   }
 
-  const today: Moment = date !== undefined ? moment({ timezone, date }) : moment({ timezone });
+  const today: DateTime = date !== undefined ? luxonDateTime({ timezone, date }) : luxonDateTime({ timezone });
   const firstDate = Number(dayOne);
   const firstMonth = Number(monthOne) + 1;
   const secondDate = Number(dayTwo);
@@ -93,25 +93,25 @@ export default (options: ConditionCardOptions | MockConditionCardOptions): boole
 
   const firstYear: number = getFirstYear(today, firstDate, firstMonth, secondDate, secondMonth);
   const secondYear: number = getSecondYear(today, firstYear, firstDate, firstMonth, secondDate, secondMonth);
-  const first: Moment = moment({
+  const first: DateTime = luxonDateTime({
     timezone,
-    date: `${firstYear}-${pad(firstMonth)}-${pad(firstDate)}T${pad(today.get('hour'))}:${pad(today.get('minute'))}:${pad(today.get('second'))}`
+    date: `${firstYear}-${pad(firstMonth)}-${pad(firstDate)}T${pad(today.hour)}:${pad(today.minute)}:${pad(today.second)}`
   });
-  const second: Moment = moment({
+  const second: DateTime = luxonDateTime({
     timezone,
-    date: `${secondYear}-${pad(secondMonth)}-${pad(secondDate)}T${pad(today.get('hour'))}:${pad(today.get('minute'))}:${pad(today.get('second'))}`
+    date: `${secondYear}-${pad(secondMonth)}-${pad(secondDate)}T${pad(today.hour)}:${pad(today.minute)}:${pad(today.second)}`
   });
 
-  const formattedToday: string = formatMoment(today);
-  const formattedFirst: string = formatMoment(first);
-  const formattedSecond: string = formatMoment(second);
+  const formattedToday: string = formatDateTime(today);
+  const formattedFirst: string = formatDateTime(first);
+  const formattedSecond: string = formatDateTime(second);
 
   app.log(`daymonthnum_between_daymonthnum: Today: '${formattedToday}'`);
   app.log(`daymonthnum_between_daymonthnum: First: '${formattedFirst}'`);
   app.log(`daymonthnum_between_daymonthnum: Second: '${formattedSecond}'`);
 
   // today is inside first and second
-  if (today >= first && today <= second) {
+  if (today.toMillis() >= first.toMillis() && today.toMillis() <= second.toMillis()) {
     app.log(
       `daymonthnum_between_daymonthnum: Today(${formattedToday}) is (>= to first(${formattedFirst}) && <= to second(${formattedSecond})). Inside this year!`
     );
@@ -119,7 +119,11 @@ export default (options: ConditionCardOptions | MockConditionCardOptions): boole
   }
 
   // second is lower than first and today is greater than or equal to first and lower than or equal second (still inside for next year)
-  if (second < first && today >= first && today <= second) {
+  if (
+    second.toMillis() < first.toMillis() &&
+    today.toMillis() >= first.toMillis() &&
+    today.toMillis() <= second.toMillis()
+  ) {
     app.log(
       `daymonthnum_between_daymonthnum: Second(${formattedSecond}) is < first(${formattedFirst}) && today(${formattedToday}) is (>= to first(${formattedFirst}) && <= to second(${formattedSecond})). Inside for next year!`
     );

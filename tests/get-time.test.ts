@@ -1,26 +1,27 @@
-import { describe, expect, test } from '@jest/globals';
+import assert from 'node:assert/strict';
+import { describe, test } from 'node:test';
 
 import getTime from '../lib/get-time.js';
-import moment from '../lib/moment-datetime.js';
+import luxonDateTime from '../lib/luxon-datetime.js';
 
-const now = moment({});
+const now = luxonDateTime({});
 
 describe('Date with', () => {
-  test('valid format HH:mm -> Returns moment', () => {
+  test('valid format HH:mm -> Returns luxonDateTime', () => {
     const time = getTime('08:30');
-    expect(time.get('date')).toBe(now.get('date'));
-    expect(time.get('month')).toBe(now.get('month'));
-    expect(time.get('year')).toBe(now.get('year'));
-    expect(time.get('hour')).toBe(8);
-    expect(time.get('minute')).toBe(30);
+    assert.strictEqual(time.day, now.day);
+    assert.strictEqual(time.month, now.month);
+    assert.strictEqual(time.year, now.year);
+    assert.strictEqual(time.hour, 8);
+    assert.strictEqual(time.minute, 30);
   });
 
-  test('valid format HH.mm -> Returns moment', () => {
+  test('valid format HH.mm -> Returns luxonDateTime', () => {
     const time = getTime('08.30');
-    expect(time.get('date')).toBe(now.get('date'));
-    expect(time.get('month')).toBe(now.get('month'));
-    expect(time.get('year')).toBe(now.get('year'));
-    expect(time.get('hour')).toBe(8);
-    expect(time.get('minute')).toBe(30);
+    assert.strictEqual(time.day, now.day);
+    assert.strictEqual(time.month, now.month);
+    assert.strictEqual(time.year, now.year);
+    assert.strictEqual(time.hour, 8);
+    assert.strictEqual(time.minute, 30);
   });
 });

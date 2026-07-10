@@ -1,9 +1,9 @@
-import type { Moment } from 'moment-timezone';
+import type { DateTime } from 'luxon';
 import type ExtendedHomeyApp from '../types/ExtendedHomeyApp';
 import type { MockApp } from '../types/tests.types';
 import type { CheckDateTimeType } from '../types/types';
 
-import formatMoment from './format-moment.js';
+import formatDateTime from './format-datetime.js';
 import getDate from './get-date.js';
 import getDateTime from './get-date-time.js';
 import getTime from './get-time.js';
@@ -11,19 +11,19 @@ import getTime from './get-time.js';
 const check = (
   app: ExtendedHomeyApp | MockApp,
   type: CheckDateTimeType,
-  parsedOne: Moment,
-  parsedTwo: Moment,
+  parsedOne: DateTime,
+  parsedTwo: DateTime,
   descOne: string,
   descTwo: string
 ): boolean => {
-  if (!parsedOne.isValid() || !parsedTwo.isValid()) {
+  if (!parsedOne.isValid || !parsedTwo.isValid) {
     app.logError(`${type}/check-date-time: ${descOne} and/or ${descTwo} invalid`);
     throw new Error(`${descOne} and/or ${descTwo} is invalid`);
   }
 
-  app.log(`${type}/check-date-time: ${descOne}: '${formatMoment(parsedOne)}'`);
-  app.log(`${type}/check-date-time: ${descTwo}: '${formatMoment(parsedTwo)}'`);
-  const result = parsedOne < parsedTwo;
+  app.log(`${type}/check-date-time: ${descOne}: '${formatDateTime(parsedOne)}'`);
+  app.log(`${type}/check-date-time: ${descTwo}: '${formatDateTime(parsedTwo)}'`);
+  const result = parsedOne.toMillis() < parsedTwo.toMillis();
   app.log(`${type}/check-date-time: Is ${descOne} before ${descTwo}:`, result);
   return result;
 };
@@ -38,20 +38,20 @@ export default (
   timezone?: string
 ): boolean => {
   if (descOne.includes('DateTime') && descTwo.includes('DateTime')) {
-    const parsedOne: Moment = getDateTime(itemOne, timezone);
-    const parsedTwo: Moment = getDateTime(itemTwo, timezone);
+    const parsedOne: DateTime = getDateTime(itemOne, timezone);
+    const parsedTwo: DateTime = getDateTime(itemTwo, timezone);
     return check(app, type, parsedOne, parsedTwo, itemOne, itemTwo);
   }
 
   if (descOne.includes('Date') && descTwo.includes('Date')) {
-    const parsedOne: Moment = getDate(itemOne, timezone);
-    const parsedTwo: Moment = getDate(itemTwo, timezone);
+    const parsedOne: DateTime = getDate(itemOne, timezone);
+    const parsedTwo: DateTime = getDate(itemTwo, timezone);
     return check(app, type, parsedOne, parsedTwo, itemOne, itemTwo);
   }
 
   if (descOne.includes('Time') && descTwo.includes('Time')) {
-    const parsedOne: Moment = getTime(itemOne, timezone);
-    const parsedTwo: Moment = getTime(itemTwo, timezone);
+    const parsedOne: DateTime = getTime(itemOne, timezone);
+    const parsedTwo: DateTime = getTime(itemTwo, timezone);
     return check(app, type, parsedOne, parsedTwo, itemOne, itemTwo);
   }
 

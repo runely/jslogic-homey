@@ -1,4 +1,5 @@
-import { describe, expect, test } from '@jest/globals';
+import assert from 'node:assert/strict';
+import { describe, test } from 'node:test';
 import check from '../../handlers/conditions/monthnum_between_monthnum.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
 import { mockConditionCardOptions } from '../lib/mock-options.js';
@@ -15,7 +16,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 
   test('Month is after "monthOne" this year and before "monthTwo" next year', () => {
@@ -29,7 +30,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 
   test('Month is after "monthOne" next year and before "monthTwo" next year', () => {
@@ -43,7 +44,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 
   test('Month is equal to "monthOne" which is equal to "monthTwo"', () => {
@@ -57,7 +58,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 
   test('Month is after "monthOne" next year and equal to "monthTwo" next year', () => {
@@ -71,7 +72,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 });
 
@@ -84,7 +85,7 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 
   test('"monthTwo" is missing', () => {
@@ -95,7 +96,7 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 
   test('"monthOne" is an empty string', () => {
@@ -107,7 +108,7 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 
   test('"monthTwo" is an empty string', () => {
@@ -119,7 +120,7 @@ describe('Return false when', () => {
       }
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 });
 
@@ -134,7 +135,7 @@ describe('Throw an error when', () => {
       month: 10
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 
   test('monthTwo is more than actual months"', () => {
@@ -147,6 +148,6 @@ describe('Throw an error when', () => {
       month: 10
     };
 
-    expect((): boolean => check(options)).toThrow();
+    assert.throws((): boolean => check(options));
   });
 });

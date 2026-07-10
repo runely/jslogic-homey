@@ -55,7 +55,7 @@ export interface FlowCard {
   id: string;
 }
 
-export interface MomentDateTimeOptions {
+export interface DateTimeOptions {
   timezone?: string | undefined;
   date?: string | undefined;
 }

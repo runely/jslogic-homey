@@ -1,5 +1,5 @@
 import hasData from '../../lib/has-data.js';
-import moment from '../../lib/moment-datetime.js';
+import luxonDateTime from '../../lib/luxon-datetime.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
 import type { ConditionCardArgs, ConditionCardOptions } from '../../types/types';
 
@@ -17,7 +17,7 @@ export default (options: ConditionCardOptions | MockConditionCardOptions): boole
     throw new Error("'dayOne' and/or 'dayTwo' is missing");
   }
 
-  const today: number = day ?? moment({ timezone }).get('date');
+  const today: number = day ?? luxonDateTime({ timezone }).day;
   const first = dayOne as number;
   const second = dayTwo as number;
 

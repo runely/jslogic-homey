@@ -130,5 +130,8 @@
   },
   "2.1.4": {
     "en": "Dependency updates"
+  },
+  "3.0.0": {
+    "en": "BREAKING: Migrated from 'moment' to 'luxon': Action card might need new format"
   }
 }

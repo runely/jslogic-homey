@@ -1,4 +1,5 @@
-import { describe, expect, test } from '@jest/globals';
+import assert from 'node:assert/strict';
+import { describe, test } from 'node:test';
 import check from '../../handlers/conditions/value_empty.js';
 import type { MockConditionCardOptions } from '../../types/tests.types';
 import { mockConditionCardOptions } from '../lib/mock-options.js';
@@ -13,7 +14,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 
   test('"value" is one whitespace', () => {
@@ -25,7 +26,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 
   test('"value" is 10 whitespace', () => {
@@ -37,7 +38,7 @@ describe('Return true when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeTruthy();
+    assert.ok(result);
   });
 });
 
@@ -51,7 +52,7 @@ describe('Return false when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeFalsy();
+    assert.ok(!result);
   });
 
   test('"value" is one word', () => {
@@ -63,7 +64,7 @@ describe('Return false when', () => {
     };
 
     const result = check(options);
-    expect(result).toBeFalsy();
+    assert.ok(!result);
   });
 });
 
@@ -77,7 +78,7 @@ describe('Throws an error when', () => {
       }
     };
 
-    expect(() => check(options)).toThrow();
+    assert.throws(() => check(options));
   });
 
   test('"value" is undefined', () => {
@@ -88,6 +89,6 @@ describe('Throws an error when', () => {
       }
     };
 
-    expect(() => check(options)).toThrow();
+    assert.throws(() => check(options));
   });
 });

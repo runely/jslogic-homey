@@ -5,6 +5,11 @@
     "nl": "Opgemaakte datum en tijd ophalen",
     "no": "Hent formatert dato- og tidspunkt"
   },
+  "hint": {
+    "en": "Only luxon tokens supported: https://github.com/moment/luxon/blob/master/docs/formatting.md#table-of-tokens",
+    "nl": "Alleen luxon-tokens worden ondersteund: https://github.com/moment/luxon/blob/master/docs/formatting.md#table-of-tokens",
+    "no": "Kun luxon tokens er støttet: https://github.com/moment/luxon/blob/master/docs/formatting.md#table-of-tokens"
+  },
   "titleFormatted": {
     "en": "Get date and time [[toAdd]] [[type]] ahead in [[format]] format",
     "nl": "Datum en tijd ophalen [[toAdd]] [[type]] vooruit in [[format]] formaat",
@@ -64,9 +69,9 @@
       "type": "text",
       "name": "format",
       "placeholder": {
-        "en": "Format, like 'MM-DD-YYYY HH:mm:ss'",
-        "nl": "Formaat, zoals 'DD-MM-YYYY HH:mm:ss'",
-        "no": "Format, som 'DD-MM-YYYY HH:mm:ss'"
+        "en": "Format, like 'MM-dd-yyyy HH:mm:ss'",
+        "nl": "Formaat, zoals 'dd-MM-yyyy HH:mm:ss'",
+        "no": "Format, som 'dd-MM-yyyy HH:mm:ss'"
       }
     }
   ]

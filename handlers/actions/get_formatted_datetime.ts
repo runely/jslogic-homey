@@ -1,10 +1,12 @@
-import type { DurationInputArg2 } from 'moment-timezone';
+import type { DateTime } from 'luxon';
 import hasData from '../../lib/has-data.js';
-import moment from '../../lib/moment-datetime.js';
+import luxonDateTime from '../../lib/luxon-datetime.js';
 import type ExtendedHomeyApp from '../../types/ExtendedHomeyApp';
 import type { ActionCardArgs, ActionCardOptions } from '../../types/types';
 
-const convertToType = (num: string | number, app: ExtendedHomeyApp): DurationInputArg2 => {
+type DurationUnit = 'minutes' | 'hours' | 'days' | 'weeks';
+
+const convertToType = (num: string | number, app: ExtendedHomeyApp): DurationUnit => {
   if ([1, '1'].includes(num)) {
     return 'minutes';
   } else if ([2, '2'].includes(num)) {
@@ -28,8 +30,8 @@ export default async (options: ActionCardOptions): Promise<boolean> => {
     throw new Error("Argument 'type' missing");
   }
 
-  const convertedType = convertToType(type, app);
-  const time = moment({ timezone }).add(toAdd, convertedType);
+  const convertedType: DurationUnit = convertToType(type, app);
+  const dateTime: DateTime = luxonDateTime({ timezone }).plus({ [convertedType]: toAdd });
   const token = app.homey.flow.getToken('formatted_datetime');
   if (typeof token.setValue !== 'function') {
     app.logError("get_formatted_datetime: Token 'formatted_time' not found");
@@ -37,7 +39,7 @@ export default async (options: ActionCardOptions): Promise<boolean> => {
   }
 
   try {
-    await token.setValue(time.format(format));
+    await token.setValue(dateTime.toFormat(format ?? ''));
     return true;
   } catch (ex) {
     app.logError('Failed to set value on formatted_datetime token:', ex);

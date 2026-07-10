@@ -1,11 +1,12 @@
-import moment from '../../lib/moment-datetime.js';
+import type { DateTime } from 'luxon';
+import luxonDateTime from '../../lib/luxon-datetime.js';
 import type { ActionCardArgs, ActionCardOptions } from '../../types/types';
 
 export default async (options: ActionCardOptions): Promise<boolean> => {
   const { timezone, app } = options;
   const { daysToAdd, format } = options.args as ActionCardArgs;
 
-  const day = moment({ timezone }).add(daysToAdd, 'days');
+  const day: DateTime = luxonDateTime({ timezone }).plus({ days: daysToAdd });
   const token = app.homey.flow.getToken('formatted_date');
   if (typeof token.setValue !== 'function') {
     app.logError("get_formatted_date: Token 'formatted_date' not found");
@@ -13,7 +14,7 @@ export default async (options: ActionCardOptions): Promise<boolean> => {
   }
 
   try {
-    await token.setValue(day.format(format));
+    await token.setValue(day.toFormat(format ?? ''));
     return true;
   } catch (ex) {
     app.logError('Failed to set value on formatted_date token:', ex);

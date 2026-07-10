@@ -1,5 +1,5 @@
 import hasData from '../../lib/has-data.js';
-import moment from '../../lib/moment-datetime.js';
+import luxonDateTime from '../../lib/luxon-datetime.js';
 import type ExtendedHomeyApp from '../../types/ExtendedHomeyApp';
 import type { MockApp, MockConditionCardOptions } from '../../types/tests.types';
 import type { ConditionCardArgs, ConditionCardOptions, Weekday } from '../../types/types';
@@ -60,7 +60,7 @@ export default (options: ConditionCardOptions | MockConditionCardOptions): boole
     throw new Error('One or more weekdays invalid');
   }
 
-  const value: number | undefined = Number.isInteger(day) ? day : moment({ timezone }).get('weekday');
+  const value: number | undefined = Number.isInteger(day) ? day : luxonDateTime({ timezone }).weekday % 7;
 
   app.log('weekday_one_of: Weekdays:', actualWeekdays.join(','), '--', 'WeekdayStrings:', weekdayStrings.join(','));
   app.log("weekday_one_of: Today's weekday:", value);

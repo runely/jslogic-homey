@@ -6,11 +6,11 @@
     "node": ">=22.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.2",
+    "@biomejs/biome": "2.5.5",
     "@tsconfig/node24": "^24.0.4",
     "@types/homey": "npm:homey-apps-sdk-v3-types@0.3.12",
     "@types/luxon": "^3.7.2",
-    "@types/node": "^26.1.0",
+    "@types/node": "^26.1.1",
     "typescript": "^6.0.3"
   },
   "dependencies": {

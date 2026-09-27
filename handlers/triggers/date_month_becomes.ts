@@ -7,12 +7,7 @@ export default (options: TriggerCardOptions | MockTriggerCardOptions): boolean =
   const { date: argsDate, month: argsMonth } = options.args as TriggerCardArgs;
   const { date: stateDate, month: stateMonth } = options.state as TriggerCardState;
 
-  if (
-    argsDate === undefined ||
-    !hasData<number>(argsDate) ||
-    argsMonth === undefined ||
-    !hasData<string>(argsMonth)
-  ) {
+  if (argsDate === undefined || !hasData<number>(argsDate) || argsMonth === undefined || !hasData<string>(argsMonth)) {
     app.logError("date_month_becomes: 'args.date' and/or 'args.month' is missing");
     throw new Error("'date' and/or 'month' is missing");
   }

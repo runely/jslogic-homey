@@ -7,7 +7,12 @@ export default (options: TriggerCardOptions | MockTriggerCardOptions): boolean =
   const { date: argsDate, month: argsMonth } = options.args as TriggerCardArgs;
   const { date: stateDate, month: stateMonth } = options.state as TriggerCardState;
 
-  if (argsDate === undefined || !hasData<number>(argsDate) || argsMonth === undefined || !hasData<string>(argsMonth)) {
+  if (
+    argsDate === undefined ||
+    !hasData<number>(argsDate) ||
+    argsMonth === undefined ||
+    !hasData<string>(argsMonth)
+  ) {
     app.logError("date_month_becomes: 'args.date' and/or 'args.month' is missing");
     throw new Error("'date' and/or 'month' is missing");
   }
@@ -22,9 +27,14 @@ export default (options: TriggerCardOptions | MockTriggerCardOptions): boolean =
     throw new Error("'date' and/or 'month' is missing from state");
   }
 
-  const result = argsDate === stateDate && argsMonth === stateMonth;
+  const argsDateNum: number = Number(argsDate);
+  const argsMonthNum: number = Number(argsMonth);
+  const stateDateNum: number = Number(stateDate);
+  const stateMonthNum: number = Number(stateMonth);
+
+  const result = argsDateNum === stateDateNum && argsMonthNum === stateMonthNum;
   app.log(
-    `date_month_becomes: Is ${argsDate} === ${stateDate} && ${argsMonth} === ${stateMonth} ?? ${result.toString()}`
+    `date_month_becomes: Is ${argsDateNum} === ${stateDateNum} && ${argsMonthNum} === ${stateMonthNum} ?? ${result.toString()}`
   );
   return result;
 };

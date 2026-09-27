@@ -133,5 +133,8 @@
   },
   "3.0.0": {
     "en": "BREAKING: Migrated from 'moment' to 'luxon': Action card might need new format"
+  },
+  "3.0.1": {
+    "en": "Bugfix: 'Date and month becomes' now evaluates correctly. Dependency updates."
   }
 }

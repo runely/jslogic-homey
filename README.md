@@ -41,6 +41,8 @@ In the following conditions you can choose to use case sensitivity or not:
 
 ## Changelog
 
+- 3.0.2
+  - Dev dependency updates
 - 3.0.1
   - Dev dependency updates
   - Upgraded TypeScript from 6.x to 7.0.x

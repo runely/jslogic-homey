@@ -39,12 +39,10 @@ class JSLogic extends ExtendedHomeyApp {
     actions.forEach(({ id }) => {
       this.log('Adding runListener for action', id);
       this.homey.flow.getActionCard(id).registerRunListener(async (args, _) => {
-        // eslint-disable-next-line @typescript-eslint/no-require-imports - Required for Homey to read the flows correctly...
         const action = (require(`./handlers/actions/${id}.js`) as { default: ActionCard }).default;
         return await action({
           timezone,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          args, // Disabled because Homey.FlowCard.RunCallback specifies args and state as any
+          args, // NOTE: Homey.FlowCard.RunCallback specifies args and state as any
           app: this
         });
       });
@@ -54,12 +52,10 @@ class JSLogic extends ExtendedHomeyApp {
     conditions.forEach(({ id }) => {
       this.log('Adding runListener for condition', id);
       this.homey.flow.getConditionCard(id).registerRunListener(async (args, _) => {
-        // eslint-disable-next-line @typescript-eslint/no-require-imports - Required for Homey to read the flows correctly...
         const condition = (require(`./handlers/conditions/${id}.js`) as { default: ConditionCard }).default;
         return condition({
           timezone,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          args, // Disabled because Homey.FlowCard.RunCallback specifies args and state as any
+          args, // NOTE: Homey.FlowCard.RunCallback specifies args and state as any
           app: this
         });
       });
@@ -69,13 +65,10 @@ class JSLogic extends ExtendedHomeyApp {
     triggers.forEach(({ id }) => {
       this.log('Adding runListener for trigger', id);
       this.homey.flow.getTriggerCard(id).registerRunListener(async (args, state) => {
-        // eslint-disable-next-line @typescript-eslint/no-require-imports - Required for Homey to read the flows correctly...
         const trigger = (require(`./handlers/triggers/${id}.js`) as { default: TriggerCard }).default;
         return trigger({
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          args, // Disabled because Homey.FlowCard.RunCallback specifies args and state as any
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          state, // Disabled because Homey.FlowCard.RunCallback specifies args and state as any
+          args, // NOTE: Homey.FlowCard.RunCallback specifies args and state as any
+          state, // NOTE: Homey.FlowCard.RunCallback specifies args and state as any
           app: this
         });
       });
@@ -101,7 +94,7 @@ class JSLogic extends ExtendedHomeyApp {
       this.log('dateMonthBecomes: Triggering "date_month_becomes" card');
       this.homey.flow
         .getTriggerCard('date_month_becomes')
-        .trigger(undefined, { date: now.day, month: now.month - 1 })
+        .trigger(undefined, { date: now.day, month: now.month - 1 }) // NOTE: Need to take away 1 here since the trigger card is 0 based (leftover from MomentTimezone...)
         .catch(error => this.logError('onInit/dateMonthBecomes: Failed when triggering triggerCard', error));
 
       try {

@@ -44,6 +44,7 @@ In the following conditions you can choose to use case sensitivity or not:
 - 3.0.1
   - Dev dependency updates
   - Upgraded TypeScript from 6.x to 7.0.x
+  - Bugfix: `Date and month becomes` did not work since it was evaluating string to number
 - 3.0.0
   - Upgraded TypeScript from 5.x to 6.x
   - BREAKING: Migrated from `moment` to `luxon`. Different datetime format!

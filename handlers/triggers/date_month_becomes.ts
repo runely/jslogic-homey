@@ -22,9 +22,14 @@ export default (options: TriggerCardOptions | MockTriggerCardOptions): boolean =
     throw new Error("'date' and/or 'month' is missing from state");
   }
 
-  const result = argsDate === stateDate && argsMonth === stateMonth;
+  const argsDateNum: number = Number(argsDate);
+  const argsMonthNum: number = Number(argsMonth);
+  const stateDateNum: number = Number(stateDate);
+  const stateMonthNum: number = Number(stateMonth);
+
+  const result = argsDateNum === stateDateNum && argsMonthNum === stateMonthNum;
   app.log(
-    `date_month_becomes: Is ${argsDate} === ${stateDate} && ${argsMonth} === ${stateMonth} ?? ${result.toString()}`
+    `date_month_becomes: Is ${argsDateNum} === ${stateDateNum} && ${argsMonthNum} === ${stateMonthNum} ?? ${result.toString()}`
   );
   return result;
 };
